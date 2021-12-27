@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+// import { api } from 'src/app/shared/api.service'
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ApiService } from '../shared/api.service';
 import { LockerServiceModel } from './locker-service-dash board.model';
 
 @Component({
@@ -14,7 +15,8 @@ export class LockerServiceDashboardComponent implements OnInit {
   lockerServiceModelObj : LockerServiceModel = new LockerServiceModel();
 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private api : ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
