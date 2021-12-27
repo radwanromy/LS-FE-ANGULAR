@@ -38,6 +38,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     .subscribe(res=>{
       console.log(res);
       alert("Locker Details Added Successfully.");
+      this.formValue.reset();
     },
     err=>{
       alert("Something went wrong");

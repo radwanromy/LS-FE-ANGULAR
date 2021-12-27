@@ -4,6 +4,14 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": 2,
+      "fname": "ad",
+      "lname": "ds",
+      "eid": "adsca@adsa.com",
+      "mno": 12312,
+      "sal": 1231
     }
   ],
   "comments": [
