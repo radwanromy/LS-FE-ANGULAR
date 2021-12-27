@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "id": 2,
       "fname": "ad",
       "lname": "ds",
@@ -19,15 +14,8 @@
       "lname": "ds21",
       "eid": "ad21@dasd.bjh",
       "mno": 121231231231,
-      "sal": 12312
-    },
-    {
-      "id": 5,
-      "fname": "",
-      "lname": "",
-      "eid": "",
-      "mno": "",
-      "sal": ""
+      "sal": 12312,
+      "userid": "323"
     },
     {
       "id": 6,
@@ -35,16 +23,44 @@
       "lname": "romy",
       "eid": "romy@gmail.com",
       "mno": 12312,
-      "sal": 1212
-    }
-  ],
-  "comments": [
+      "sal": 1000,
+      "userid": "313"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 7,
+      "fname": "radwan",
+      "lname": "romy",
+      "eid": "radwan@romy.com",
+      "mno": 1717799111,
+      "sal": 10000
+    },
+    {
+      "id": 8,
+      "fname": "radwanasxasdcxa",
+      "lname": "romy",
+      "eid": "radwan@asjhd.cvid",
+      "mno": 65465464,
+      "sal": 5000
+    },
+    {
+      "fname": "ad",
+      "lname": "ds213",
+      "eid": "ad",
+      "mno": 123123,
+      "sal": 12312312,
+      "id": 9
+    },
+    {
+      "id": 13,
+      "fname": "radwan",
+      "lname": "ds213",
+      "eid": "radwan@adf.vhgn",
+      "mno": 12,
+      "sal": 123,
+      "userid": "121"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

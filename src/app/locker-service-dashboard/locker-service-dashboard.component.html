@@ -1,19 +1,116 @@
-<nav class="navbar navbar-light bg-primary">
+
+<div class="Header" >
+  <table width="100%">
+      <tr  >
+          <td align="left" >
+            <img src="../../assets/bank-asia-logo.gif" alt="" height="75px"  width="130px" style="padding-left: 20px;">
+      
+          </td>
+          <td align="Center" >
+              <span style="  font-family:Verdana, Arial, Serif;
+              font-size:36px;
+              color: #121b27;">Bank Aisa-Locker Service</span> 
+              <span style="  font-family:Verdana, Arial, Serif;
+              font: size 3px;
+              color: #121b27;"><br>
+                  User ID - S0121</span>
+                  <!-- <div class="btn-group"  ><td>
+                      <button type="button" class="btn btn-primary"  >Execute</button>
+                  </td>
+                  <td width="5px"></td>
+                  <td>
+                      <button type="button" class="btn btn-primary"  >Edit</button>
+                  </td><td width="5px"></td>
+                  <td>
+                      <button type="button" class="btn btn-primary"  >Clear</button>
+                  </td><td width="5px"></td>
+                  <td>
+                      <button type="button" class="btn btn-primary"  >Log-Out</button>
+                  </td>  
+                    </div> -->
+          </td>
+          <td align="right"  >
+              <img src="../../assets/Era_logodown.png" alt="" height="75px"  width="130px" style="padding-right: 20px;">
+          </td>
+      </tr>
+      <tr style="height: 7px;">
+          
+      </tr>
+  </table>
+ 
+</div>
+
+<!-- <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
 <h1 style="color: aliceblue;">
     Locker Service
 </h1>
 <div class="d-flex">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+  <button (click)="clickAddEmployee()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Add Locker Service 
     </button>
 </div>
     </div>
-</nav>
+</nav> -->
+<table>
+  <tr>
+     <td>
+       
+<div class="modal-body">
+  <form [formGroup]= "formValue">
+    <div >
+      <label for="exampleInputEmail1" class="form-label">User ID</label>
+      <input type="int" formControlName="userid"  (keydown.enter)="onKeyPress($event)"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+      <div >
+        <label for="exampleInputEmail1" class="form-label">F A</label>
+        <input type="text" formControlName="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+      <div >
+        <label for="exampleInputPassword1" class="form-label">L N</label>
+        <input type="text" formControlName="lname" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div >
+          <label for="exampleInputEmail1" class="form-label">E ID</label>
+          <input type="email" formControlName="eid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div >
+          <label for="exampleInputPassword1" class="form-label">M No</label>
+          <input type="number" formControlName="mno" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div >
+          <label for="exampleInputPassword1" class="form-label">SAL</label>
+          <input type="number" formControlName="sal" class="form-control" id="exampleInputPassword1">
+        </div>
+      
+      <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </form>
+</div>
+<div class="modal-footer">
+<button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary">Add</button>
+<button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
+</div>
+
+
+     </td>
+
+  </tr>
+    <tr><td>
+
+    </td>
+    
+  </tr>
+
+</table>
 <table class="table mt-3">
     <thead>
         <tr>
-            <th scope="col">E ID</th>
+            <th scope="col"> ID</th>
+            <th scope="col">User ID</th>
             <th scope="col">F N</th>
             <th scope="col">L N</th>
             <th scope="col">E ID</th>
@@ -26,12 +123,12 @@
     </thead>
     <tbody><tr *ngFor="let row of lockerServiceData">
         <td>{{row.id}}</td>
+        <td>{{row.userid}}</td>
         <td>{{row.fname}}</td>
         <td>{{row.lname}}</td>
         <td>{{row.eid}}</td>
         <td>{{row.mno}}</td> 
         <td>{{row.sal}}</td>
-      
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
@@ -43,49 +140,50 @@
 
     </tbody>
 </table>
-
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">locker-service-specification</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form [formGroup]= "formValue">
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">F A</label>
-                  <input type="text" formControlName="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">L N</label>
-                  <input type="text" formControlName="lname" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">E ID</label>
-                    <input type="email" formControlName="eid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">M No</label>
-                    <input type="number" formControlName="mno" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">SAL</label>
-                    <input type="number" formControlName="sal" class="form-control" id="exampleInputPassword1">
-                  </div>
-                
-                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="postLockerServiceDetails()" class="btn btn-primary">Add</button>
-          <button type="button" (click)="updateLockerServiceDetails()" class="btn btn-primary">Update</button>
-        </div>
-      </div>
+<!-- 
+<div class="modal-body">
+  <form [formGroup]= "formValue">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">User ID</label>
+      <input type="int" formControlName="userid"  (keydown.enter)="onKeyPress($event)"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+     
     </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">F A</label>
+        <input type="text" formControlName="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">L N</label>
+        <input type="text" formControlName="lname" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">E ID</label>
+          <input type="email" formControlName="eid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">M No</label>
+          <input type="number" formControlName="mno" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">SAL</label>
+          <input type="number" formControlName="sal" class="form-control" id="exampleInputPassword1">
+        </div>
+      
+    
+    </form>
+</div>
+<div class="modal-footer">
+<button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary">Add</button>
+<button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
+</div> -->
+
+
+  <div>
+
+  </div>
+  
+  
+  <div class="Footer">
+      <span>&copy;<a href="https://www.erainfotechbd.com/" >ERA InfoTech Ltd</a> </span>
   </div>

@@ -22,6 +22,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
+      userid : [''],
       fname : [''],
       lname : [''],
       eid : [''],
@@ -30,7 +31,15 @@ export class LockerServiceDashboardComponent implements OnInit {
     })
     this.getAllLockerServiceDetails();
   }
+
+  clickAddEmployee(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
+  } 
   postLockerServiceDetails(){
+    
+    this.lockerServiceModelObj.userid = this.formValue.value.userid;
     this.lockerServiceModelObj.fname = this.formValue.value.fname;
     this.lockerServiceModelObj.lname = this.formValue.value.lname;
     this.lockerServiceModelObj.eid = this.formValue.value.eid;
@@ -54,6 +63,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.api.getEmployee()
       .subscribe( res => {
         this.lockerServiceData = res;
+        this.showAdd = true;
       })
     }
 
@@ -81,22 +91,26 @@ export class LockerServiceDashboardComponent implements OnInit {
     // }
 
     getOnForm(row: any){
-      // this.lockerServiceModelObj.id = row.id;
+      this.lockerServiceModelObj.id = row.id;
+      this.formValue.controls['userid'].patchValue(row.userid);
       this.formValue.controls['fname'].patchValue(row.fname);
       this.formValue.controls['lname'].patchValue(row.lname);
       this.formValue.controls['eid'].patchValue(row.eid);
       this.formValue.controls['mno'].patchValue(row.mno);
       this.formValue.controls['sal'].patchValue(row.sal);
+
+      this.showAdd= false;
+      this.showUpdate= true;
     }
 
   updateLockerServiceDetails(){
-      
+    this.lockerServiceModelObj.userid = this.formValue.value.userid;
       this.lockerServiceModelObj.fname = this.formValue.value.fname;
       this.lockerServiceModelObj.lname = this.formValue.value.lname;
       this.lockerServiceModelObj.eid = this.formValue.value.eid;
       this.lockerServiceModelObj.mno = this.formValue.value.mno;
       this.lockerServiceModelObj.sal = this.formValue.value.sal;
-      console.log(this.lockerServiceModelObj);
+      // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.id)
        .subscribe(res=>{
         alert("Update Successfully")
@@ -125,6 +139,20 @@ export class LockerServiceDashboardComponent implements OnInit {
   //     })
   // }
         
+    }
+
+    onKeyPress(event : any){
+      console.log("Event Succefully");
+      this.lockerServiceModelObj.userid=this.formValue.value.userid;
+      
+      this.api.getByIdRelease(this.lockerServiceModelObj.userid)
+      .subscribe(res=>{
+        
+        this.getOnForm(res);
+      },
+      err=>{
+        alert("Something Wrong");
+      })
     }
     
 

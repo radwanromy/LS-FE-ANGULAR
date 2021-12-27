@@ -1,1 +1,124 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');/* You can add global styles to this file, and also import other style files */
+body {
+    margin-inline: 0;
+    padding: 0;
+    padding-right: 18px;
+    background: #ecf0f3;  
+    justify-content: center;
+    place-items: center;
+    font-family: poppins;
+    
+ }
+ select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    text-emphasis-color: groove;
+    padding:0px;
+    margin-bottom: 0px;
+    outline: none;
+    color:  rgb(133, 133, 133);
+    border-color:rgb(46, 43, 43);
+    border-width: 1px;
+    background: #ecf0f3;
+    padding:5px;
+    padding-left: 20px;
+    width:300px;
+    font-size:13px;
+    border-radius: 10px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+   
+  }
+  
+
+  input {
+      
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    border-color:rgb(46, 43, 43);
+    border-width: 1px;
+    font-size: 50px;
+    cursor: not-allowed;
+  }
+  
+  .no-outline:focus {
+    outline: none;
+  }
+
+  input {
+    padding: 3px;
+    margin-bottom: 0px;
+    outline: none;
+
+  }
+
+
+
+.container {
+  position: relative;
+
+  border-radius: 20px;
+ 
+  box-sizing: border-box;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+
+
+
+
+label, input, button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+
+
+input::placeholder {
+  color: gray;
+}
+
+input {
+  background: #ecf0f3;
+  padding: 3px;
+  padding-left: 20px;
+  width:300px;
+
+  font-size:13px;
+  border-radius: 10px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  
+}
+
+button {
+  margin-top:6px;
+  background: #bdc7cc;
+  width: 110px;
+  height: 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size:18px;
+  box-shadow: 6px 6px 6px #2c8099a1, -6px -6px 6px rgba(70, 123, 158, 0.623);
+  font-family: poppins;
+}
+
+button:hover {
+  box-shadow: none;
+  font-family: poppins;
+}

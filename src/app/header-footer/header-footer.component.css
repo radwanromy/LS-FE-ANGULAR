@@ -1,0 +1,27 @@
+
+.Header{
+    position: fixed;
+    top: 0%;
+    
+    background-color: rgb(145, 179, 184);
+   
+    width: 100%;
+    color: rgb(42, 124, 161);
+   
+}
+._ngcontent-ltb-c16{
+    background-color: gray;
+    color: rgb(54, 39, 10);
+
+}
+.button {background-color: #555555;} 
+.Footer{
+
+    position: fixed;
+    bottom: 0%;
+    background-color:rgb(145, 179, 184);
+    text-align: center;
+
+    width: 100%;
+    color: floralwhite;
+}
