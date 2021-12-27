@@ -24,13 +24,14 @@
             
         </tr>
     </thead>
-    <tbody><tr>
-        <td>1</td>
-        <td>s</td>
-        <td>y</td>
-        <td>yy</td>
-        <td>12313</td>
-        <td>1</td>
+    <tbody><tr *ngFor="let row of lockerServiceData">
+        <td>{{row.id}}</td>
+        <td>{{row.fname}}</td>
+        <td>{{row.lname}}</td>
+        <td>{{row.eid}}</td>
+        <td>{{row.mno}}</td>
+        <td>{{row.sal}}</td>
+       
         <td>
             <button class="btn btn-info">
                 Edit

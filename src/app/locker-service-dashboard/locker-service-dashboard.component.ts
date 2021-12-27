@@ -13,7 +13,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
   formValue !: FormGroup;
   lockerServiceModelObj : LockerServiceModel = new LockerServiceModel();
-
+  lockerServiceData !: any;
 
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
@@ -26,6 +26,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       mno : [''],
       sal : ['']
     })
+    this.getAllLockerServiceDetails();
   }
   postLockerServiceDetails(){
     this.lockerServiceModelObj.fname = this.formValue.value.fname;
@@ -38,14 +39,23 @@ export class LockerServiceDashboardComponent implements OnInit {
     .subscribe(res=>{
       console.log(res);
       alert("Locker Details Added Successfully.");
+      let ref = document.getElementById('cancel')
+      ref?.click();
       this.formValue.reset();
     },
     err=>{
       alert("Something went wrong");
     })
+  }
+    getAllLockerServiceDetails(){
+      this.api.getLocker()
+      .subscribe(res=>{
+        this.lockerServiceData = res;
+      })
+    }
     
 
 
-  }
-
 }
+
+
