@@ -31,6 +31,15 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.eid = this.formValue.value.eid;
     this.lockerServiceModelObj.mno = this.formValue.value.mno;
     this.lockerServiceModelObj.sal = this.formValue.value.sal;
+
+    this.api.postLocker(this.lockerServiceModelObj)
+    .subscribe(res=>{
+      console.log(res);
+      alert("Locker Details Added Successfully.");
+    },
+    err=>{
+      alert("Something went wrong");
+    })
     
 
 
