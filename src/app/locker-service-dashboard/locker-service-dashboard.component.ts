@@ -35,8 +35,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.mno = this.formValue.value.mno;
     this.lockerServiceModelObj.sal = this.formValue.value.sal;
 
-    this.api.postLocker(this.lockerServiceModelObj)
-    .subscribe(res=>{
+    this.api.postLocker(this.lockerServiceModelObj).subscribe(res=>{
       console.log(res);
       alert("Locker Details Added Successfully.");
       let ref = document.getElementById('cancel')
@@ -48,8 +47,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     })
   }
     getAllLockerServiceDetails(){
-      this.api.getLocker()
-      .subscribe(res=>{
+      this.api.getLocker().subscribe(res=>{
         this.lockerServiceData = res;
       })
     }
@@ -57,7 +55,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     deleteLockerServiceData(row : any){
       this.api.deleteLocker(row.id)
       .subscribe(res=>{
-        alert("Delted");
+        alert("Deleted");
+        this.getAllLockerServiceDetails();
       })
     }
     
