@@ -37,25 +37,53 @@ export class LockerServiceDashboardComponent implements OnInit {
 
     this.api.postLocker(this.lockerServiceModelObj).subscribe(res=>{
       console.log(res);
-      alert("Locker Details Added Successfully.");
+      alert("Locker Details Added Successfully.")
       let ref = document.getElementById('cancel')
       ref?.click();
       this.formValue.reset();
+      this.getAllLockerServiceDetails();
     },
     err=>{
       alert("Something went wrong");
     })
   }
-    getAllLockerServiceDetails(){
+  getAllLockerServiceDetails(){
       this.api.getLocker().subscribe(res=>{
         this.lockerServiceData = res;
       })
     }
 
-    deleteLockerServiceData(row : any){
+  deleteLockerServiceData(row : any){
       this.api.deleteLocker(row.id)
       .subscribe(res=>{
         alert("Deleted");
+        this.getAllLockerServiceDetails();
+      })
+    }
+
+  onEdit(row: any){
+      this.lockerServiceModelObj.id = row.id;
+      this.formValue.controls['fname'].setValue(row.fname);
+      this.formValue.controls['lname'].setValue(row.lname);
+      this.formValue.controls['eid'].setValue(row.eid);
+      this.formValue.controls['mno'].setValue(row.mno);
+      this.formValue.controls['sal'].setValue(row.sal);
+    }
+
+  updateLockerServiceDetails(){
+      
+      this.lockerServiceModelObj.fname = this.formValue.value.fname;
+      this.lockerServiceModelObj.lname = this.formValue.value.lname;
+      this.lockerServiceModelObj.eid = this.formValue.value.eid;
+      this.lockerServiceModelObj.mno = this.formValue.value.mno;
+      this.lockerServiceModelObj.sal = this.formValue.value.sal;
+       this.api.updateLocker(this.lockerServiceModelObj,this.lockerServiceModelObj.id)
+       .subscribe(res=>{
+
+        alert("Updated Successfully");
+        let ref = document.getElementById('cancel')
+        ref?.click();
+        this.formValue.reset();
         this.getAllLockerServiceDetails();
       })
     }

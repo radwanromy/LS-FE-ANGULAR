@@ -33,13 +33,13 @@
         <td>{{row.sal}}</td>
        
         <td>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button>
-            <button 
-            (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3">
+            <button (click)="deleteLockerServiceData(row)" type="button" class="btn btn-primary">
                 Delete
             </button>
+            
         </td>
     </tr>
 
@@ -85,7 +85,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)=" postLockerServiceDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="postLockerServiceDetails()" class="btn btn-primary">Add</button>
+          <button type="button" (click)="updateLockerServiceDetails()" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>
