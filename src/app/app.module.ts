@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LockerServiceDashboardComponent } from './locker-service-dashboard/locker-service-dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LockerServiceDashboardComponent
   ],
   imports: [
     BrowserModule,
