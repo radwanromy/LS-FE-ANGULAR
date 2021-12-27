@@ -6,4 +6,5 @@ export class LockerServiceModel{
     mno : string = '';
     sal : string = '';
 
+
 }

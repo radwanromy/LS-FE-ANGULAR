@@ -31,14 +31,12 @@
         <td>{{row.eid}}</td>
         <td>{{row.mno}}</td> 
         <td>{{row.sal}}</td>
-       
+      
         <td>
-            <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button (click)="getOnForm(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button>
-            <button (click)="deleteLockerServiceData(row)" type="button" class="btn btn-primary">
-                Delete
-            </button>
+            <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-primary mx-3"> Delete</button>
             
         </td>
     </tr>
@@ -69,7 +67,7 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">E ID</label>
                     <input type="email" formControlName="eid" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">M No</label>
