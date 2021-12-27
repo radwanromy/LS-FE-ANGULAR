@@ -29,14 +29,15 @@
         <td>{{row.fname}}</td>
         <td>{{row.lname}}</td>
         <td>{{row.eid}}</td>
-        <td>{{row.mno}}</td>
+        <td>{{row.mno}}</td> 
         <td>{{row.sal}}</td>
        
         <td>
             <button class="btn btn-info">
                 Edit
             </button>
-            <button class="btn btn-danger mx-3">
+            <button 
+            (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3">
                 Delete
             </button>
         </td>

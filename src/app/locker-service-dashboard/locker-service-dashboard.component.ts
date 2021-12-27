@@ -53,6 +53,13 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.lockerServiceData = res;
       })
     }
+
+    deleteLockerServiceData(row : any){
+      this.api.deleteLocker(row.id)
+      .subscribe(res=>{
+        alert("Delted");
+      })
+    }
     
 
 
