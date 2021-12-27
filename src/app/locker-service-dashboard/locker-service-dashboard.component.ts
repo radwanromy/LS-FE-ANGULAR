@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { LockerServiceModel } from './locker-service-dash board.model';
 
 @Component({
   selector: 'app-locker-service-dashboard',
@@ -10,6 +11,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LockerServiceDashboardComponent implements OnInit {
 
   formValue !: FormGroup;
+  lockerServiceModelObj : LockerServiceModel = new LockerServiceModel();
+
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -21,6 +24,16 @@ export class LockerServiceDashboardComponent implements OnInit {
       mno : [''],
       sal : ['']
     })
+  }
+  postLockerServiceDetails(){
+    this.lockerServiceModelObj.fname = this.formValue.value.fname;
+    this.lockerServiceModelObj.lname = this.formValue.value.lname;
+    this.lockerServiceModelObj.eid = this.formValue.value.eid;
+    this.lockerServiceModelObj.mno = this.formValue.value.mno;
+    this.lockerServiceModelObj.sal = this.formValue.value.sal;
+    
+
+
   }
 
 }
