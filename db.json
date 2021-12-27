@@ -1,17 +1,9 @@
 {
   "posts": [
     {
-      "id": 2,
-      "fname": "ad",
-      "lname": "ds",
-      "eid": "adsca@adsa.com",
-      "mno": 12312,
-      "sal": 1231
-    },
-    {
       "id": 4,
-      "fname": "ad21",
-      "lname": "ds21",
+      "fname": "A. S. M.",
+      "lname": "Radwan",
       "eid": "ad21@dasd.bjh",
       "mno": 121231231231,
       "sal": 12312,
@@ -19,36 +11,12 @@
     },
     {
       "id": 6,
-      "fname": "radwan",
+      "fname": "radwan romy",
       "lname": "romy",
       "eid": "romy@gmail.com",
       "mno": 12312,
       "sal": 1000,
       "userid": "313"
-    },
-    {
-      "id": 7,
-      "fname": "radwan",
-      "lname": "romy",
-      "eid": "radwan@romy.com",
-      "mno": 1717799111,
-      "sal": 10000
-    },
-    {
-      "id": 8,
-      "fname": "radwanasxasdcxa",
-      "lname": "romy",
-      "eid": "radwan@asjhd.cvid",
-      "mno": 65465464,
-      "sal": 5000
-    },
-    {
-      "fname": "ad",
-      "lname": "ds213",
-      "eid": "ad",
-      "mno": 123123,
-      "sal": 12312312,
-      "id": 9
     },
     {
       "id": 13,

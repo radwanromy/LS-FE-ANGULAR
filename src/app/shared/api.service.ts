@@ -36,7 +36,7 @@ export class ApiService {
       return res;
     }))
   }
-  getByIdRelease(id : any){
+  getByIdRelease(id : number){
     return this.http.get("http://localhost:3000/posts/"+id);   
   }
 }

@@ -22,6 +22,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
+      id: [''],
       userid : [''],
       fname : [''],
       lname : [''],
@@ -118,6 +119,7 @@ export class LockerServiceDashboardComponent implements OnInit {
         ref?.click();
         this.formValue.reset();
         this.getAllLockerServiceDetails();
+        this.showUpdate=false;
       },
         err=>{
           alert("Something wrong");
@@ -143,15 +145,16 @@ export class LockerServiceDashboardComponent implements OnInit {
 
     onKeyPress(event : any){
       console.log("Event Succefully");
-      this.lockerServiceModelObj.userid=this.formValue.value.userid;
+      this.lockerServiceModelObj.id=this.formValue.value.id;
+      console.log(this.lockerServiceModelObj.id);
       
-      this.api.getByIdRelease(this.lockerServiceModelObj.userid)
+      this.api.getByIdRelease(this.lockerServiceModelObj.id)
       .subscribe(res=>{
-        
+        console.log(res);
         this.getOnForm(res);
       },
       err=>{
-        alert("Something Wrong");
+        alert("Something Wrong With On Key Press");
       })
     }
     
