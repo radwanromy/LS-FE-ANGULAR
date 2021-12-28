@@ -100,19 +100,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       })
     }
 
-    // onKeyPress(event : any){
-    //   console.log("Event Succefully");
-    //   this.lockerServiceModelObj.relid=this.formValue.value.relid;
-      
-    //   this.api.getById(this.lockerServiceModelObj.relid)
-    //   .subscribe(res=>{
-        
-    //     this.getOnForm(res);
-    //   },
-    //   err=>{
-    //     alert("Something Wrong");
-    //   })
-    // }
+
 
     getOnForm(row: any){
       this.lockerServiceModelObj.relid = row.relid;
