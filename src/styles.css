@@ -32,7 +32,7 @@ body {
     padding-left: 20px;
     width:300px;
     font-size:13px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
    
   }
@@ -100,7 +100,7 @@ input {
   width:300px;
 
   font-size:13px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   
 }

@@ -41,7 +41,7 @@
 </div>
 
 
-<div  >
+<!-- <div  >
   <table width="100%" >
     
       <tr  >
@@ -332,7 +332,7 @@
       </tr>
   </table>
  
-</div>
+</div> -->
 
 <!-- <nav class="navbar navbar-light bg-primary">
     <div class="container-fluid">
@@ -352,79 +352,96 @@
     
   
        
-<div class="modal-body">
+<div class="modal-body"  this.showAdd = true;>
   <form [formGroup]= "formValue">
-    <div >
-      <label for="exampleInputEmail1" class="form-label">Locker ID:</label>
-      <input type="int" formControlName="id"  (keydown.enter)="onKeyPress($event)" placeholder="Locker ID">
-      <label for="exampleInputEmail1" class="form-label">Drawer ID</label>
-      <input type="int" formControlName="userid"  placeholder="Drawer ID"  >
-      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-    </div>
-      <div >
-        <label for="exampleInputEmail1" class="form-label">A/C Type:</label>
-        <input type="text" formControlName="fname" placeholder="Account Type">
-        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-      </div>
-      <div >
-        <label for="exampleInputPassword1" class="form-label">A/C Number:
-        <input type="text" formControlName="lname" > </label>
-      </div>
-      <div >
-          <label for="exampleInputEmail1" class="form-label">E ID</label>
-          <input type="email" formControlName="eid" >
-          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-        <div >
-          <label for="exampleInputPassword1" class="form-label">M No</label>
-          <input type="number" formControlName="mno" >
-        </div>
-        <div >
-          <label for="exampleInputPassword1" class="form-label">SAL</label>
-          <input type="number" formControlName="sal" >
-        </div>
+      <table width="100%" align="center">
+          <tr align="center">
+              <td align="center">
+                <div >
+                    <label  >ID:</label>
+                    <input type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Locker ID">
+                    <label  >Locker ID:</label>
+                    <input type="text" formControlName="lckrid"  placeholder="Drawer ID"  >
+                    <label  >Drawer ID:</label>
+                    <input type="text" formControlName="drwrid"  placeholder="Drawer ID"  >
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                  </div>
+                  <div >
+                      <label  >Customer ID:	</label>
+                      <input type="text" formControlName="cuscod" placeholder="Account Type">
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div >
+                      <label  >A/C Type:</label>
+                      <input type="text" formControlName="actype" placeholder="Account Type">
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div >
+                      <label for="exampleInputPassword1" class="form-label">A/C Number:</label>
+                      <input type="text" formControlName="actnum" placeholder="Account Number" > 
+                    </div>
+                    <div >
+                        <label  >A/C Title:</label>
+                        <input type="text" formControlName="brancd" placeholder="Account Title" >
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                      </div>
+                      <div >
+                        <label  >Deposit Product:</label>
+                        <input type="text" formControlName="oprbrancd" placeholder="Enter Deposit Product" >
+                      </div>
+                      <div >
+                        <label  >For Sale Value:</label>
+                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" >
+                      </div>
+                      <div >
+                          <label  >Market value:</label>
+                          <input type="text" formControlName="appstamp" placeholder="Account Type">
+                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        </div>
+                        <div >
+                          <label  >Security Required:	 </label>
+              
+                          <input type="text" formControlName="apptimstamp" placeholder="Security Required">
+                        </div>
+                        <div >
+                            <label   >Security Amount:	
+                          </label>
+                            <input type="text" formControlName="oprstamp" placeholder="Security Amount" >
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                          </div>
+                          <div >
+                            <label  >Caution Money:</label>
+                            <input type="text" formControlName="paystat" placeholder="Caution Money" >
+                          </div>
+                          <div >
+                            <label  >Tenure (In Year):</label>
+                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" >
+                          </div>
+                          <div >
+                              <label  >Status:</label>
+                              <input type="text" formControlName="reldate" placeholder="Current Status" >
+                            </div>
+                            <div >
+                              <label  >Remarks:</label>
+                              <input type="text" formControlName="remarks" placeholder="Feed back" >
+                            </div>
+                            <div >
+                              <label  >Updated By:</label>
+                              <input type="text" formControlName="update_BY" placeholder="Updated By" >
+                            </div>
+                            <div >
+                              <label  >Update Date:</label>
+                              <input type="text" formControlName="update_DATE" placeholder="Update Time">
+                            </div>
+                      
+              </td>
+          </tr>
+      </table>
+   
       
       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </form>
 </div>
-
-</td>
-<td>
-  <div class="modal-body">
-    <form [formGroup]= "formValue">
-      <div >
-        <label for="exampleInputEmail1" class="form-label">Locker ID:</label>
-        <input type="int" formControlName="id"  (keydown.enter)="onKeyPress($event)" placeholder="Locker ID">
-        <label for="exampleInputEmail1" class="form-label">Drawer ID</label>
-        <input type="int" formControlName="userid"  placeholder="Drawer ID"  >
-        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-      </div>
-        <div >
-          <label for="exampleInputEmail1" class="form-label">A/C Type:</label>
-          <input type="text" formControlName="fname" placeholder="Account Type">
-          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-        <div >
-          <label for="exampleInputPassword1" class="form-label">A/C Number:
-          <input type="text" formControlName="lname" > </label>
-        </div>
-        <div >
-            <label for="exampleInputEmail1" class="form-label">E ID</label>
-            <input type="email" formControlName="eid" >
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-          </div>
-          <div >
-            <label for="exampleInputPassword1" class="form-label">M No</label>
-            <input type="number" formControlName="mno" >
-          </div>
-          <div >
-            <label for="exampleInputPassword1" class="form-label">SAL</label>
-            <input type="number" formControlName="sal" >
-          </div>
-        
-        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-      </form>
-  </div>
 
 </td>
 
@@ -437,8 +454,8 @@
 </tr>
 </table>
 <div class="modal-footer">
-<button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-<button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary">Add</button>
+<button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal" (click)=" this.formValue.reset();">Clear</button>
+<button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary" >Execuate</button>
 <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
 </div>
 
@@ -451,10 +468,21 @@
     <thead>
         <tr>
             <th scope="col"> ID</th>
-            <th scope="col">User ID</th>
+            <th scope="col">Locker ID</th>
+            <th scope="col">Drawer ID</th>
+            <th scope="col">A/C Title</th>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Deposit Product</th>
+            <th scope="col">S</th>
+            <th scope="col"> ID</th>
+            <th scope="col">Locker ID</th>
             <th scope="col">F N</th>
             <th scope="col">L N</th>
             <th scope="col">E ID</th>
+            <th scope="col">M NO</th>
+            <th scope="col">S</th>
+            <th scope="col">update_by</th>
+            <th scope="col">update_date</th>
             <th scope="col">M NO</th>
             <th scope="col">S</th>
             <th scope="col">A</th>
@@ -463,13 +491,24 @@
         </tr>
     </thead>
     <tbody><tr *ngFor="let row of lockerServiceData">
-        <td>{{row.id}}</td>
-        <td>{{row.userid}}</td>
-        <td>{{row.fname}}</td>
-        <td>{{row.lname}}</td>
-        <td>{{row.eid}}</td>
-        <td>{{row.mno}}</td> 
-        <td>{{row.sal}}</td>
+        <td>{{row.relid}}</td>
+        <td>{{row.lckrid}}</td>
+        <td>{{row.drwrid}}</td>
+        <td>{{row.oprbrancd}}</td>
+        <td>{{row.cuscod}}</td>
+        <td>{{row.brancd}}</td> 
+        <td>{{row.actype}}</td>
+        <td>{{row.actnum}}</td>
+        <td>{{row.remarks}}</td>
+        <td>{{row.reldate}}</td>
+        <td>{{row.paystat}}</td>
+        <td>{{row.oprstamp}}</td>
+        <td>{{row.oprtimstamp}}</td> 
+        <td>{{row.update_BY}}</td>
+        <td>{{row.update_DATE}}</td>
+        <td>{{row.appflg}}</td>
+        <td>{{row.appstamp}}</td>
+        <td>{{row.apptimstamp}}</td>
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
@@ -485,7 +524,7 @@
 <div class="modal-body">
   <form [formGroup]= "formValue">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">User ID</label>
+      <label   >User ID</label>
       <input type="int" formControlName="userid"  (keydown.enter)="onKeyPress($event)"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
      
     </div>

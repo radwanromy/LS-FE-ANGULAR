@@ -16,19 +16,31 @@ export class LockerServiceDashboardComponent implements OnInit {
   lockerServiceData !: any;
   showAdd !: boolean;
   showUpdate !: boolean;
+ 
 
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
-      id: [''],
-      userid : [''],
-      fname : [''],
-      lname : [''],
-      eid : [''],
-      mno : [''],
-      sal : ['']
+       relid:[''],
+      oprbrancd: [''],
+     cuscod: [''],
+      brancd: [''],
+     actype:[''],
+      actnum:[''],
+    lckrid:[''],
+     drwrid:[''],
+     remarks:[''],
+     reldate:[''],
+      paystat:[''],      
+     oprstamp:[''],
+     oprtimstamp:[''],
+     update_BY:[''],
+    update_DATE:[''],
+      appflg:[''],
+     appstamp:[''],
+     apptimstamp: ['']
     })
     this.getAllLockerServiceDetails();
   }
@@ -40,12 +52,23 @@ export class LockerServiceDashboardComponent implements OnInit {
   } 
   postLockerServiceDetails(){
     
-    this.lockerServiceModelObj.userid = this.formValue.value.userid;
-    this.lockerServiceModelObj.fname = this.formValue.value.fname;
-    this.lockerServiceModelObj.lname = this.formValue.value.lname;
-    this.lockerServiceModelObj.eid = this.formValue.value.eid;
-    this.lockerServiceModelObj.mno = this.formValue.value.mno;
-    this.lockerServiceModelObj.sal = this.formValue.value.sal;
+    this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
+    this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
+    this.lockerServiceModelObj.cuscod = this.formValue.value.cuscod;
+    this.lockerServiceModelObj.actype = this.formValue.value.actype;
+    this.lockerServiceModelObj.actnum = this.formValue.value.actnum;
+    this.lockerServiceModelObj.brancd = this.formValue.value.brancd;
+    this.lockerServiceModelObj.oprbrancd = this.formValue.value.oprbrancd;
+    this.lockerServiceModelObj.appflg = this.formValue.value.appflg;
+    this.lockerServiceModelObj.appstamp = this.formValue.value.appstamp;
+    this.lockerServiceModelObj.apptimstamp = this.formValue.value.apptimstamp;
+    this.lockerServiceModelObj.oprstamp = this.formValue.value.oprstamp;
+    this.lockerServiceModelObj.paystat = this.formValue.value.paystat;
+    this.lockerServiceModelObj.oprtimstamp = this.formValue.value.oprtimstamp;
+    this.lockerServiceModelObj.reldate = this.formValue.value.reldate;
+    this.lockerServiceModelObj.remarks = this.formValue.value.remarks;
+    this.lockerServiceModelObj.update_BY = this.formValue.value.update_BY;
+    this.lockerServiceModelObj.update_DATE = this.formValue.value.update_DATE;
 
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
@@ -57,7 +80,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.getAllLockerServiceDetails();
     },
     err=>{
-      alert("Something went wrong");
+      alert("Something went wrong with insert");
     })
   }
   getAllLockerServiceDetails(){
@@ -69,7 +92,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     }
 
   deleteLockerServiceData(res : any){
-      this.api.deleteEmployee(res.id)
+      this.api.deleteEmployee(res.relid)
       .subscribe(res => {
         
         alert("Deleted");
@@ -92,27 +115,49 @@ export class LockerServiceDashboardComponent implements OnInit {
     // }
 
     getOnForm(row: any){
-      this.lockerServiceModelObj.id = row.id;
-      this.formValue.controls['userid'].patchValue(row.userid);
-      this.formValue.controls['fname'].patchValue(row.fname);
-      this.formValue.controls['lname'].patchValue(row.lname);
-      this.formValue.controls['eid'].patchValue(row.eid);
-      this.formValue.controls['mno'].patchValue(row.mno);
-      this.formValue.controls['sal'].patchValue(row.sal);
+      this.lockerServiceModelObj.relid = row.relid;
+      this.formValue.controls['lckrid'].patchValue(row.lckrid);
+      this.formValue.controls['drwrid'].patchValue(row.drwrid);
+      this.formValue.controls['cuscod'].patchValue(row.cuscod);
+      this.formValue.controls['actype'].patchValue(row.actype);
+      this.formValue.controls['actnum'].patchValue(row.actnum);
+      this.formValue.controls['brancd'].patchValue(row.brancd);
+      this.formValue.controls['oprbrancd'].patchValue(row.oprbrancd);
+      this.formValue.controls['appflg'].patchValue(row.appflg);
+      this.formValue.controls['appstamp'].patchValue(row.appstamp);
+      this.formValue.controls['apptimstamp'].patchValue(row.apptimstamp);
+      this.formValue.controls['oprstamp'].patchValue(row.oprstamp);
+      this.formValue.controls['paystat'].patchValue(row.paystat);
+      this.formValue.controls['oprtimstamp'].patchValue(row.oprtimstamp);
+      this.formValue.controls['reldate'].patchValue(row.reldate);
+      this.formValue.controls['remarks'].patchValue(row.remarks);
+      this.formValue.controls['update_BY'].patchValue(row.update_BY);
+      this.formValue.controls['update_DATE'].patchValue(row.update_DATE);
 
       this.showAdd= false;
       this.showUpdate= true;
     }
 
   updateLockerServiceDetails(){
-    this.lockerServiceModelObj.userid = this.formValue.value.userid;
-      this.lockerServiceModelObj.fname = this.formValue.value.fname;
-      this.lockerServiceModelObj.lname = this.formValue.value.lname;
-      this.lockerServiceModelObj.eid = this.formValue.value.eid;
-      this.lockerServiceModelObj.mno = this.formValue.value.mno;
-      this.lockerServiceModelObj.sal = this.formValue.value.sal;
+    this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
+    this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
+    this.lockerServiceModelObj.cuscod = this.formValue.value.cuscod;
+    this.lockerServiceModelObj.actype = this.formValue.value.actype;
+    this.lockerServiceModelObj.actnum = this.formValue.value.actnum;
+    this.lockerServiceModelObj.brancd = this.formValue.value.brancd;
+    this.lockerServiceModelObj.oprbrancd = this.formValue.value.oprbrancd;
+    this.lockerServiceModelObj.appflg = this.formValue.value.appflg;
+    this.lockerServiceModelObj.appstamp = this.formValue.value.appstamp;
+    this.lockerServiceModelObj.apptimstamp = this.formValue.value.apptimstamp;
+    this.lockerServiceModelObj.oprstamp = this.formValue.value.oprstamp;
+    this.lockerServiceModelObj.paystat = this.formValue.value.paystat;
+    this.lockerServiceModelObj.oprtimstamp = this.formValue.value.oprtimstamp;
+    this.lockerServiceModelObj.reldate = this.formValue.value.reldate;
+    this.lockerServiceModelObj.remarks = this.formValue.value.remarks;
+    this.lockerServiceModelObj.update_BY = this.formValue.value.update_BY;
+    this.lockerServiceModelObj.update_DATE = this.formValue.value.update_DATE;
       // console.log(this.lockerServiceModelObj);
-       this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.id)
+       this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
         alert("Update Successfully")
         let ref=document.getElementById("cancel")
@@ -122,7 +167,7 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.showUpdate=false;
       },
         err=>{
-          alert("Something wrong");
+          alert("Something wrong in update");
         })
 
 
@@ -145,10 +190,10 @@ export class LockerServiceDashboardComponent implements OnInit {
 
     onKeyPress(event : any){
       console.log("Event Succefully");
-      this.lockerServiceModelObj.id=this.formValue.value.id;
-      console.log(this.lockerServiceModelObj.id);
+      this.lockerServiceModelObj.relid=this.formValue.value.relid;
+      console.log(this.lockerServiceModelObj.relid);
       
-      this.api.getByIdRelease(this.lockerServiceModelObj.id)
+      this.api.getByIdRelease(this.lockerServiceModelObj.relid)
       .subscribe(res=>{
         console.log(res);
         this.getOnForm(res);
