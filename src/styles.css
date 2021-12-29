@@ -31,7 +31,7 @@ body {
     padding:5px;
     padding-left: 20px;
     width:300px;
-    font-size:13px;
+    font-size:5px;
     /* border-radius: 10px; */
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
    
@@ -46,7 +46,7 @@ body {
     border-bottom-style: groove;
     border-color:rgb(46, 43, 43);
     border-width: 1px;
-    font-size: 50px;
+    /* font-size: 50px; */
     cursor: not-allowed;
   }
   
@@ -55,7 +55,7 @@ body {
   }
 
   input {
-    padding: 3px;
+    padding: 0px;
     margin-bottom: 0px;
     outline: none;
 
@@ -85,12 +85,13 @@ label, input, button {
   outline: none;
   box-sizing: border-box;
   font-family: poppins;
+  font: size 14px;
 }
 
 
 
 input::placeholder {
-  color: gray;
+  color: rgb(169, 159, 159);
 }
 
 input {
@@ -121,4 +122,19 @@ button {
 button:hover {
   box-shadow: none;
   font-family: poppins;
+}
+
+.form-control {
+  background: #ecf0f3;
+  padding: 3px;
+  padding-left: 20px;
+  width:300px;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: poppins;
+  font-size:13px;
+  
 }

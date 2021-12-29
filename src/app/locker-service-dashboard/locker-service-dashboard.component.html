@@ -350,7 +350,11 @@
   <tr>
     <td>
     
-  
+        <div class="modal-footer" align="left">
+            <button type="button" id = "cancel" class="btn btn-danger" data-bs-dismiss="modal" (click)=" this.formValue.reset();">Clear</button>
+            <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary" >Execuate</button>
+            <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
+            </div>
        
 <div class="modal-body"  this.showAdd = true;>
   <form [formGroup]= "formValue">
@@ -373,7 +377,18 @@
                     </div>
                     <div >
                       <label  >A/C Type:</label>
-                      <input type="text" formControlName="actype" placeholder="Account Type">
+
+                      <select class="form-control" formControlName="actype" data-toggle="tooltip"   
+                      data-placement="right" title="Select Student Branch">  
+                  <option value="ACT001" selected>Account Type 01</option>  
+                  <option value="ACT002">Account Type 02</option>  
+                  <option value="ACT003">Account Type 03</option>  
+                  <option value="ACT004">Account Type 04</option>  
+                  <option value="ACT005">Account Type 05</option>  
+                  <option value="ACT006">Account Type 06</option>  
+                 
+                </select>  
+                      <!-- <input type="text" formControlName="actype" placeholder="Account Type"> -->
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div >
@@ -400,8 +415,13 @@
                         </div>
                         <div >
                           <label  >Security Required:	 </label>
-              
-                          <input type="text" formControlName="apptimstamp" placeholder="Security Required">
+                          <select class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
+                          data-placement="right" title="Select Student Branch">  
+                      <option value="Yes" selected>Yes</option>  
+                      <option value="No"> No</option>  
+                    </select>  
+      
+                          <!-- <input type="text" formControlName="apptimstamp" placeholder="Security Required"> -->
                         </div>
                         <div >
                             <label   >Security Amount:	
@@ -419,7 +439,12 @@
                           </div>
                           <div >
                               <label  >Status:</label>
-                              <input type="text" formControlName="reldate" placeholder="Current Status" >
+                              <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
+                              data-placement="right" title="Select Student Branch">  
+                          <option value="Free" selected>Free</option>  
+                          <option value="Used">Used</option>  
+                        </select>  
+                              <!-- <input type="text" formControlName="reldate" placeholder="Current Status" > -->
                             </div>
                             <div >
                               <label  >Remarks:</label>
@@ -435,6 +460,8 @@
                             </div>
                       
               </td>
+
+         
           </tr>
       </table>
    
@@ -443,21 +470,18 @@
     </form>
 </div>
 
+
 </td>
 
 
 
 
 </tr>
-<tr>
-
+<tr >
+  
+        
 </tr>
 </table>
-<div class="modal-footer">
-<button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal" (click)=" this.formValue.reset();">Clear</button>
-<button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary" >Execuate</button>
-<button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
-</div>
 
 
 
@@ -476,16 +500,7 @@
             <th scope="col">A/C Type</th>
             <th scope="col">A/C Number</th>
             <th scope="col">Remarks</th>
-            <th scope="col">Status</th>
-            <th scope="col">Caution Money</th>
-            <th scope="col">Security Amount</th>
-            <th scope="col">Tenure (In Year)</th>
-            <th scope="col">Updated By</th>
-            <th scope="col">update_by</th>
-            <th scope="col">update_date</th>
-            <th scope="col">M NO</th>
-            <th scope="col">S</th>
-            <th scope="col">A</th>
+            <th scope="col">Action</th>
 
             
         </tr>
@@ -500,7 +515,41 @@
         <td>{{row.actype}}</td>
         <td>{{row.actnum}}</td>
         <td>{{row.remarks}}</td>
-        <td>{{row.reldate}}</td>
+        <td>
+            <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Edit
+            </button>
+            <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
+            
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+<br>
+<br>
+<Br>
+    
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Caution Money</th>
+            <th scope="col">Security Amount</th>
+            <th scope="col">Tenure (In Year)</th>
+            <th scope="col">Updated By</th>
+            <th scope="col">Update Date</th>
+            <th scope="col">For Sale Value</th>
+            <th scope="col">Market value</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+
+            
+        </tr>
+    </thead>
+    <tbody><tr *ngFor="let row of lockerServiceData">
+        <td>{{row.relid}}</td>
         <td>{{row.paystat}}</td>
         <td>{{row.oprstamp}}</td>
         <td>{{row.oprtimstamp}}</td> 
@@ -510,10 +559,10 @@
         <td>{{row.appstamp}}</td>
         <td>{{row.apptimstamp}}</td>
         <td>
-            <button (click)="getOnForm(row)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button>
-            <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-primary mx-3"> Delete</button>
+            <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
             
         </td>
     </tr>
