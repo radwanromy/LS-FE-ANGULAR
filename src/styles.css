@@ -33,7 +33,7 @@ body {
     width:300px;
     font-size:5px;
     /* border-radius: 10px; */
-    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+    box-shadow: inset 4px 4px 4px #cbced1, inset -4px -4px 4px white;
    
   }
   
@@ -66,7 +66,7 @@ body {
 .container {
   position: relative;
 
-  border-radius: 20px;
+  border-radius: 0px;
  
   box-sizing: border-box;
   background: #ecf0f3;
@@ -85,7 +85,7 @@ label, input, button {
   outline: none;
   box-sizing: border-box;
   font-family: poppins;
-  font: size 14px;
+  font-size: 12px;
 }
 
 
@@ -100,22 +100,23 @@ input {
   padding-left: 20px;
   width:300px;
 
-  font-size:13px;
+  font-size:11px;
   /* border-radius: 10px; */
-  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  box-shadow: inset 4px 4px 4px #cbced1, inset -4px -4px 4px white;
   
 }
 
 button {
-  margin-top:6px;
+  margin-top:0px;
   background: #bdc7cc;
   width: 110px;
+  /* padding-top: 10px; */
   height: 28px;
-  border-radius: 10px;
+  border-radius: 0px;
   cursor: pointer;
   font-weight: 900;
-  font-size:18px;
-  box-shadow: 6px 6px 6px #2c8099a1, -6px -6px 6px rgba(70, 123, 158, 0.623);
+  font-size:14px;
+  box-shadow: 4px 4px 4px #2c8099a1, -4px -4px 4px rgba(70, 123, 158, 0.623);
   font-family: poppins;
 }
 
@@ -135,6 +136,12 @@ button:hover {
   outline: none;
   box-sizing: border-box;
   font-family: poppins;
-  font-size:13px;
+  font-size:11px;
   
+}
+label{
+    margin: 0%;
+}
+.form-label {
+  margin-bottom: 0rem;
 }

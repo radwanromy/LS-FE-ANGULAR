@@ -3,16 +3,16 @@
   <table width="100%">
       <tr  >
           <td align="left" >
-            <img src="../../assets/bank-asia-logo.gif" alt="" height="75px"  width="130px" style="padding-left: 20px;">
+            <img src="../../assets/bank-asia-logo.gif" alt="" height="65px"  width="110px" style="padding-left: 20px;">
       
           </td>
           <td align="Center" >
               <span style="  font-family:Verdana, Arial, Serif;
-              font-size:36px;
+              font-size:26px;
               color: #121b27;">Bank Aisa-Locker Service</span> 
               <span style="  font-family:Verdana, Arial, Serif;
               font: size 3px;
-              color: #121b27;"><br>
+              color: #121b27;  font-size:12px;"><br>
                   User ID - S0121</span>
                   <!-- <div class="btn-group"  ><td>
                       <button type="button" class="btn btn-primary"  >Execute</button>
@@ -30,7 +30,7 @@
                     </div> -->
           </td>
           <td align="right"  >
-              <img src="../../assets/Era_logodown.png" alt="" height="75px"  width="130px" style="padding-right: 20px;">
+              <img src="../../assets/Era_logodown.png" alt="" height="65px"  width="110px" style="padding-right: 20px;">
           </td>
       </tr>
       <tr style="height: 7px;">
@@ -346,24 +346,127 @@
 </div>
     </div>
 </nav> -->
+
+<div width="100%" align="center">
+    <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
+    <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+    this.showUpdate = false;">Clear</button> &nbsp;
+    <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Execuate</button>
+    <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
+    </div>
+
 <table width="100%">
   <tr>
     <td>
     
-        <div class="modal-footer" align="left">
-            <button type="button" id = "cancel" class="btn btn-danger" data-bs-dismiss="modal" (click)=" this.formValue.reset();">Clear</button>
-            <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-primary" >Execuate</button>
-            <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary">Update</button>   
-            </div>
-       
 <div class="modal-body"  this.showAdd = true;>
   <form [formGroup]= "formValue">
       <table width="100%" align="center">
-          <tr align="center">
-              <td align="center">
+          <tr  align="center" >
+              <td >
                 <div >
-                    <label  >ID:</label>
-                    <input type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Locker ID">
+                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID">
+                    <label  >Locker ID:</label>
+                    <input type="text" formControlName="lckrid"  placeholder="Drawer ID"  >
+                    <label  >Drawer ID:</label>
+                    <input type="text" formControlName="drwrid"  placeholder="Drawer ID"  >
+                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                  </div>
+                  <div >
+                      <label  >Customer ID:	</label>
+                      <input type="text" formControlName="cuscod" placeholder="Account Type">
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div >
+                      <label  >A/C Type:</label>
+
+                      <select class="form-control" formControlName="actype" data-toggle="tooltip"   
+                      data-placement="right" title="Select Student Branch">  
+                  <option value="ACT001" selected>Account Type 01</option>  
+                  <option value="ACT002">Account Type 02</option>  
+                  <option value="ACT003">Account Type 03</option>  
+                  <option value="ACT004">Account Type 04</option>  
+                  <option value="ACT005">Account Type 05</option>  
+                  <option value="ACT006">Account Type 06</option>  
+                 
+                </select>  
+                      <!-- <input type="text" formControlName="actype" placeholder="Account Type"> -->
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+                    <div >
+                      <label for="exampleInputPassword1" class="form-label">A/C Number:</label>
+                      <input type="text" formControlName="actnum" placeholder="Account Number"> 
+                    </div>
+                    <div >
+                        <label  >A/C Title:</label>
+                        <input type="text" formControlName="brancd" placeholder="Account Title" >
+                        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                      </div>
+                      <div >
+                        <label  >Deposit Product:</label>
+                        <input type="text" formControlName="oprbrancd" placeholder="Enter Deposit Product" >
+                      </div>
+                      <div >
+                        <label  >For Sale Value:</label>
+                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" >
+                      </div>
+                      <div >
+                          <label  >Market value:</label>
+                          <input type="text" formControlName="appstamp" placeholder="Account Type">
+                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        </div>
+                        <div >
+                          <label  >Security Required:	 </label>
+                          <select class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
+                          data-placement="right" title="Select Student Branch">  
+                      <option value="Yes" selected>Yes</option>  
+                      <option value="No"> No</option>  
+                    </select>  
+      
+                          <!-- <input type="text" formControlName="apptimstamp" placeholder="Security Required"> -->
+                        </div>
+                        <div >
+                            <label   >Security Amount:	
+                          </label>
+                            <input type="text" formControlName="oprstamp" placeholder="Security Amount" >
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                          </div>
+                          <div >
+                            <label  >Caution Money:</label>
+                            <input type="text" formControlName="paystat" placeholder="Caution Money" >
+                          </div>
+                          <div >
+                            <label  >Tenure (In Year):</label>
+                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" >
+                          </div>
+                          <div >
+                              <label  >Status:</label>
+                              <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
+                              data-placement="right" title="Select Student Branch">  
+                          <option value="Free" selected>Free</option>  
+                          <option value="Used">Used</option>  
+                        </select>  
+                              <!-- <input type="text" formControlName="reldate" placeholder="Current Status" > -->
+                            </div>
+                            <div >
+                              <label  >Remarks:</label>
+                              <input type="text" formControlName="remarks" placeholder="Feed back" >
+                            </div>
+                            <div >
+                              <label hidden  >Updated By:</label>
+                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" hidden>
+                            </div>
+                            <div >
+                              <label hidden >Update Date:</label>
+                              <input type="text" formControlName="update_DATE" placeholder="Update Time" value="Date" hidden>
+                            </div>
+                      
+              </td>
+
+
+              <td >
+                <div >
+                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Details By Searching ID">
                     <label  >Locker ID:</label>
                     <input type="text" formControlName="lckrid"  placeholder="Drawer ID"  >
                     <label  >Drawer ID:</label>
@@ -451,15 +554,16 @@
                               <input type="text" formControlName="remarks" placeholder="Feed back" >
                             </div>
                             <div >
-                              <label  >Updated By:</label>
-                              <input type="text" formControlName="update_BY" placeholder="Updated By" >
+                              <label hidden  >Updated By:</label>
+                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" hidden>
                             </div>
                             <div >
-                              <label  >Update Date:</label>
-                              <input type="text" formControlName="update_DATE" placeholder="Update Time">
+                              <label hidden >Update Date:</label>
+                              <input type="text" formControlName="update_DATE" placeholder="Update Time" value="Date" hidden>
                             </div>
                       
               </td>
+
 
          
           </tr>
