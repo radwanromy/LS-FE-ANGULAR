@@ -1,45 +1,10 @@
 
-<div class="Header" >
-  <table width="100%">
-      <tr  >
-          <td align="left" >
-            <img src="../../assets/bank-asia-logo.gif" alt="" height="65px"  width="110px" style="padding-left: 20px;">
-      
-          </td>
-          <td align="Center" >
-              <span style="  font-family:Verdana, Arial, Serif;
-              font-size:26px;
-              color: #121b27;">Bank Aisa-Locker Service</span> 
-              <span style="  font-family:Verdana, Arial, Serif;
-              font: size 3px;
-              color: #121b27;  font-size:12px;"><br>
-                  User ID - S0121</span>
-                  <!-- <div class="btn-group"  ><td>
-                      <button type="button" class="btn btn-primary"  >Execute</button>
-                  </td>
-                  <td width="5px"></td>
-                  <td>
-                      <button type="button" class="btn btn-primary"  >Edit</button>
-                  </td><td width="5px"></td>
-                  <td>
-                      <button type="button" class="btn btn-primary"  >Clear</button>
-                  </td><td width="5px"></td>
-                  <td>
-                      <button type="button" class="btn btn-primary"  >Log-Out</button>
-                  </td>  
-                    </div> -->
-          </td>
-          <td align="right"  >
-              <img src="../../assets/Era_logodown.png" alt="" height="65px"  width="110px" style="padding-right: 20px;">
-          </td>
-      </tr>
-      <tr style="height: 7px;">
-          
-      </tr>
-  </table>
- 
-</div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <!-- <div  >
   <table width="100%" >
@@ -347,6 +312,8 @@
     </div>
 </nav> -->
 
+
+    
 <div width="100%" align="center">
     <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
     <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
@@ -360,51 +327,37 @@
     <td>
     
 <div class="modal-body"  this.showAdd = true;>
-  <form [formGroup]= "formValue">
+  <form [formGroup]= "formValue" style="position: static;">
       <table width="100%" align="center">
           <tr  align="center" >
               <td >
                 <div >
                     <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID">
                     <label  >Locker ID:</label>
-                    <input type="text" formControlName="lckrid"  placeholder="Drawer ID"  >
+                    <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID"  >
                     <label  >Drawer ID:</label>
-                    <input type="text" formControlName="drwrid"  placeholder="Drawer ID"  >
+                    <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID"  >
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                   <div >
-                      <label  >Customer ID:	</label>
-                      <input type="text" formControlName="cuscod" placeholder="Account Type">
+                      <label  >A/C Number:	</label>
+                      <input type="text" formControlName="actnum" placeholder="Account Type">
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                    </div>
-                    <div >
-                      <label  >A/C Type:</label>
-
-                      <select class="form-control" formControlName="actype" data-toggle="tooltip"   
-                      data-placement="right" title="Select Student Branch">  
-                  <option value="ACT001" selected>Account Type 01</option>  
-                  <option value="ACT002">Account Type 02</option>  
-                  <option value="ACT003">Account Type 03</option>  
-                  <option value="ACT004">Account Type 04</option>  
-                  <option value="ACT005">Account Type 05</option>  
-                  <option value="ACT006">Account Type 06</option>  
-                 
-                </select>  
-                      <!-- <input type="text" formControlName="actype" placeholder="Account Type"> -->
-                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                    </div>
-                    <div >
-                      <label for="exampleInputPassword1" class="form-label">A/C Number:</label>
-                      <input type="text" formControlName="actnum" placeholder="Account Number"> 
                     </div>
                     <div >
                         <label  >A/C Title:</label>
                         <input type="text" formControlName="brancd" placeholder="Account Title" >
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                       </div>
+                   
+
+
+                
+   
+                
                       <div >
                         <label  >Deposit Product:</label>
-                        <input type="text" formControlName="oprbrancd" placeholder="Enter Deposit Product" >
+                        <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" >
                       </div>
                       <div >
                         <label  >For Sale Value:</label>
@@ -417,18 +370,50 @@
                         </div>
                         <div >
                           <label  >Security Required:	 </label>
+                          
                           <select class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
                           data-placement="right" title="Select Student Branch">  
                       <option value="Yes" selected>Yes</option>  
                       <option value="No"> No</option>  
                     </select>  
-      
+                  
+
+<!--                     
+                        <input type="radio" formControlName="apptimstamp"  name="sry" id="sry" value="Yes"  style="width: 15px; background:transparent; display:inline;" >   
+                          <label for="sry" style="display: inline;">Yes &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</label>
+                        <input type="radio" formControlName="apptimstamp" name="srn" id= "srn" value="No"  style="width: 15px; background:transparent; display:inline; ">
+                        <label for="srn" style=" display: inline " >No</label>
+                        -->
+
+                    <!-- <label for="saff" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
+                    <input type="radio"  style="display: inline;" formControlName="apptimstamp" name="saff"  value="Yes"  selected style="width: 15px; background:transparent; display: inline;" >
+                
+               
+                <label for="sapp" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;No &nbsp;&nbsp;</label>
+                    <input type="radio" style="display: inline;" formControlName="apptimstamp" name="sapp" value="No" style="width: 15px; background:transparent;display: inline;">
+                  
+       -->
                           <!-- <input type="text" formControlName="apptimstamp" placeholder="Security Required"> -->
                         </div>
                         <div >
                             <label   >Security Amount:	
                           </label>
-                            <input type="text" formControlName="oprstamp" placeholder="Security Amount" >
+                          <div>
+                            <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
+                                <input type="radio"  style="display: inline;" formControlName="oprstamp" name="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;" >
+                            
+                           
+                            <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
+                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" name="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;">
+                              
+                                
+                            </div>
+                          <!-- <select class="form-control" formControlName="oprstamp" data-toggle="tooltip"   
+                          data-placement="right" title="Select Student Branch">  
+                      <option value="onFixed" selected>On Fixed</option>  
+                      <option value="onPercentage">Percentage</option>  
+                    </select>   -->
+                            <!-- <input type="text" formControlName="oprstamp" placeholder="Security Amount" > -->
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                           </div>
                           <div >
@@ -440,11 +425,11 @@
                             <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" >
                           </div>
                           <div >
-                              <label  >Status:</label>
+                              <label  >Operation Ins:</label>
                               <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
                               data-placement="right" title="Select Student Branch">  
-                          <option value="Free" selected>Free</option>  
-                          <option value="Used">Used</option>  
+                          <option value="single" selected>SIN-Single</option>  
+                          <option value="joint">JNT-Joint A/C</option>  
                         </select>  
                               <!-- <input type="text" formControlName="reldate" placeholder="Current Status" > -->
                             </div>
@@ -452,117 +437,113 @@
                               <label  >Remarks:</label>
                               <input type="text" formControlName="remarks" placeholder="Feed back" >
                             </div>
-                            <div >
-                              <label hidden  >Updated By:</label>
-                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" hidden>
-                            </div>
-                            <div >
-                              <label hidden >Update Date:</label>
-                              <input type="text" formControlName="update_DATE" placeholder="Update Time" value="Date" hidden>
-                            </div>
-                      
+                
               </td>
 
-
-              <td >
-                <div >
-                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Details By Searching ID">
-                    <label  >Locker ID:</label>
-                    <input type="text" formControlName="lckrid"  placeholder="Drawer ID"  >
-                    <label  >Drawer ID:</label>
-                    <input type="text" formControlName="drwrid"  placeholder="Drawer ID"  >
-                    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                  </div>
-                  <div >
-                      <label  >Customer ID:	</label>
-                      <input type="text" formControlName="cuscod" placeholder="Account Type">
-                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                    </div>
+              <td>
+                <span style="   font-family: poppins;
+                font: size 3px;
+                color: #121b27;  font-size:15px;  font-family: poppins;"><br>
+                    Corporate Branch</span>
+    
                     <div >
-                      <label  >A/C Type:</label>
-
-                      <select class="form-control" formControlName="actype" data-toggle="tooltip"   
-                      data-placement="right" title="Select Student Branch">  
-                  <option value="ACT001" selected>Account Type 01</option>  
-                  <option value="ACT002">Account Type 02</option>  
-                  <option value="ACT003">Account Type 03</option>  
-                  <option value="ACT004">Account Type 04</option>  
-                  <option value="ACT005">Account Type 05</option>  
-                  <option value="ACT006">Account Type 06</option>  
-                 
-                </select>  
-                      <!-- <input type="text" formControlName="actype" placeholder="Account Type"> -->
-                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                    </div>
-                    <div >
-                      <label for="exampleInputPassword1" class="form-label">A/C Number:</label>
-                      <input type="text" formControlName="actnum" placeholder="Account Number" > 
-                    </div>
-                    <div >
-                        <label  >A/C Title:</label>
-                        <input type="text" formControlName="brancd" placeholder="Account Title" >
+                        <label  >Custoemr Type:</label>
+  
+                        <select class="form-control" formControlName="actype" data-toggle="tooltip"   
+                        data-placement="right" title="Select Student Branch">  
+                    <option value="ACT001" selected>Account Type 01</option>  
+                    <option value="ACT002">Account Type 02</option>  
+                    <option value="ACT003">Account Type 03</option>  
+                    <option value="ACT004">Account Type 04</option>  
+                    <option value="ACT005">Account Type 05</option>  
+                    <option value="ACT006">Account Type 06</option>  
+                   
+                  </select>  
+                        <!-- <input type="text" formControlName="actype" placeholder="Account Type"> -->
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                       </div>
-                      <div >
-                        <label  >Deposit Product:</label>
-                        <input type="text" formControlName="oprbrancd" placeholder="Enter Deposit Product" >
-                      </div>
-                      <div >
-                        <label  >For Sale Value:</label>
-                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" >
-                      </div>
-                      <div >
-                          <label  >Market value:</label>
-                          <input type="text" formControlName="appstamp" placeholder="Account Type">
-                          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                        </div>
-                        <div >
-                          <label  >Security Required:	 </label>
-                          <select class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
-                          data-placement="right" title="Select Student Branch">  
-                      <option value="Yes" selected>Yes</option>  
-                      <option value="No"> No</option>  
-                    </select>  
-      
-                          <!-- <input type="text" formControlName="apptimstamp" placeholder="Security Required"> -->
-                        </div>
-                        <div >
-                            <label   >Security Amount:	
-                          </label>
-                            <input type="text" formControlName="oprstamp" placeholder="Security Amount" >
-                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                          </div>
-                          <div >
-                            <label  >Caution Money:</label>
-                            <input type="text" formControlName="paystat" placeholder="Caution Money" >
-                          </div>
-                          <div >
-                            <label  >Tenure (In Year):</label>
-                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" >
-                          </div>
-                          <div >
-                              <label  >Status:</label>
-                              <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
-                              data-placement="right" title="Select Student Branch">  
-                          <option value="Free" selected>Free</option>  
-                          <option value="Used">Used</option>  
-                        </select>  
-                              <!-- <input type="text" formControlName="reldate" placeholder="Current Status" > -->
-                            </div>
-                            <div >
-                              <label  >Remarks:</label>
-                              <input type="text" formControlName="remarks" placeholder="Feed back" >
-                            </div>
-                            <div >
-                              <label hidden  >Updated By:</label>
-                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" hidden>
-                            </div>
-                            <div >
-                              <label hidden >Update Date:</label>
-                              <input type="text" formControlName="update_DATE" placeholder="Update Time" value="Date" hidden>
-                            </div>
-                      
-              </td>
+                               
+                                            <div >
+                                              <label  >Custoemr Name:</label>
+                                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                            </div>
+                                           
+                                   
+                                              <div >
+                                                <label for="exampleInputPassword1" class="form-label">Customer ID:</label>
+                                                <input type="text" formControlName="cuscod" placeholder="Account Number"> 
+                                              </div>
+
+
+                                              <div >
+                                                <label  >Address1:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+                                              <div >
+                                                <label  >Address 2:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+                                              <div >
+                                                <label  >House:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+                                              <div >
+                                                <label  >City Name:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+                                              <div >
+                                                <label  >Phone No:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+                                              <div >
+                                                <label  >Occupation:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+
+                                              <div  style="display: inline;" >
+                                                <label> Email:</label>
+                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              </div>
+
+
+
+
+
+                                              
+
+                                              <div>
+
+                                              </div>
+
+
+
+
+
+
+
+
+
+
+                                              <div >
+                                                <label> Date of Birth & Age:</label>
+                                                <label style="display: inline;"> Date of Birth:</label>
+                                                <input  type="date" style="display: inline;" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" style="width: 140px; display: inline;" >
+                                             
+                                                <label style="display: inline;"> Age:</label>
+                                                <input type="text"    formControlName="update_BY" value="Radwan Romy" placeholder="Age" style="width: 60px; display: inline;" >
+                                              </div>
+
+                                              <div >
+                                                <label  >Allocation Date:</label>
+                                                <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time" >
+                                              </div>
+
+                                              <div >
+                                                <label  >Expire Date:</label>
+                                                <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time" >
+                                              </div>
+                              </td>
+          
 
 
          
@@ -588,8 +569,6 @@
 </table>
 
 
-
-   
 
 
 <table class="table mt-3">
@@ -639,11 +618,11 @@
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Caution Money</th>
+            <th scope="col">Caution<br>Money</th>
             <th scope="col">Security Amount</th>
             <th scope="col">Tenure (In Year)</th>
-            <th scope="col">Updated By</th>
-            <th scope="col">Update Date</th>
+            <th scope="col">Expire Date</th>
+            <th scope="col">Allocation Date</th>
             <th scope="col">For Sale Value</th>
             <th scope="col">Market value</th>
             <th scope="col">Status</th>
@@ -716,7 +695,4 @@
 
   </div>
   
-  
-  <div class="Footer">
-      <span>&copy;<a href="https://www.erainfotechbd.com/" >ERA InfoTech Ltd</a> </span>
-  </div>
+ 

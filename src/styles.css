@@ -145,3 +145,14 @@ label{
 .form-label {
   margin-bottom: 0rem;
 }
+.fixed-header, .fixed-footer{
+  position: fixed; 
+  width: 100%;   
+  background-color: rgba(244, 251, 253, 0.994);
+}
+.fixed-header{
+  top: 0;
+}
+.fixed-footer{
+  bottom: 0;
+}
