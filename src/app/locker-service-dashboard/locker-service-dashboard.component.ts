@@ -16,7 +16,7 @@ export class LockerServiceDashboardComponent implements OnInit {
   lockerServiceData !: any;
   showAdd !: boolean;
   showUpdate !: boolean;
- 
+
 
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
@@ -126,6 +126,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.showUpdate= true;
     }
 
+ 
+
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -191,8 +193,18 @@ export class LockerServiceDashboardComponent implements OnInit {
       })
     }
     
+    // function ageCalculator() {
+    //   var userinput =document.getElementById("DOB")?.nodeValue; 
 
+    //   if(userinput==null || userinput==''){  
+    //     document.getElementById("message").innerHTML = "**Choose a date please!";    
+    //     return false;   
+    //   }
+      
+    // }
+    
 
+    
 
 
     
