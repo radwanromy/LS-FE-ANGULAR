@@ -466,7 +466,7 @@
                                
                                             <div >
                                               <label  >Custoemr Name:</label>
-                                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Customer Name" >
                                             </div>
                                            
                                    
@@ -514,10 +514,10 @@
                                               <div >
                                                 <label> Date of Birth & Age:</label>
                                                 <label style="display: inline;"> Date of Birth:</label>
-                                                <input  type="date" style="display: inline;" formControlName="update_BY"  placeholder="Updated By" style="width: 140px; display: inline;" >
+                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;" >
                                              
                                                 <label style="display: inline;"> Age:</label>
-                                                <input type="text"    formControlName="update_BY"  placeholder="Age" style="width: 60px; display: inline;" >
+                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;" >
                                               </div>
 
                                               <div >
@@ -570,6 +570,7 @@
             <th scope="col">A/C Type</th>
             <th scope="col">A/C Number</th>
             <th scope="col">Remarks</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
 
             
@@ -585,6 +586,7 @@
         <td>{{row.actype}}</td>
         <td>{{row.actnum}}</td>
         <td>{{row.remarks}}</td>
+        <td>{{row.apptimstamp}}</td>
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
@@ -606,13 +608,14 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Caution<br>Money</th>
-            <th scope="col">Security Amount</th>
-            <th scope="col">Tenure (In Year)</th>
+            <th scope="col">Security<br>Amount</th>
+            <th scope="col">Tenure<br>(In Year)</th>
             <th scope="col">Expire Date</th>
             <th scope="col">Allocation Date</th>
             <th scope="col">For Sale Value</th>
             <th scope="col">Market value</th>
-            <th scope="col">Status</th>
+            <th scope="col">Date of<br>Birth</th>
+            <th scope="col">Age</th>
             <th scope="col">Action</th>
 
             
@@ -627,7 +630,8 @@
         <td>{{row.update_DATE}}</td>
         <td>{{row.appflg}}</td>
         <td>{{row.appstamp}}</td>
-        <td>{{row.apptimstamp}}</td>
+        <td>{{row.dob}}</td>
+        <td>{{row.age}}</td>
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit

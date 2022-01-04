@@ -11,6 +11,8 @@ export class LockerServiceModel{
 
     appflg : string = '';
     appstamp  : string = '';
+    dob  : string = '';
+    age  : string = '';
     apptimstamp : string = '';
     oprstamp : string = '';
 

@@ -40,6 +40,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     update_DATE:[''],
       appflg:[''],
      appstamp:[''],
+     dob:[''],
+     age:[''],
      apptimstamp: ['']
     })
     this.getAllLockerServiceDetails();
@@ -61,6 +63,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.oprbrancd = this.formValue.value.oprbrancd;
     this.lockerServiceModelObj.appflg = this.formValue.value.appflg;
     this.lockerServiceModelObj.appstamp = this.formValue.value.appstamp;
+    this.lockerServiceModelObj.dob = this.formValue.value.dob;
+    this.lockerServiceModelObj.age = this.formValue.value.age;
     this.lockerServiceModelObj.apptimstamp = this.formValue.value.apptimstamp;
     this.lockerServiceModelObj.oprstamp = this.formValue.value.oprstamp;
     this.lockerServiceModelObj.paystat = this.formValue.value.paystat;
@@ -113,6 +117,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['oprbrancd'].patchValue(row.oprbrancd);
       this.formValue.controls['appflg'].patchValue(row.appflg);
       this.formValue.controls['appstamp'].patchValue(row.appstamp);
+      this.formValue.controls['dob'].patchValue(row.dob);
+      this.formValue.controls['age'].patchValue(row.age);
       this.formValue.controls['apptimstamp'].patchValue(row.apptimstamp);
       this.formValue.controls['oprstamp'].patchValue(row.oprstamp);
       this.formValue.controls['paystat'].patchValue(row.paystat);
@@ -138,6 +144,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.oprbrancd = this.formValue.value.oprbrancd;
     this.lockerServiceModelObj.appflg = this.formValue.value.appflg;
     this.lockerServiceModelObj.appstamp = this.formValue.value.appstamp;
+    this.lockerServiceModelObj.dob = this.formValue.value.dob;
+    this.lockerServiceModelObj.age = this.formValue.value.age;
     this.lockerServiceModelObj.apptimstamp = this.formValue.value.apptimstamp;
     this.lockerServiceModelObj.oprstamp = this.formValue.value.oprstamp;
     this.lockerServiceModelObj.paystat = this.formValue.value.paystat;
