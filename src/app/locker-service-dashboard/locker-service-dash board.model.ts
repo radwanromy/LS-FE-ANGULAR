@@ -15,7 +15,8 @@ export class LockerServiceModel{
     age  : string = '';
     apptimstamp : string = '';
     oprstamp : string = '';
-
+    addone  : string = '';
+    addtwo : string = '';
     paystat : string = '';
     oprtimstamp : string = '';
     reldate : string = '';

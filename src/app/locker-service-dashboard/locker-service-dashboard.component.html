@@ -478,11 +478,11 @@
 
                                               <div >
                                                 <label  >Address1:</label>
-                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                                <input type="text" formControlName="addone"  placeholder="Enter Your Present Residential Address" >
                                               </div>
                                               <div >
                                                 <label  >Address 2:</label>
-                                                <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
+                                                <input type="text" formControlName="addtwo"  placeholder="Enter Your Permanent Residential Address" >
                                               </div>
                                               <div >
                                                 <label  >House:</label>
@@ -505,11 +505,6 @@
                                                 <label> Email:</label>
                                                 <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Updated By" >
                                               </div>
-
-       
-
-
-
 
                                               <div >
                                                 <label> Date of Birth & Age:</label>
@@ -571,6 +566,7 @@
             <th scope="col">A/C Number</th>
             <th scope="col">Remarks</th>
             <th scope="col">Status</th>
+            <th scope="col">Address 1</th>
             <th scope="col">Action</th>
 
             
@@ -587,10 +583,11 @@
         <td>{{row.actnum}}</td>
         <td>{{row.remarks}}</td>
         <td>{{row.apptimstamp}}</td>
+        <td>{{row.addtwo}}</td>
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
-            </button>
+            </button><br>
             <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
             
         </td>
@@ -616,6 +613,7 @@
             <th scope="col">Market value</th>
             <th scope="col">Date of<br>Birth</th>
             <th scope="col">Age</th>
+            <th scope="col">Address 2</th>
             <th scope="col">Action</th>
 
             
@@ -632,10 +630,11 @@
         <td>{{row.appstamp}}</td>
         <td>{{row.dob}}</td>
         <td>{{row.age}}</td>
+        <td>{{row.addtwo}}</td>
         <td>
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
-            </button>
+            </button><br>
             <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
             
         </td>

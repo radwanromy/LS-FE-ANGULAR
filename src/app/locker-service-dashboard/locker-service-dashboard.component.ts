@@ -42,6 +42,8 @@ export class LockerServiceDashboardComponent implements OnInit {
      appstamp:[''],
      dob:[''],
      age:[''],
+     addone:[''],
+     addtwo:[''],
      apptimstamp: ['']
     })
     this.getAllLockerServiceDetails();
@@ -73,6 +75,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.remarks = this.formValue.value.remarks;
     this.lockerServiceModelObj.update_BY = this.formValue.value.update_BY;
     this.lockerServiceModelObj.update_DATE = this.formValue.value.update_DATE;
+    this.lockerServiceModelObj.addone = this.formValue.value.addone;
+    this.lockerServiceModelObj.addtwo = this.formValue.value.addtwo;
 
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
@@ -127,6 +131,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['remarks'].patchValue(row.remarks);
       this.formValue.controls['update_BY'].patchValue(row.update_BY);
       this.formValue.controls['update_DATE'].patchValue(row.update_DATE);
+      this.formValue.controls['addone'].patchValue(row.addone);
+      this.formValue.controls['addtwo'].patchValue(row.addtwo);
 
       this.showAdd= false;
       this.showUpdate= true;
@@ -154,6 +160,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.remarks = this.formValue.value.remarks;
     this.lockerServiceModelObj.update_BY = this.formValue.value.update_BY;
     this.lockerServiceModelObj.update_DATE = this.formValue.value.update_DATE;
+    this.lockerServiceModelObj.addone = this.formValue.value.addone;
+    this.lockerServiceModelObj.addtwo = this.formValue.value.addtwo;
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
@@ -187,9 +195,9 @@ export class LockerServiceDashboardComponent implements OnInit {
     }
 
     onKeyPress(event : any){
-      console.log("Event Succefully");
+      // console.log("Event Succefully");
       this.lockerServiceModelObj.relid=this.formValue.value.relid;
-      console.log(this.lockerServiceModelObj.relid);
+      // console.log(this.lockerServiceModelObj.relid);
       
       this.api.getByIdRelease(this.lockerServiceModelObj.relid)
       .subscribe(res=>{
