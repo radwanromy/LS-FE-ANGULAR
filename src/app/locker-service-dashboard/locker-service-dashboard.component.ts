@@ -86,6 +86,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.house = this.formValue.value.house;
     this.lockerServiceModelObj.city = this.formValue.value.city;
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
+    this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
+    this.lockerServiceModelObj.email = this.formValue.value.email;
 
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
@@ -146,6 +148,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['house'].patchValue(row.house);
       this.formValue.controls['city'].patchValue(row.city);
       this.formValue.controls['phone'].patchValue(row.phone);
+      this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
+      this.formValue.controls['email'].patchValue(row.email);
 
 
       this.showAdd= false;
@@ -176,11 +180,11 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.update_DATE = this.formValue.value.update_DATE;
     this.lockerServiceModelObj.addone = this.formValue.value.addone;
     this.lockerServiceModelObj.addtwo = this.formValue.value.addtwo;
-
-    
     this.lockerServiceModelObj.house = this.formValue.value.house;
     this.lockerServiceModelObj.city = this.formValue.value.city;
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
+    this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
+    this.lockerServiceModelObj.email = this.formValue.value.email;
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
