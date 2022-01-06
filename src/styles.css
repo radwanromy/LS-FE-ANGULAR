@@ -148,11 +148,14 @@ label{
 .fixed-header, .fixed-footer{
   position: fixed; 
   width: 100%;   
-  background-color: rgba(244, 251, 253, 0.994);
+  background-color: #ecf0f3;
 }
 .fixed-header{
   top: 0;
 }
 .fixed-footer{
   bottom: 0;
+}
+BODY{
+  font-size: 12PX;
 }

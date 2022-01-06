@@ -5,6 +5,7 @@
 <br>
 <br>
 <br>
+<BR>
 
 
 <!-- <div  >
@@ -555,7 +556,7 @@
 
 <table class="table mt-3">
     <thead>
-        <tr>
+        <tr align="CENTER">
             <th scope="col"> ID</th>
             <th scope="col">Locker ID</th>
             <th scope="col">Drawer ID</th>
@@ -571,7 +572,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData">
+    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.lckrid}}</td>
         <td>{{row.drwrid}}</td>
@@ -601,7 +602,7 @@
     
 <table class="table mt-3">
     <thead>
-        <tr>
+        <tr align="CENTER">
             <th scope="col">ID</th>
             <th scope="col">Caution<br>Money</th>
             <th scope="col">Security<br>Amount</th>
@@ -618,7 +619,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData">
+    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.paystat}}</td>
         <td>{{row.oprstamp}}</td>
@@ -650,7 +651,7 @@
     
 <table class="table mt-3">
     <thead>
-        <tr>
+        <tr align="CENTER">
             <th scope="col">ID</th>
             <th scope="col">Phone<br>Number</th>
             <th scope="col">House<br>Address</th>
@@ -662,13 +663,13 @@
             <th scope="col">Age</th>
             
             <th scope="col">Status</th>
-            <th scope="col">Address 2</th>
+      
             <th scope="col">Action</th>
 
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData">
+    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.phone}}</td>
         <td>{{row.house}}</td>
@@ -679,7 +680,7 @@
       
         <td>{{row.age}}</td>
         <td>{{row.apptimstamp}}</td>
-        <td>{{row.addtwo}}</td>
+ 
         <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
