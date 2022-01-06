@@ -22,6 +22,11 @@ export class LockerServiceModel{
     reldate : string = '';
     remarks : string = '' ;
 
+    
+    house : string = '';
+    city : string = '';
+    phone : string = '' ;
+
     update_BY : string = '';
     update_DATE : string = '';
 
