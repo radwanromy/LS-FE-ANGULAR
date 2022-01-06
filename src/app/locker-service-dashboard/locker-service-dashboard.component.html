@@ -1,5 +1,4 @@
 
-
 <br>
 <br>
 <br>
@@ -7,7 +6,7 @@
 <br>
 <BR>
 
-
+    
 <!-- <div  >
   <table width="100%" >
     
@@ -316,13 +315,6 @@
 
 
     
-<div width="100%" align="center">
-    <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
-    <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
-    this.showUpdate = false;">Clear</button> &nbsp;
-    <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Execuate</button>
-    <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
-    </div>
 
 <table width="100%">
   <tr>
@@ -558,6 +550,7 @@
     <thead>
         <tr align="CENTER">
             <th scope="col"> ID</th>
+            <th scope="col">Customer Name</th>
             <th scope="col">Locker ID</th>
             <th scope="col">Drawer ID</th>
             <th scope="col">Deposit Product</th>
@@ -565,7 +558,7 @@
             <th scope="col">A/C Title</th>
             <th scope="col">A/C Type</th>
             <th scope="col">A/C Number</th>
-            <th scope="col">Remarks</th>
+          
             <th scope="col">Address 1</th>
             <th scope="col">Action</th>
 
@@ -574,6 +567,7 @@
     </thead>
     <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
         <td>{{row.relid}}</td>
+        <td>{{row.cname}}</td>
         <td>{{row.lckrid}}</td>
         <td>{{row.drwrid}}</td>
         <td>{{row.oprbrancd}}</td>
@@ -581,7 +575,7 @@
         <td>{{row.brancd}}</td> 
         <td>{{row.actype}}</td>
         <td>{{row.actnum}}</td>
-        <td>{{row.remarks}}</td>
+       
        
         <td>{{row.addone}}</td>
         <td align = "center">
@@ -658,12 +652,12 @@
             <th scope="col">City<br>Name</th>
             <th scope="col">Occupation</th>
             <th scope="col">Email</th>
-            <th scope="col">Customer Name</th>
+          
            
             <th scope="col">Age</th>
             
             <th scope="col">Status</th>
-      
+            <th scope="col">Remarks</th>
             <th scope="col">Action</th>
 
             
@@ -676,11 +670,11 @@
         <td>{{row.city}}</td> 
         <td>{{row.ocpatn}}</td>
         <td>{{row.email}}</td>
-        <td>{{row.cname}}</td>
+      
       
         <td>{{row.age}}</td>
         <td>{{row.apptimstamp}}</td>
- 
+        <td>{{row.remarks}}</td>
         <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
@@ -737,3 +731,63 @@
   </div>
   
  
+
+<div class="fixed-header">
+    <table width="100%" style="background-origin: border-box;">
+        <tr  >
+            <td align="left"  >
+              <img src="../../assets/bank-asiapxl.gif" alt="" height="95px"  width="180px" style="padding-left: 20px; padding-top: 10px;">
+            </td>
+            <td align="Center" style="padding-top: 0px;">
+                <span style=" font-family: 'Raleway',sans-serif; 
+                font-size:26px;
+                color: #32598d;">Bank Aisa-Locker Service</span> 
+                 <span style="   font-family: poppins;
+                 font: size 3px;
+                 color: #121b27;  font-size:15px;  font-family: poppins;"><br>
+                     Corporate Branch</span>
+                <span style="   font-family: poppins;
+                font: size 3px;
+                color: #121b27;  font-size:12px;  font-family: poppins;"><br>
+                    Drawer Allocation to Customer</span>
+
+                    <div width="100%" align="center">
+                        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
+                        <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+                        this.showUpdate = false;">Clear</button> &nbsp;
+                        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Execuate</button>
+                        <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
+                        </div>
+
+                    <!-- <div class="btn-group"  ><td>
+                        <button type="button" class="btn btn-primary"  >Execute</button>
+                    </td>
+                    <td width="5px"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary"  >Edit</button>
+                    </td><td width="5px"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary"  >Clear</button>
+                    </td><td width="5px"></td>
+                    <td>
+                        <button type="button" class="btn btn-primary"  >Log-Out</button>
+                    </td>  
+                      </div> -->
+            </td>
+            <td align="right"  >
+                <img src="../../assets/Era_logodown.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
+            </td>
+        </tr>
+        <tr style="height: 7px;">
+            
+        </tr>
+        
+    </table>
+    <!-- <div width="100%" align="center">
+        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
+        <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+        this.showUpdate = false;">Clear</button> &nbsp;
+        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Execuate</button>
+        <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
+        </div>
+  </div> -->

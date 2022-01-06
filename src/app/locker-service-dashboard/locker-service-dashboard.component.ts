@@ -90,7 +90,6 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
-
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
 
     this.api.postEmployee(this.lockerServiceModelObj)
@@ -148,13 +147,11 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['update_DATE'].patchValue(row.update_DATE);
       this.formValue.controls['addone'].patchValue(row.addone);
       this.formValue.controls['addtwo'].patchValue(row.addtwo);
-      
       this.formValue.controls['house'].patchValue(row.house);
       this.formValue.controls['city'].patchValue(row.city);
       this.formValue.controls['phone'].patchValue(row.phone);
       this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
       this.formValue.controls['email'].patchValue(row.email);
-
       this.formValue.controls['cname'].patchValue(row.cname);
 
       this.showAdd= false;
@@ -190,7 +187,6 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
-    
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
@@ -248,6 +244,9 @@ export class LockerServiceDashboardComponent implements OnInit {
     //   }
       
     // }
+
+
+    
     
 
     

@@ -109,9 +109,9 @@ input {
 button {
   margin-top:0px;
   background: #bdc7cc;
-  width: 100px;
+  width: 80px;
   /* padding-top: 10px; */
-  height: 28px;
+  height: 22px;
   border-radius: 0px;
   cursor: pointer;
   font-weight: 900;
@@ -152,10 +152,15 @@ label{
 }
 .fixed-header{
   top: 0;
+  position: fixed; 
 }
 .fixed-footer{
   bottom: 0;
 }
 BODY{
   font-size: 12PX;
+}
+
+.btn {
+  padding: 0.0rem 0.0rem;
 }
