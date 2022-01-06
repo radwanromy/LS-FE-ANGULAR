@@ -30,6 +30,9 @@ export class LockerServiceModel{
     update_BY : string = '';
     update_DATE : string = '';
 
+    
+    ocpatn : string = '';
+    email : string = '';
     // userinput : string = '';
     // dob : string = '';
 
