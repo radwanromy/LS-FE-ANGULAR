@@ -50,6 +50,8 @@ export class LockerServiceDashboardComponent implements OnInit {
      
      ocpatn:[''],
      email:[''],
+     
+     cname:[''],
      apptimstamp: ['']
     })
     this.getAllLockerServiceDetails();
@@ -88,6 +90,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
+
+    this.lockerServiceModelObj.cname = this.formValue.value.cname;
 
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
@@ -151,6 +155,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
       this.formValue.controls['email'].patchValue(row.email);
 
+      this.formValue.controls['cname'].patchValue(row.cname);
 
       this.showAdd= false;
       this.showUpdate= true;
@@ -185,6 +190,8 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.phone = this.formValue.value.phone;
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
+    
+    this.lockerServiceModelObj.cname = this.formValue.value.cname;
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{

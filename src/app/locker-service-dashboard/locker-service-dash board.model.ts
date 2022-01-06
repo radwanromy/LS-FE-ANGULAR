@@ -33,6 +33,7 @@ export class LockerServiceModel{
     
     ocpatn : string = '';
     email : string = '';
+    cname : string = '';
     // userinput : string = '';
     // dob : string = '';
 

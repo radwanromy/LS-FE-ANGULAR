@@ -466,7 +466,7 @@
                                
                                             <div >
                                               <label  >Customer Name:</label>
-                                              <input type="text" formControlName="update_BY" value="Radwan Romy" placeholder="Customer Name" >
+                                              <input type="text" formControlName="cname"  placeholder="Customer Name" >
                                             </div>
                                            
                                    
@@ -565,7 +565,6 @@
             <th scope="col">A/C Type</th>
             <th scope="col">A/C Number</th>
             <th scope="col">Remarks</th>
-            <th scope="col">Status</th>
             <th scope="col">Address 1</th>
             <th scope="col">Action</th>
 
@@ -582,9 +581,9 @@
         <td>{{row.actype}}</td>
         <td>{{row.actnum}}</td>
         <td>{{row.remarks}}</td>
-        <td>{{row.apptimstamp}}</td>
-        <td>{{row.addtwo}}</td>
-        <td>
+       
+        <td>{{row.addone}}</td>
+        <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button><br>
@@ -612,7 +611,7 @@
             <th scope="col">For Sale Value</th>
             <th scope="col">Market value</th>
             <th scope="col">Date of<br>Birth</th>
-            <th scope="col">Age</th>
+      
             <th scope="col">Address 2</th>
             <th scope="col">Action</th>
 
@@ -629,9 +628,9 @@
         <td>{{row.appflg}}</td>
         <td>{{row.appstamp}}</td>
         <td>{{row.dob}}</td>
-        <td>{{row.age}}</td>
+    
         <td>{{row.addtwo}}</td>
-        <td>
+        <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button><br>
@@ -658,10 +657,11 @@
             <th scope="col">City<br>Name</th>
             <th scope="col">Occupation</th>
             <th scope="col">Email</th>
-            <th scope="col">For Sale Value</th>
-            <th scope="col">Market value</th>
-            <th scope="col">Date of<br>Birth</th>
+            <th scope="col">Customer Name</th>
+           
             <th scope="col">Age</th>
+            
+            <th scope="col">Status</th>
             <th scope="col">Address 2</th>
             <th scope="col">Action</th>
 
@@ -675,15 +675,16 @@
         <td>{{row.city}}</td> 
         <td>{{row.ocpatn}}</td>
         <td>{{row.email}}</td>
-        <td>{{row.appflg}}</td>
-        <td>{{row.appstamp}}</td>
-        <td>{{row.dob}}</td>
+        <td>{{row.cname}}</td>
+      
         <td>{{row.age}}</td>
+        <td>{{row.apptimstamp}}</td>
         <td>{{row.addtwo}}</td>
-        <td>
+        <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
-            </button><br>
+            </button>
+            <br>
             <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
             
         </td>
