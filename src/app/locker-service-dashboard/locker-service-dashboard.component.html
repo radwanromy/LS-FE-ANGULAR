@@ -642,6 +642,55 @@
 
     </tbody>
 </table>
+
+
+
+<br>
+<br>
+<Br>
+    
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Phone<br>Number</th>
+            <th scope="col">House<br>Address</th>
+            <th scope="col">City<br>Name</th>
+            <th scope="col">Expire Date</th>
+            <th scope="col">Allocation Date</th>
+            <th scope="col">For Sale Value</th>
+            <th scope="col">Market value</th>
+            <th scope="col">Date of<br>Birth</th>
+            <th scope="col">Age</th>
+            <th scope="col">Address 2</th>
+            <th scope="col">Action</th>
+
+            
+        </tr>
+    </thead>
+    <tbody><tr *ngFor="let row of lockerServiceData">
+        <td>{{row.relid}}</td>
+        <td>{{row.phone}}</td>
+        <td>{{row.house}}</td>
+        <td>{{row.city}}</td> 
+        <td>{{row.update_BY}}</td>
+        <td>{{row.update_DATE}}</td>
+        <td>{{row.appflg}}</td>
+        <td>{{row.appstamp}}</td>
+        <td>{{row.dob}}</td>
+        <td>{{row.age}}</td>
+        <td>{{row.addtwo}}</td>
+        <td>
+            <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Edit
+            </button><br>
+            <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
+            
+        </td>
+    </tr>
+
+    </tbody>
+</table>
 <!-- 
 <div class="modal-body">
   <form [formGroup]= "formValue">
