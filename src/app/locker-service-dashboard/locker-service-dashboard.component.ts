@@ -158,8 +158,6 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.showUpdate= true;
     }
 
- 
-
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -202,8 +200,6 @@ export class LockerServiceDashboardComponent implements OnInit {
           alert("Something wrong in update");
         })
 
-
-        
   //   console.log(this.ReleaseModeloObj);
 
   //   this.apiservice.UpdateByIdRelease(this.ReleaseModeloObj.relid, this.ReleaseModeloObj,)

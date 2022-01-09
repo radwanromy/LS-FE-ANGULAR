@@ -5,7 +5,7 @@ body {
     margin-inline: 0;
     padding: 0;
     padding-right: 18px;
-    background: #ecf0f3;  
+    background:rgba(70, 123, 158, 0.623);  
     justify-content: center;
     place-items: center;
     font-family: poppins;
@@ -27,7 +27,7 @@ body {
     color:  rgb(133, 133, 133);
     border-color:rgb(46, 43, 43);
     border-width: 1px;
-    background: #ecf0f3;
+    background: #BBC2CC;
     padding:5px;
     padding-left: 20px;
     width:300px;
@@ -148,7 +148,7 @@ label{
 .fixed-header, .fixed-footer{
   position: fixed; 
   width: 100%;   
-  background-color: #ecf0f3;
+  background-color:rgba(142, 178, 202, 0.281);
 }
 .fixed-header{
   top: 0;
@@ -166,5 +166,7 @@ BODY{
 }
 
 :root {
-  --bs-body-line-height:1.2;
+  --bs-body-line-height:1.4;
 }
+
+
