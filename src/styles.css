@@ -5,7 +5,7 @@ body {
     margin-inline: 0;
     padding: 0;
     padding-right: 18px;
-    background:rgba(70, 123, 158, 0.623);  
+    background:rgb(255, 255, 255);  
     justify-content: center;
     place-items: center;
     font-family: poppins;
@@ -148,7 +148,7 @@ label{
 .fixed-header, .fixed-footer{
   position: fixed; 
   width: 100%;   
-  background-color:rgba(142, 178, 202, 0.281);
+  background-color:rgba(210, 228, 240, 0.541);
 }
 .fixed-header{
   top: 0;
