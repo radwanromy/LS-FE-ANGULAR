@@ -148,7 +148,7 @@ label{
 .fixed-header, .fixed-footer{
   position: fixed; 
   width: 100%;   
-  background-color:rgba(210, 228, 240, 0.541);
+  background-color:rgba(229, 237, 241, 0.788);
 }
 .fixed-header{
   top: 0;
@@ -166,7 +166,7 @@ BODY{
 }
 
 :root {
-  --bs-body-line-height:1.4;
+  --bs-body-line-height:1.3888;
 }
 
 
