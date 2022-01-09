@@ -164,3 +164,7 @@ BODY{
 .btn {
   padding: 0.0rem 0.0rem;
 }
+
+:root {
+  --bs-body-line-height:1.2;
+}
