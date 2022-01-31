@@ -388,11 +388,11 @@
                           </label>
                           <div>
                             <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
-                                <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  (click)="this.showform=false;" (click)="this.niform=false;">
+                                <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  >
                             
                            
                             <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
-                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
+                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" >
                               
                                 
                             </div>
@@ -496,20 +496,20 @@
                                               <div >
                                                 <label> Date of Birth & Age:</label>
                                                 <label style="display: inline;"> Date of Birth:</label>
-                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
+                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;"  >
                                              
                                                 <label style="display: inline;"> Age:</label>
-                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
+                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;">
                                               </div>
 
                                               <div >
                                                 <label  >Allocation Date:</label>
-                                                <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time" (click)="this.showform=false;" (click)="this.niform=false;" >
+                                                <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time"  >
                                               </div>
 
                                               <div >
                                                 <label  >Expire Date:</label>
-                                                <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time"  (click)="this.showform=false;" (click)="this.niform=false;">
+                                                <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time" >
                                               </div>
                               </td>
           </tr>
@@ -754,6 +754,11 @@
           
   </tr>
   </table>
+<hr/>
+  <div class="form-group" align="right" style="padding: 20px;" >
+    <h3>Search</h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
+  </div> 
+  <div style="padding-left: 20px;">
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
@@ -772,7 +777,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.cname}}</td>
         <td>{{row.lckrid}}</td>
@@ -813,7 +818,7 @@
             <th scope="col">Action</th>
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.paystat}}</td>
         <td>{{row.oprstamp}}</td>
@@ -856,7 +861,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.phone}}</td>
         <td>{{row.house}}</td>
@@ -878,6 +883,7 @@
 
     </tbody>
 </table>
+</div>
 <!-- 
 <div class="modal-body">
   <form [formGroup]= "formValue">
@@ -927,7 +933,7 @@
     <table width="100%" style="background-origin: border-box;">
         <tr  >
             <td align="left"  >
-              <img src="../../assets/bank-asiapxl.gif" alt="" height="95px"  width="180px" style="padding-left: 20px; padding-top: 10px;">
+              <img src="../../assets/Bankasia-logo.svg" alt="" height="95px"  width="180px" style="padding-left: 20px; padding-top: 10px;">
             </td>
             <td align="Center" style="padding-top: 0px;">
                 <span style=" font-family: 'Raleway',sans-serif; 

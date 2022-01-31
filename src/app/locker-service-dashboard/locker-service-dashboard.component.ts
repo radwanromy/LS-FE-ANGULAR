@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { LockerServiceModel } from './locker-service-dash board.model';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @Component({
   selector: 'app-locker-service-dashboard',
   templateUrl: './locker-service-dashboard.component.html',
@@ -18,6 +20,7 @@ export class LockerServiceDashboardComponent implements OnInit {
   showUpdate !: boolean;
   showform !: boolean;
   niform !: boolean;
+  filterTerm !: string;
 
 
   constructor(private formBuilder: FormBuilder,
@@ -278,4 +281,18 @@ let grid: Grid = new Grid({
 );
 grid.appendTo('#Grid');
 
+// sortData(){
+//   if(this.order:any){
+//     let newarr = this.showData.sort((a,b) => a.relid - b.relid);
+//     this.showData = newarr;
+//   }
+//   else {
+//     let newarr = this.showData.sort((a,b)=> b.id - a.id);
+//     this.showData = newarr;
+//   }
+//   this.order = !this.order;
+// }
+// function sortData() {
+//   throw new Error('Function not implemented.');
+// }
 
