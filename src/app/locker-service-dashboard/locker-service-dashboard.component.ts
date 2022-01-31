@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from '../shared/api.service';
 import { LockerServiceModel } from './locker-service-dash board.model';
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 @Component({
   selector: 'app-locker-service-dashboard',
@@ -250,6 +250,15 @@ export class LockerServiceDashboardComponent implements OnInit {
 
       this.showform=false;
      }
+
+     key: any = 'relid';
+     reverse: boolean = false;
+     sort(key : any){
+       this.key = key;
+       this.reverse = !this.reverse;
+     }
+
+
 }
 import { Grid, Sort,  Search, Toolbar } from '@syncfusion/ej2-grids';
 Grid.Inject(Sort,  Search, Toolbar);

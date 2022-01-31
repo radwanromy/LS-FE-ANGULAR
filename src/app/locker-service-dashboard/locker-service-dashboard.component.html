@@ -762,23 +762,23 @@
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
-            <th scope="col"> ID</th>
-            <th scope="col">Customer Name</th>
-            <th scope="col">Locker ID</th>
-            <th scope="col">Drawer ID</th>
-            <th scope="col">Deposit Product</th>
-            <th scope="col">Customer ID</th>
-            <th scope="col">A/C Title</th>
-            <th scope="col">A/C Type</th>
-            <th scope="col">A/C Number</th>
-            <th scope="col">Address 1</th>
+            <th scope="col" (click)="sort('relid')" > ID &nbsp; <i class="fa fa-sort" style="color: rgb(10, 10, 10); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('cname')" >Customer Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('lckrid')" >Locker ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('drwrid')"  >Drawer ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('oprbrancd')" >Deposit Product &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('cuscod')" >Customer ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('brancd')" >A/C Title &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('actype')" >A/C Type &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('actnum')" >A/C Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('addone')" >Address 1 &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col">Action</th>
 
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
-        <td>{{row.relid}}</td>
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse  " align="CENTER">
+        <td >{{row.relid}}</td>
         <td>{{row.cname}}</td>
         <td>{{row.lckrid}}</td>
         <td>{{row.drwrid}}</td>
@@ -805,16 +805,16 @@
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
-            <th scope="col">ID</th>
-            <th scope="col">Caution<br>Money</th>
-            <th scope="col">Security<br>Amount</th>
-            <th scope="col">Tenure<br>(In Year)</th>
-            <th scope="col">Expire Date</th>
-            <th scope="col">Allocation Date</th>
-            <th scope="col">For Sale Value</th>
-            <th scope="col">Market value</th>
-            <th scope="col">Date of<br>Birth</th>      
-            <th scope="col">Address 2</th>
+            <th scope="col">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Caution<br>Money &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i> </th>
+            <th scope="col">Security<br>Amount &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Tenure<br>(In Year) &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Expire Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Allocation Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">For Sale Value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Market value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Date of<br>Birth &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>      
+            <th scope="col">Address 2 &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -847,16 +847,16 @@
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
-            <th scope="col">ID</th>
-            <th scope="col">Phone<br>Number</th>
-            <th scope="col">House<br>Address</th>
-            <th scope="col">City<br>Name</th>
-            <th scope="col">Occupation</th>
-            <th scope="col">Email</th>
-            <th scope="col">Age</th>
-            <th scope="col">Status</th>
-            <th scope="col">Remarks</th>
-            <th scope="col">Action</th>
+            <th scope="col">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Phone<br>Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">House<br>Address &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">City<br>Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Occupation &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Email &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Age &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Status &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Remarks &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col">Action </th>
 
             
         </tr>

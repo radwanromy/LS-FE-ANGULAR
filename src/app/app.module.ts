@@ -7,12 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LockerServiceDashboardComponent } from './locker-service-dashboard/locker-service-dashboard.component';
 import { TestComponent } from './test/test.component';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LockerServiceDashboardComponent,
-    TestComponent
+    TestComponent 
   ],
   imports: [
     BrowserModule,
@@ -20,7 +21,9 @@ import { TestComponent } from './test/test.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule , 
+    Ng2OrderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
