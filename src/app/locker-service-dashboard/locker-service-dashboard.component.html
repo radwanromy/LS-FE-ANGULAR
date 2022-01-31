@@ -4,7 +4,8 @@
 <br>
 <br>
 <br>
-    
+
+
 <!-- <div  >
   <table width="100%" >
     
@@ -325,42 +326,42 @@
               <td >
                 <div >
                     
-                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID">
+                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;">
                     <label  >Locker ID:</label>
-                    <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID"  >
+                    <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID"  (click)="this.showform=false;" (click)="this.niform=false;"  >
                     <label  >Drawer ID:</label>
-                    <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID"  >
+                    <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID"  (click)="this.showform=false;" (click)="this.niform=false;">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                   <div >
                       <label  >A/C Number:	</label>
-                      <input type="text" formControlName="actnum" placeholder="Account Type">
+                      <input type="text" formControlName="actnum" (click)="hideNomineeInformation()" placeholder="Account Type">
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div >
                         <label  >A/C Title:</label>
-                        <input type="text" formControlName="brancd" placeholder="Account Title" >
+                        <input type="text" formControlName="brancd" placeholder="Account Title"  (click)="this.showform=false;" (click)="this.niform=false;" >
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                       </div>
                       <div >
                         <label  >Deposit Product:</label>
-                        <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" >
+                        <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" (click)="this.showform=false;" (click)="this.niform=false;" >
                       </div>
                       <div >
                         <label  >For Sale Value:</label>
-                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" >
+                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" (click)="this.showform=false;" (click)="this.niform=false;" >
                       </div>
                       <div >
                           <label  >Market value:</label>
-                          <input type="text" formControlName="appstamp" placeholder="Account Type">
+                          <input type="text" formControlName="appstamp" placeholder="Account Type" (click)="this.showform=false;" (click)="this.niform=false;">
                           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div >
                           <label  >Security Required:	 </label>
-                          
-                          <select class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
-                          data-placement="right" title="Select Student Branch">  
-                      <option value="Yes" selected>Yes</option>  
+                          <!-- <button type="submit" id="pop"  >New Vendor</button> -->
+                          <select   class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
+                          data-placement="right"  title="Select Student Branch"   (click) ="hideForm()" (click)="this.niform=false;" >  
+                      <option value="Yes"  selected>Yes</option>  
                       <option value="No"> No</option>  
                     </select>  
                   
@@ -387,11 +388,11 @@
                           </label>
                           <div>
                             <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
-                                <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;" >
+                                <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  (click)="this.showform=false;" (click)="this.niform=false;">
                             
                            
                             <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
-                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;">
+                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                               
                                 
                             </div>
@@ -405,16 +406,16 @@
                           </div>
                           <div >
                             <label  >Caution Money:</label>
-                            <input type="text" formControlName="paystat" placeholder="Caution Money" >
+                            <input type="text" formControlName="paystat" placeholder="Caution Money" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                             <label  >Tenure (In Year):</label>
-                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" >
+                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                               <label  >Operation Ins:</label>
                               <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
-                              data-placement="right" title="Select Student Branch">  
+                              data-placement="right" title="Select Student Branch" (click)="this.showform=false;" (click)="this.niform=false;" >  
                           <option value="single" selected>SIN-Single</option>  
                           <option value="joint">JNT-Joint A/C</option>  
                         </select>  
@@ -422,7 +423,7 @@
                             </div>
                             <div >
                               <label  >Remarks:</label>
-                              <input type="text" formControlName="remarks" placeholder="Feed back" >
+                              <input type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" (click)="this.niform=false;" >
                             </div>
                 
               </td>
@@ -452,63 +453,63 @@
                                
                                             <div >
                                               <label  >Customer Name:</label>
-                                              <input type="text" formControlName="cname"  placeholder="Customer Name" >
+                                              <input type="text" formControlName="cname"  placeholder="Customer Name" (click)="this.showform=false;" (click)="this.niform=false;" >
                                             </div>
                                            
                                    
                                               <div >
                                                 <label for="exampleInputPassword1" class="form-label">Customer ID:</label>
-                                                <input type="text" formControlName="cuscod" placeholder="Customer ID Number"> 
+                                                <input type="text" formControlName="cuscod" placeholder="Customer ID Number" (click)="this.showform=false;" (click)="this.niform=false;"> 
                                               </div>
 
 
                                               <div >
                                                 <label  >Address1:</label>
-                                                <input type="text" formControlName="addone"  placeholder="Enter Present Residential Address" >
+                                                <input type="text" formControlName="addone"  placeholder="Enter Present Residential Address" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
                                               <div >
                                                 <label  >Address 2:</label>
-                                                <input type="text" formControlName="addtwo"  placeholder="Enter Permanent Residential Address" >
+                                                <input type="text" formControlName="addtwo"  placeholder="Enter Permanent Residential Address"  (click)="this.showform=false;" (click)="this.niform=false;">
                                               </div>
                                               <div >
                                                 <label  >House:</label>
-                                                <input type="text" formControlName="house"  placeholder="Road No/Plot NO" >
+                                                <input type="text" formControlName="house"  placeholder="Road No/Plot NO" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
                                               <div >
                                                 <label  >City Name:</label>
-                                                <input type="text" formControlName="city"  placeholder="City Name/Village Name/Thana Name" >
+                                                <input type="text" formControlName="city"  placeholder="City Name/Village Name/Thana Name" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
                                               <div >
                                                 <label  >Phone No:</label>
-                                                <input type="text" formControlName="phone"  placeholder="Phone Number" >
+                                                <input type="text" formControlName="phone"  placeholder="Phone Number" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
                                               <div >
                                                 <label  >Occupation:</label>
-                                                <input type="text" formControlName="ocpatn"  placeholder="Occupation" >
+                                                <input type="text" formControlName="ocpatn"  placeholder="Occupation" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
 
                                               <div  >
                                                 <label> Email:</label>
-                                                <input type="text" formControlName="email" placeholder="Email Address" >
+                                                <input type="text" formControlName="email" placeholder="Email Address"  (click)="this.showform=false;" (click)="this.niform=false;">
                                               </div>
 
                                               <div >
                                                 <label> Date of Birth & Age:</label>
                                                 <label style="display: inline;"> Date of Birth:</label>
-                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;" >
+                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                                              
                                                 <label style="display: inline;"> Age:</label>
-                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;" >
+                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
 
                                               <div >
                                                 <label  >Allocation Date:</label>
-                                                <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time" >
+                                                <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time" (click)="this.showform=false;" (click)="this.niform=false;" >
                                               </div>
 
                                               <div >
                                                 <label  >Expire Date:</label>
-                                                <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time" >
+                                                <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time"  (click)="this.showform=false;" (click)="this.niform=false;">
                                               </div>
                               </td>
           </tr>
@@ -528,8 +529,231 @@
   
         
 </tr>
+<!-- Security From-->
 </table>
+<table width="100%"  id="pop"   align="center">
+    <tr>
+      <td>
+      
+  <div class="modal-body"   this.showAdd = true; *ngIf = "showform" align="center" width="100%">
+    <form [formGroup]= "formValue" style="position: static;">
+        <table width="100%" align="center" border="3px">
+            <p style="font-size: medium;"  align="left"> Security List</p>
+            <tr  align="center" >
+                <td >
+                   
+         
+                    <table width="100%" class="table mt-3" border="2px">
+                        <thead  width="100%">
+                            <tr align="center">
 
+
+                                
+                                
+                                
+                                
+                                
+                                
+                               
+
+                                
+                                <th scope="col" align="center">FDR Lien</th>
+                                <th scope="col" align="center">Security No</th>
+                                <th scope="col" align="center">Title</th>
+                                <th scope="col" align="center">Security Number </th>
+                                <th scope="col" align="center">Security type</th>
+                                <!-- <th scope="col" align="center">Margin</th>
+                                <th scope="col" align="center">Reamin FDR AMT</th>
+                                <th scope="col" align="center">FDR Balanace</th>
+                                <th scope="col" align="center">A/I</th>
+                                <th scope="col" align="center">X</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let row of contentdata?.content">
+                            <td>{{row.id}}</td>
+                            <td>{{row.title}}</td>
+                            <td>{{row.description}}</td>
+                            <td>{{row.content}}</td>
+                        </tr> -->
+                        <tr align="center">
+                            <td>1</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" style="width:200px;" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" style="width:200px;" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn"  style="width:200px;"></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" style="width:200px;" ></td> 
+                            <!-- <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" ></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" ></td>  -->
+                        </tr>
+                        <tr align="center">
+                            <td>2</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID"  style="width:200px;"></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" style="width:200px;" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn"  style="width:200px;"></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" style="width:200px;" ></td> 
+                        </tr>
+                        
+                      
+                        </tbody>
+
+                        <thead  width="100%">
+                            <tr align="center">
+
+
+                                
+                                
+                                
+                                
+                                
+                                
+                               
+
+<!--                                 
+                                <th scope="col" align="center">FDR Lien</th>
+                                <th scope="col" align="center">Security No</th>
+                                <th scope="col" align="center">Title</th>
+                                <th scope="col" align="center">Security Number </th>
+                                <th scope="col" align="center">Security type</th> -->
+                                <th scope="col" align="center">Margin</th>
+                                <th scope="col" align="center">Reamin FDR AMT</th>
+                                <th scope="col" align="center">FDR Balanace</th>
+                                <th scope="col" align="center">A/I</th>
+                                <th scope="col" align="center">X</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let row of contentdata?.content">
+                            <td>{{row.id}}</td>
+                            <td>{{row.title}}</td>
+                            <td>{{row.description}}</td>
+                            <td>{{row.content}}</td>
+                        </tr> -->
+                        <tr align="center">
+                            <!-- <td>1</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" ></td>  -->
+                            <td> <input type="text" formControlName="" placeholder="Relationship" style="width: 100px;"></td> 
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID"  style="width:200px;" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" style="width:200px;"> </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" style="width:200px;" ></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship"  style="width:200px;"></td> 
+                        </tr>
+                        <!-- <tr align="center">
+                            <td>2</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" ></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" ></td> 
+                        </tr> -->
+                        
+                      
+                        </tbody>
+                      </table>      
+                      
+                      
+                      
+                            <div width="100%" align="right">
+                            <button type="button"  class="btn btn-secondary" (click)="this.showform=false;">Close</button> &nbsp;
+                            <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+                            this.showUpdate = false;">Clear</button> &nbsp;
+                            <!-- <button type="button" (click) = "postSecurityDetails()"  class="btn btn-success" >Submit</button>
+                            <button type="button" *ngIf = "showUpdate" (click) = "updateSecurityDetails()" class="btn btn-primary"  style="padding-left: 3px;">Save</button>    -->
+                            </div>
+                </td>
+            </tr>
+        </table>
+       
+      </form>
+  </div>
+  
+  </td>
+
+  </tr>
+  <tr >  
+  </tr>
+  </table>
+
+ 
+<!-- Account Number From-->
+<table width="80%"  id="pop"  align="center"   >
+    <tr>
+      <td>
+      
+  <div class="modal-body"   this.showAdd = true; *ngIf = "niform" align="center" >
+    <form [formGroup]= "formValue" style="position: static;">
+      
+        <table width="100%" align="center" border="3px">
+            <p style="font-size: medium;"  align="left">Nominee Information</p>
+            <tr  align="center" >
+                <td >
+                    <table class="table mt-3" border="2px">
+                        <thead >
+                            <tr align="center">
+                                <th scope="col" align="center">SL</th>
+                                <th scope="col" align="center">Nominee ID</th>
+                                <th scope="col" align="center">Nominee Name</th>
+                                <th scope="col" align="center">%Nomn</th>
+                                <th scope="col" align="center">Relationship</th>
+                              
+                      
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let row of contentdata?.content">
+                            <td>{{row.id}}</td>
+                            <td>{{row.title}}</td>
+                            <td>{{row.description}}</td>
+                            <td>{{row.content}}</td>
+                        </tr> -->
+                        <tr align="center">
+                            <td>1</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" ></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" ></td> 
+                        </tr>
+                        <tr align="center">
+                            <td>2</td>
+                            <td>     <input type="text" formControlName="" placeholder="Enter Nominee ID" ></td>
+                            <td> <input type="text" formControlName="" placeholder="Enter Nominee Name" > </td>
+                            <td> <input type="text" formControlName="" placeholder="Enter %Nomn" ></td> 
+                            <td> <input type="text" formControlName="" placeholder="Relationship" ></td> 
+                        </tr>
+                        
+                      
+                        </tbody>
+                      </table>
+                            
+                           <div width="100%" align="right">
+                              <button type="button"  class="btn btn-secondary" (click)="this.niform=false;">Close</button> &nbsp;
+                              <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+                              this.showUpdate = false;">Clear</button> &nbsp;
+                              <button type="button" (click) = "postLockerServiceDetails()"  class="btn btn-success" >Submit</button>
+                              <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary"  style="padding-left: 3px;">Save</button>   
+                              </div>
+                </td>
+            </tr>
+        </table>
+       
+      </form>
+  </div>
+  
+  
+  </td>
+  
+  
+  
+  
+  </tr>
+  <tr >
+    
+          
+  </tr>
+  </table>
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
@@ -542,7 +766,6 @@
             <th scope="col">A/C Title</th>
             <th scope="col">A/C Type</th>
             <th scope="col">A/C Number</th>
-          
             <th scope="col">Address 1</th>
             <th scope="col">Action</th>
 
@@ -559,18 +782,14 @@
         <td>{{row.brancd}}</td> 
         <td>{{row.actype}}</td>
         <td>{{row.actnum}}</td>
-       
-       
         <td>{{row.addone}}</td>
         <td align = "center">
             <button (click)="getOnForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Edit
             </button><br>
             <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
-            
         </td>
     </tr>
-
     </tbody>
 </table>
 
@@ -589,12 +808,9 @@
             <th scope="col">Allocation Date</th>
             <th scope="col">For Sale Value</th>
             <th scope="col">Market value</th>
-            <th scope="col">Date of<br>Birth</th>
-      
+            <th scope="col">Date of<br>Birth</th>      
             <th scope="col">Address 2</th>
             <th scope="col">Action</th>
-
-            
         </tr>
     </thead>
     <tbody><tr *ngFor="let row of lockerServiceData" align="CENTER">
@@ -620,13 +836,9 @@
 
     </tbody>
 </table>
-
-
-
 <br>
 <br>
 <Br>
-    
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
@@ -636,10 +848,7 @@
             <th scope="col">City<br>Name</th>
             <th scope="col">Occupation</th>
             <th scope="col">Email</th>
-          
-           
             <th scope="col">Age</th>
-            
             <th scope="col">Status</th>
             <th scope="col">Remarks</th>
             <th scope="col">Action</th>
@@ -654,8 +863,6 @@
         <td>{{row.city}}</td> 
         <td>{{row.ocpatn}}</td>
         <td>{{row.email}}</td>
-      
-      
         <td>{{row.age}}</td>
         <td>{{row.apptimstamp}}</td>
         <td>{{row.remarks}}</td>
@@ -759,7 +966,7 @@
                       </div> -->
             </td>
             <td align="right"  >
-                <img src="../../assets/Era_logodown.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
+                <img src="../../assets/download.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
             </td>
         </tr>
         <tr style="height: 7px;">

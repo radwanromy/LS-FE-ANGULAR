@@ -39,3 +39,7 @@ export class ApiService {
     return this.http.get("http://localhost:9090/api/posts/"+relid);   
   }
 }
+
+
+
+

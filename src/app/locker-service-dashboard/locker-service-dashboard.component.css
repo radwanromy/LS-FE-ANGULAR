@@ -1,0 +1,9 @@
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.mt-3 {
+    margin-top: 0;
+}
+@import '../../node_modules/@syncfusion/ej2/material.css';

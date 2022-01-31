@@ -16,6 +16,8 @@ export class LockerServiceDashboardComponent implements OnInit {
   lockerServiceData !: any;
   showAdd !: boolean;
   showUpdate !: boolean;
+  showform !: boolean;
+  niform !: boolean;
 
 
   constructor(private formBuilder: FormBuilder,
@@ -112,7 +114,6 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.showAdd = true;
       })
     }
-
   deleteLockerServiceData(res : any){
       this.api.deleteEmployee(res.relid)
       .subscribe(res => {
@@ -121,9 +122,6 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.getAllLockerServiceDetails();
       })
     }
-
-
-
     getOnForm(row: any){
       this.lockerServiceModelObj.relid = row.relid;
       this.formValue.controls['lckrid'].patchValue(row.lckrid);
@@ -153,11 +151,9 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
       this.formValue.controls['email'].patchValue(row.email);
       this.formValue.controls['cname'].patchValue(row.cname);
-
       this.showAdd= false;
       this.showUpdate= true;
     }
-
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -212,10 +208,8 @@ export class LockerServiceDashboardComponent implements OnInit {
   //     err=>{
   //       alert("Something wrong");
   //     })
-  // }
-        
-    }
-
+  // }      
+ }
     onKeyPress(event : any){
       // console.log("Event Succefully");
       this.lockerServiceModelObj.relid=this.formValue.value.relid;
@@ -230,7 +224,6 @@ export class LockerServiceDashboardComponent implements OnInit {
         alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");
       })
     }
-    
     // function ageCalculator() {
     //   var userinput =document.getElementById("DOB")?.nodeValue; 
 
@@ -240,18 +233,49 @@ export class LockerServiceDashboardComponent implements OnInit {
     //   }
       
     // }
+      hideForm(){
+      this.showform=true; 
+      this.niform=false;
+    }
 
-    
+    hideNomineeInformation(){
+      this.niform=true; 
+      this.showform=false;
+    }
+     close(){
+      this.niform=false;
 
-    
-    
-
-    
-
-
-    
-
-
+      this.showform=false;
+     }
 }
+import { Grid, Sort,  Search, Toolbar } from '@syncfusion/ej2-grids';
+Grid.Inject(Sort,  Search, Toolbar);
+// relid:[''],
+// oprbrancd: [''],
+// cuscod: [''],
+// brancd: [''],
+// actype:[''],
+// actnum:[''],
+// lckrid:[''],drwrid:[''],remarks:[''],reldate:[''],paystat:[''],      oprstamp:[''],oprtimstamp:[''],update_BY:[''],update_DATE:[''],appflg:[''],appstamp:[''],dob:[''],
+// age:[''],addone:[''],addtwo:[''],house:[''],city:[''],phone:[''],ocpatn:[''],email:[''],cname:[''],apptimstamp: ['']
+let grid: Grid = new Grid({
+  dataSource: LockerServiceModel,
+    allowSorting: true,
+    sortSettings: { columns: [{ field: 'relid', direction: 'Ascending' }, { field: 'actype', direction: 'Descending' }] },
+    toolbar: ['Search'],
+    searchSettings: { fields: ['CustomerID'], operator: 'contains', key: 'Ha', ignoreCase: true },
+
+    columns: [
+        { field: 'relid', headerText: 'relid', textAlign: 'Right', width: 120 },
+        { field: 'oprbrancd', headerText: 'Customer ID', width: 150 },
+        { field: 'cuscod', headerText: 'Ship City', width: 150 },
+        { field: 'brancd', headerText: 'Ship Name', width: 150 }
+    ],
+    height: 315,
+   
+   
+}
+);
+grid.appendTo('#Grid');
 
 
