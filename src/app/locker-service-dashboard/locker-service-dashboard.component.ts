@@ -5,6 +5,7 @@ import { ApiService } from '../shared/api.service';
 import { LockerServiceModel } from './locker-service-dash board.model';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @Component({
   selector: 'app-locker-service-dashboard',
@@ -21,6 +22,10 @@ export class LockerServiceDashboardComponent implements OnInit {
   showform !: boolean;
   niform !: boolean;
   filterTerm !: string;
+  p: number = 1;
+
+  config:any;
+
 
 
   constructor(private formBuilder: FormBuilder,
@@ -257,6 +262,10 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.key = key;
        this.reverse = !this.reverse;
      }
+
+     pageChanged(event: any) {
+      this.config.currentPage = event;
+    }
 
 
 }

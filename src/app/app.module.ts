@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LockerServiceDashboardComponent } from './locker-service-dashboard/locker-service-dashboard.component';
 import { TestComponent } from './test/test.component';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     HttpClientModule,
     FormsModule,
     Ng2SearchPipeModule , 
-    Ng2OrderModule
+    Ng2OrderModule, 
+    NgxPaginationModule
 
   ],
   providers: [],

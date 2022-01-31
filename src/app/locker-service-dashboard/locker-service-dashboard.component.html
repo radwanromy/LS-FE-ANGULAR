@@ -777,7 +777,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse  " align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
         <td >{{row.relid}}</td>
         <td>{{row.cname}}</td>
         <td>{{row.lckrid}}</td>
@@ -796,6 +796,7 @@
         </td>
     </tr>
     </tbody>
+    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
 </table>
 
 <br>
@@ -803,22 +804,24 @@
 <Br>
     
 <table class="table mt-3">
+    
+    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
     <thead>
         <tr align="CENTER">
-            <th scope="col">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Caution<br>Money &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i> </th>
-            <th scope="col">Security<br>Amount &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Tenure<br>(In Year) &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Expire Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Allocation Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">For Sale Value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Market value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Date of<br>Birth &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>      
-            <th scope="col">Address 2 &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Action</th>
+            <th scope="col"  (click)="sort('relid')">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('paystat')">Caution<br>Money &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i> </th>
+            <th scope="col"  (click)="sort('oprstamp')">Security<br>Amount &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('oprtimstamp')">Tenure<br>(In Year) &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('update_BY')">Expire Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('update_DATE')">Allocation Date &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('appflg')">For Sale Value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('appstamp')">Market value &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col"  (click)="sort('dob')">Date of<br>Birth &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>      
+            <th scope="col"  (click)="sort('addtwo')">Address 2 &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" >Action</th>
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.paystat}}</td>
         <td>{{row.oprstamp}}</td>
@@ -838,8 +841,9 @@
             
         </td>
     </tr>
-
+   
     </tbody>
+    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
 </table>
 <br>
 <br>
@@ -847,21 +851,21 @@
 <table class="table mt-3">
     <thead>
         <tr align="CENTER">
-            <th scope="col">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Phone<br>Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">House<br>Address &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">City<br>Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Occupation &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Email &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Age &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Status &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Remarks &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('relid')">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('phone')">Phone<br>Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('house')">House<br>Address &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('city')">City<br>Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('ocpatn')">Occupation &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('email')">Email &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('age')">Age &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('apptimstamp')">Status &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+            <th scope="col" (click)="sort('remarks')" >Remarks &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col">Action </th>
 
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm" align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.phone}}</td>
         <td>{{row.house}}</td>
@@ -882,7 +886,9 @@
     </tr>
 
     </tbody>
+    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
 </table>
+  
 </div>
 <!-- 
 <div class="modal-body">
