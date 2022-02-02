@@ -7,3 +7,37 @@ p {
     margin-top: 0;
 }
 @import '../../node_modules/@syncfusion/ej2/material.css';
+
+.ngx-pagination{
+    width : 250px;
+}
+thead{
+    background-color: rgba(142, 171, 185, 0.494); 
+    font-weight: bolder; 
+   
+}
+tbody{
+    background-color: rgba(32, 111, 153, 0.789);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

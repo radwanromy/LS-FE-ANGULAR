@@ -519,6 +519,7 @@
 </div>
 
 
+
 </td>
 
 
@@ -531,6 +532,9 @@
 </tr>
 <!-- Security From-->
 </table>
+
+
+
 <table width="100%"  id="pop"   align="center">
     <tr>
       <td>
@@ -756,11 +760,11 @@
   </table>
 <hr/>
   <div class="form-group" align="right" style="padding: 20px;" >
-    <h3>Search</h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
+    <h3>Search &#128269;</h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
   </div> 
   <div style="padding-left: 20px;">
 <table class="table mt-3">
-    <thead>
+    <thead >
         <tr align="CENTER">
             <th scope="col" (click)="sort('relid')" > ID &nbsp; <i class="fa fa-sort" style="color: rgb(10, 10, 10); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col" (click)="sort('cname')" >Customer Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
@@ -796,7 +800,14 @@
         </td>
     </tr>
     </tbody>
-    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
+   
+    <tr colspan="11" rowspan="" align="center">
+        <td colspan="11" rowspan="3" align="center">
+            <pagination-controls (pageChange) = "p = $event" > </pagination-controls>
+        </td>
+       
+    </tr>
+
 </table>
 
 <br>
@@ -805,7 +816,7 @@
     
 <table class="table mt-3">
     
-    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
+    <!-- <pagination-controls (pageChange) = "p = $event"> </pagination-controls> -->
     <thead>
         <tr align="CENTER">
             <th scope="col"  (click)="sort('relid')">ID &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
@@ -821,7 +832,7 @@
             <th scope="col" >Action</th>
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage:3, currentPage: p } " align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.paystat}}</td>
         <td>{{row.oprstamp}}</td>
@@ -843,7 +854,13 @@
     </tr>
    
     </tbody>
-    <pagination-controls (pageChange) = "p = $event" style="width: 400px;"> </pagination-controls>
+    <tr colspan="11" rowspan="" align="center">
+        <td colspan="11" rowspan="3" align="center">
+            <pagination-controls (pageChange) = "p = $event" > </pagination-controls>
+        </td>
+       
+    </tr>
+   
 </table>
 <br>
 <br>
@@ -865,7 +882,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 3, currentPage: p } " align="CENTER">
         <td>{{row.relid}}</td>
         <td>{{row.phone}}</td>
         <td>{{row.house}}</td>
@@ -886,7 +903,14 @@
     </tr>
 
     </tbody>
-    <pagination-controls (pageChange) = "p = $event"> </pagination-controls>
+  
+    <tr colspan="10" rowspan="" align="center">
+        <td colspan="10" rowspan="3" align="center">
+            <pagination-controls (pageChange) = "p = $event" > </pagination-controls>
+        </td>
+       
+    </tr>
+
 </table>
   
 </div>
@@ -958,7 +982,7 @@
                         <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
                         <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
                         this.showUpdate = false;">Clear</button> &nbsp;
-                        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Execuate</button>
+                        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Submit</button>
                         <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
                         </div>
 
@@ -978,7 +1002,7 @@
                       </div> -->
             </td>
             <td align="right"  >
-                <a href="https://www.erainfotechbd.com/" >         <img src="../../assets/download.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
+                <a href="https://www.erainfotechbd.com/" >         <img src="../../assets/272154370_10533375452.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
                 </a>  </td>
         </tr>
         <tr style="height: 7px;">

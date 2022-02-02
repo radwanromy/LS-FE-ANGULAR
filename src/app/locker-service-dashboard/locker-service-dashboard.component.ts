@@ -28,6 +28,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
 
 
+
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
 
@@ -314,3 +315,13 @@ grid.appendTo('#Grid');
 //   throw new Error('Function not implemented.');
 // }
 
+// searchData(){
+//   let searchValue = (<HTMLInputElement>document.getElementById('search')).value;
+//   let searchFilter = new Search({
+//     fields: ['cuscod', 'brancd'],
+//     operator: 'contains',
+//     key: searchValue,
+//     ignoreCase: true
+//   });
+//   grid.search(searchFilter);
+// }
