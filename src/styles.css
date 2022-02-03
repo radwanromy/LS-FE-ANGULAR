@@ -47,7 +47,7 @@ body {
     border-color:rgb(46, 43, 43);
     border-width: 1px;
     /* font-size: 50px; */
-    cursor: not-allowed;
+    cursor: auto;
   }
   
   .no-outline:focus {

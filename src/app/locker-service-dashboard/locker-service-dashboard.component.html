@@ -326,40 +326,48 @@
               <td >
                 <div >
                     
-                    <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;">
+                 <img src="../../assets/form Icons/search.png" style="height: 18px; display: inline; "  alt=””> &nbsp;<input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="  Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;" style="display: inline;">
                     <label  >Locker ID:</label>
-                    <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID"  (click)="this.showform=false;" (click)="this.niform=false;"  >
+                    <img src="../../assets/form Icons/lock.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                    <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID" style="display: inline;"  (click)="this.showform=false;" (click)="this.niform=false;"  >
                     <label  >Drawer ID:</label>
-                    <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID"  (click)="this.showform=false;" (click)="this.niform=false;">
+                    <img src="../../assets/form Icons/drawer.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                    <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                   <div >
                       <label  >A/C Number:	</label>
-                      <input type="text" formControlName="actnum" (click)="hideNomineeInformation()" placeholder="Account Type">
+                      <img src="../../assets/form Icons/book-keeping.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                      <input type="text" formControlName="actnum" (click)="hideNomineeInformation()" placeholder="Account Type" style="display: inline;">
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div >
                         <label  >A/C Title:</label>
-                        <input type="text" formControlName="brancd" placeholder="Account Title"  (click)="this.showform=false;" (click)="this.niform=false;" >
+                        <img src="../../assets/form Icons/article.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <input type="text" formControlName="brancd" placeholder="Account Title"  (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                       </div>
                       <div >
                         <label  >Deposit Product:</label>
-                        <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" (click)="this.showform=false;" (click)="this.niform=false;" >
+                        <img src="../../assets/form Icons/box.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                       </div>
                       <div >
                         <label  >For Sale Value:</label>
-                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" (click)="this.showform=false;" (click)="this.niform=false;" >
+                        <img src="../../assets/form Icons/increase.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <input type="text" formControlName="appflg"placeholder="Enter Sale Value" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                       </div>
                       <div >
                           <label  >Market value:</label>
-                          <input type="text" formControlName="appstamp" placeholder="Account Type" (click)="this.showform=false;" (click)="this.niform=false;">
+                          <img src="../../assets/form Icons/stock-market.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                          <input type="text" formControlName="appstamp" placeholder="Account Type" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;">
                           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div >
                           <label  >Security Required:	 </label>
+                          <img src="../../assets/form Icons/internet-security.png" style="height: 18px; display: inline;" alt=””> &nbsp;
                           <!-- <button type="submit" id="pop"  >New Vendor</button> -->
-                          <select   class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
+                          <select style="display: inline;"  class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
                           data-placement="right"  title="Select Student Branch"   (click) ="hideForm()" (click)="this.niform=false;" >  
                       <option value="Yes"  selected>Yes</option>  
                       <option value="No"> No</option>  
@@ -387,11 +395,13 @@
                             <label   >Security Amount:	
                           </label>
                           <div>
+                            <img src="../../assets/form Icons/data-security.png" style="height: 18px; display: inline;" alt=””> &nbsp; &nbsp;
+
                             <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
                                 <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  >
                             
                            
-                            <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
+                            <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
                                 <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" >
                               
                                 
@@ -406,15 +416,18 @@
                           </div>
                           <div >
                             <label  >Caution Money:</label>
-                            <input type="text" formControlName="paystat" placeholder="Caution Money" (click)="this.showform=false;" (click)="this.niform=false;" >
+                            <img src="../../assets/form Icons/caution-sign.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                            <input type="text" formControlName="paystat" placeholder="Caution Money" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                             <label  >Tenure (In Year):</label>
-                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" (click)="this.showform=false;" (click)="this.niform=false;" >
+                            <img src="../../assets/form Icons/stopwatch.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                               <label  >Operation Ins:</label>
-                              <select class="form-control" formControlName="reldate" data-toggle="tooltip"   
+                              <img src="../../assets/form Icons/teamwork.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                              <select class="form-control" formControlName="reldate" data-toggle="tooltip"  style="display:inline;" 
                               data-placement="right" title="Select Student Branch" (click)="this.showform=false;" (click)="this.niform=false;" >  
                           <option value="single" selected>SIN-Single</option>  
                           <option value="joint">JNT-Joint A/C</option>  
@@ -423,7 +436,8 @@
                             </div>
                             <div >
                               <label  >Remarks:</label>
-                              <input type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" (click)="this.niform=false;" >
+                              <img src="../../assets/form Icons/chat-bubble.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                              <input type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                             </div>
                 
               </td>
@@ -781,7 +795,7 @@
             
         </tr>
     </thead>
-    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 2, currentPage: p } " align="CENTER">
+    <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 3, currentPage: p } " align="CENTER">
         <td >{{row.relid}}</td>
         <td>{{row.cname}}</td>
         <td>{{row.lckrid}}</td>
