@@ -21,6 +21,8 @@ export class LockerServiceDashboardComponent implements OnInit {
   showUpdate !: boolean;
   showform !: boolean;
   niform !: boolean;
+  record !:boolean;
+  fform !:boolean;
   filterTerm !: string;
   p: number = 1;
 
@@ -66,12 +68,14 @@ export class LockerServiceDashboardComponent implements OnInit {
      apptimstamp: ['']
     })
     this.getAllLockerServiceDetails();
+    this.fform = true;
   }
 
   clickAddEmployee(){
     this.formValue.reset();
     this.showAdd = true;
     this.showUpdate = false;
+    this.fform = true;
   } 
   postLockerServiceDetails(){
     
@@ -121,6 +125,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe( res => {
         this.lockerServiceData = res;
         this.showAdd = true;
+        
       })
     }
   deleteLockerServiceData(res : any){
@@ -255,6 +260,12 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.niform=false;
 
       this.showform=false;
+     }
+
+     showRecord(){
+       this.record=true;
+       this.fform=false;
+       this.showAdd=false;
      }
 
      key: any = 'relid';
