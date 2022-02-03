@@ -167,6 +167,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['cname'].patchValue(row.cname);
       this.showAdd= false;
       this.showUpdate= true;
+      this.fform = true;
+      this.record= false
     }
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
@@ -266,6 +268,7 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.record=true;
        this.fform=false;
        this.showAdd=false;
+      
      }
 
      key: any = 'relid';
@@ -277,6 +280,11 @@ export class LockerServiceDashboardComponent implements OnInit {
 
      pageChanged(event: any) {
       this.config.currentPage = event;
+    }
+    showFformm(){
+      this.fform=true;
+      this.record=false;
+      this.showAdd=true;
     }
 
 
