@@ -774,7 +774,9 @@
   </table>
 <hr/>
   <div class="form-group" align="right" style="padding: 20px;" >
-    <h3>Search &#128269;</h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
+    <h3>Search
+        <img src="../../assets/Button Icon/search.png" width="30px" height="30px" >
+    </h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
   </div> 
   <div style="padding-left: 20px;">
 <table class="table mt-3">
@@ -993,11 +995,18 @@
                     Drawer Allocation to Customer</span>
 
                     <div width="100%" align="center">
-                        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();">Refresh</button> &nbsp;
+                        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();" style=" background-color: #8fa0b8;"> 
+                            <img src="../../assets/Button Icon/rewind.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> Refresh</button> &nbsp;
                         <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
-                        this.showUpdate = false;">Clear</button> &nbsp;
-                        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success" >Submit</button>
-                        <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;">Update</button>   
+                        this.showUpdate = false;"  style=" background-color: #8fa0b8;">
+                        <img src="../../assets/Button Icon/cross.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
+                        Clear</button> &nbsp;
+                        <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success"  style=" background-color: #8fa0b8;" >
+                            <img src="../../assets/Button Icon/download (6).png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””>                            
+                            Submit</button>
+                        <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary" style="padding-left: 3px;"  style=" background-color: #8fa0b8;" >
+                            <img src="../../assets/Button Icon/plus.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
+                            Update</button>   
                         </div>
 
                     <!-- <div class="btn-group"  ><td>
