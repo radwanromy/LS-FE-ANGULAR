@@ -9,6 +9,7 @@ import { LockerServiceDashboardComponent } from './locker-service-dashboard/lock
 import { TestComponent } from './test/test.component';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     Ng2SearchPipeModule , 
     Ng2OrderModule, 
+    MatFormFieldModule,
     NgxPaginationModule
 
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

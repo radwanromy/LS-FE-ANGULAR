@@ -327,6 +327,20 @@
           <tr  align="center" >
               <td >
                 <div >
+
+                    <!-- <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="int" formControlName="relid"   class="form-control"
+                             (keydown.enter)="onKeyPress($event)" 
+                              (click)="this.showform=false;" (click)="this.niform=false;" style="display: inline;"  style="color: green; background-color: transparent; border: transparent; box-shadow:
+                              transparent; padding-top :35px; padding-bottom:20px; border: 0px; border-radius: 0%; text-decoration: none;">
+                   
+                        
+                          <span class="omrs-input-label" style="font-size: 20px ; padding-top: 0px;">Search By ID Number <img src="../../assets/Button Icon/search.png" width="20px" height="20px" >  </span> 
+                            <span class="omrs-input-helper">You Can Search Your Required Data Here..</span>
+                      </label>
+                    </div> -->
+
                     
                  <img src="../../assets/form Icons/search.png" style="height: 18px; display: inline; "  alt=””> &nbsp;<input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="  Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;" style="display: inline;">
                     <label  >Locker ID:</label>
@@ -770,19 +784,52 @@
   <hr/>
   </table>
 </div>
-       <!-- <div class="example-form">
 
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Favorite food</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
-          </mat-form-field>
-       </div> -->
+
+
+
+
+
+
 
 <div class="modal-body"   this.showAdd = true; *ngIf = "record" align="center" >
   <div class="form-group" align="right" style="padding: 20px;" >
-    <h3>Search
-        <img src="../../assets/Button Icon/search.png" width="30px" height="30px" >
-    </h3><input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px">
+    <!-- <h3>Search   -->
+         
+
+
+
+
+
+
+
+        <div class="omrs-input-group">
+            <label class="omrs-input-underlined">
+                <input type="text" class="form-control"  [(ngModel)]="filterTerm" style="color: green; background-color: transparent; border: transparent; box-shadow: transparent; padding-top :35px; padding-bottom:20px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+              <span class="omrs-input-label" style="font-size: 20px ; padding-top: 0px;">Search  <img src="../../assets/Button Icon/search.png" width="20px" height="20px" >  </span> 
+                <span class="omrs-input-helper">You Can Search Your Required Data Here..</span>
+          </label>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+   <!-- <input type="text" class="form-control" placeholder="Search..." [(ngModel)]="filterTerm" style="padding : 20px"> -->
   </div> 
   <div style="padding-left: 20px;">
 <table class="table mt-3">
@@ -1002,6 +1049,14 @@
                     Drawer Allocation to Customer <br></span>
                     <span style="   font-family: poppins;
                     font: size 3px;
+                    color: #121b27;  font-size:15px;  font-family: poppins;"  *ngIf = "showUpdate"><br>
+                        Corporate Branch</span>
+                   <span style="   font-family: poppins;
+                   font: size 3px;
+                   color: #121b27;  font-size:12px;  font-family: poppins; "  *ngIf = "showUpdate" ><br>
+                       Drawer Allocation to Customer <br></span>
+                    <span style="   font-family: poppins;
+                    font: size 3px;
                     color: #121b27;  font-size:15px;  font-family: poppins;"  *ngIf = "record"><br>
                        Customer Records</span>
                    <span style="   font-family: poppins;
@@ -1025,16 +1080,21 @@
                             <button type="button" *ngIf = "record" (click)="showFformm()"  class="btn btn-primary"  style=" background-color: #8fa0b8;" >
                                 <img src="../../assets/Button Icon/cross.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
                                 Close</button> 
-                            
+                                &nbsp;
                             <button type="button"  *ngIf = "showAdd" (click) = "showRecord()" class="btn btn-primary"   style=" background-color: #8fa0b8;">
                                 <img src="../../assets/Button Icon/file.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
-                                Record</button>   
+                                Record</button> 
+                                &nbsp;&nbsp; <button type="button" *ngIf = "showUpdate" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+                                this.showUpdate = false;"  style=" background-color: #8fa0b8; " >
+                                <img src="../../assets/Button Icon/cross.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
+                                Clear</button>   
+
                         </div>
 
                   
             </td>
             <td align="right"  >
-                <a href="https://www.erainfotechbd.com/" >         <img src="../../assets/272154370_10533375452.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
+                <a href="https://www.erainfotechbd.com/" >         <img src="../../assets/output-onlinepngtools.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
                 </a>  </td>
         </tr>
         <tr style="height: 7px;">

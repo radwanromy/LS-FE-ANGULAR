@@ -21,33 +21,72 @@ tbody{
 }
 
 
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+/* .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+  
+
+
+/** END: Non Openmrs CSS **/
+div.omrs-input-group {
+  margin-bottom: 2.5rem;
+  position: relative;
+  width: 300px;
+  
+  border-bottom: darkgreen 1px solid;
+  border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+
 }
 
-.example-full-width {
-  width: 100%;
+/* Input*/
+.omrs-input-underlined > input,
+.omrs-input-filled > input {
+	border: none;
+	/* border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast); */
+	width: 100%;
+	height:3rem;
+	font-size:18px;
+	padding-left: 0.875rem;
+	line-height: 147.6%;
+	padding-top: 0.825rem;
+	padding-bottom: 0.5rem;
+}
+
+.omrs-input-underlined > .omrs-input-label,
+.omrs-input-filled > .omrs-input-label {
+	position: absolute;
+	top: 0.9375rem;
+	left: 0.875rem;
+	line-height: 147.6%;
+	color: var(--omrs-color-ink-medium-contrast);
+	transition: top .2s;
 }
 
 
+.omrs-input-underlined > input:focus + .omrs-input-label,
+.omrs-input-underlined > input:valid + .omrs-input-label,
+.omrs-input-filled > input:focus + .omrs-input-label,
+.omrs-input-filled > input:valid + .omrs-input-label {
+	top: 0;
+	font-size: 0.9375rem;
+	margin-bottom: 32px;;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+span.omrs-input-label{
+    font-size: 25px;
+    color: var(--omrs-color-ink-medium-contrast);
+}

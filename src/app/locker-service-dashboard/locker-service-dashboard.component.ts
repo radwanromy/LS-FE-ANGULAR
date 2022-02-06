@@ -6,6 +6,7 @@ import { LockerServiceModel } from './locker-service-dash board.model';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-locker-service-dashboard',
@@ -30,6 +31,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
 
 
+  
 
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
