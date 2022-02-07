@@ -7,7 +7,7 @@
 
 <br>
 
-<div  this.fform = true; *ngIf = "fform" align="center" >
+<div  this.fform = true; *ngIf = "fform" align="center"  >
 <!-- <div  >
   <table width="100%" >
     
@@ -317,7 +317,7 @@
 
     
 
-<table width="100%">
+<table width="100%" >
   <tr>
     <td>
     
@@ -328,6 +328,7 @@
               <td >
                 <div >
 
+<!-- Formstart-->
                     <!-- <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input  type="int" formControlName="relid"   class="form-control"
@@ -340,55 +341,213 @@
                             <span class="omrs-input-helper">You Can Search Your Required Data Here..</span>
                       </label>
                     </div> -->
+                  
+                    <div class="omrs-input-group" style="height: 0%; padding-bottom: 0%;">
+                        <label class="omrs-input-underlined">
+                            <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" (click)="this.showform=false;" (click)="this.niform=false;" placeholder="Update Or View Details By Searching ID"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:16px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Search Details By ID  <img src="../../assets/Button Icon/search.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="text" formControlName="lckrid"  placeholder="Enter Locker ID" style="display: inline;"  (click)="this.showform=false;" (click)="this.niform=false;"   style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Locker ID  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+                    
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="text" formControlName="drwrid"  placeholder="Enter Drawer ID" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Drawer ID  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="text" formControlName="actnum" (click)="hideNomineeInformation()" placeholder="Account Type" style="display: inline;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">A/C Number  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="text" formControlName="brancd" placeholder="Account Title"  (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">A/C Title  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Deposit Product  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="text" formControlName="appflg"placeholder="Enter Sale Value" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">For Sale Value  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="text" formControlName="appstamp" placeholder="Account Type" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Market value  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <select style="display: inline;"  class="form-control" formControlName="apptimstamp" data-toggle="tooltip" aria-placeholder="Select Option Below"   data-placement="right"  title="Select Student Branch"   (click) ="hideForm()" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>  <option value="" disabled selected>Select your option</option>  <option value="Yes"  selected >Yes</option>  
+                             <option value="No"> No</option>  
+                           </select>  
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;   background:rgb(199, 202, 204);    ">Security Required 
+                             <img src="../../assets/Button Icon/fast-forward.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+                  
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                    <fieldset
+                        style="color: black;  display: inline;
+                       background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :22px;
+                        padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                   
+ <label for="saf" style="display: inline;  bottom: 0%;">  &nbsp;&nbsp;On Fixed &nbsp;&nbsp;&nbsp;</label>
+ <input type="radio"  style="display: inline; color:#1068b2 ;  bottom: 0%;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; height: 15px; background:transparent; display: inline;"  >
+
+
+<label for="sap" style="display: inline;  bottom: 0%;" > &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
+ <input type="radio" style="display: inline;color:#1068b2 ; background-color: #1068b2 ; bottom: 0%;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; height: 15px; background:transparent;display: inline;"  >
+
+                      </fieldset>
+                            <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204); color: rgb(34, 33, 33);   ">Security Amount 
+                                 <img src="../../assets/Button Icon/check (1).png" width="15px" height="15px" >  </span>
+                         </label>
+                    </div>
 
                     
-                 <img src="../../assets/form Icons/search.png" style="height: 18px; display: inline; "  alt=””> &nbsp;<input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="  Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;" style="display: inline;">
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="text" formControlName="paystat" placeholder="Caution Money" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Caution Money  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;"   style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Tenure (In Year)  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <!-- <select class="form-control" formControlName="reldate" data-toggle="tooltip"  style="display:inline;" 
+                    data-placement="right" title="Select Student Branch" (click)="this.showform=false;" (click)="this.niform=false;" >  
+                <option value="single" selected>SIN-Single</option>  
+                <option value="joint">JNT-Joint A/C</option>  
+              </select>   -->
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            
+                            <select class="form-control" formControlName="reldate" data-toggle="tooltip"  style="display:inline;" 
+                            data-placement="right" title="Select Student Branch" (click)="this.showform=false;" (click)="this.niform=false;" style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>  <option value="" disabled selected>Select your option</option> 
+                              <option value="single" selected>SIN-Single</option>  
+                              <option value="joint">JNT-Joint A/C</option>  
+                           </select>  
+                            
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Operation Ins 
+                             <img src="../../assets/Button Icon/fast-forward.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input type="textarea" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;"   style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Remarks 
+                             <img src="../../assets/Button Icon/envelope.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    
+                   <div hidden>
+                       <div>
+                 <!-- <img src="../../assets/form Icons/search.png" style="height: 18px; display: inline; "  alt=””> &nbsp; -->
+                 <input  type="int" formControlName="relid"  (keydown.enter)="onKeyPress($event)" placeholder="Update Or View Details By Searching ID" (click)="this.showform=false;" (click)="this.niform=false;" style="display: inline;">
                     <label  >Locker ID:</label>
-                    <img src="../../assets/form Icons/lock.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                    <!-- <img src="../../assets/form Icons/lock.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                     <input type="text" formControlName="lckrid"  placeholder="Enter Locker ID" style="display: inline;"  (click)="this.showform=false;" (click)="this.niform=false;"  >
                     <label  >Drawer ID:</label>
-                    <img src="../../assets/form Icons/drawer.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                    <!-- <img src="../../assets/form Icons/drawer.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                     <input type="text" formControlName="drwrid"  placeholder="Enter Drawer ID" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;">
                     <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                   </div>
                   <div >
                       <label  >A/C Number:	</label>
-                      <img src="../../assets/form Icons/book-keeping.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                      <!-- <img src="../../assets/form Icons/book-keeping.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                       <input type="text" formControlName="actnum" (click)="hideNomineeInformation()" placeholder="Account Type" style="display: inline;">
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
                     <div >
                         <label  >A/C Title:</label>
-                        <img src="../../assets/form Icons/article.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <!-- <img src="../../assets/form Icons/article.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                         <input type="text" formControlName="brancd" placeholder="Account Title"  (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                         <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                       </div>
                       <div >
                         <label  >Deposit Product:</label>
-                        <img src="../../assets/form Icons/box.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <!-- <img src="../../assets/form Icons/box.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                         <input type="text"  formControlName="oprbrancd" placeholder="Enter Deposit Product" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                       </div>
                       <div >
                         <label  >For Sale Value:</label>
-                        <img src="../../assets/form Icons/increase.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                        <!-- <img src="../../assets/form Icons/increase.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                         <input type="text" formControlName="appflg"placeholder="Enter Sale Value" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                       </div>
                       <div >
                           <label  >Market value:</label>
-                          <img src="../../assets/form Icons/stock-market.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                          <!-- <img src="../../assets/form Icons/stock-market.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                           <input type="text" formControlName="appstamp" placeholder="Account Type" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;">
                           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div >
                           <label  >Security Required:	 </label>
-                          <img src="../../assets/form Icons/internet-security.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                          <!-- <img src="../../assets/form Icons/internet-security.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                           <!-- <button type="submit" id="pop"  >New Vendor</button> -->
                           <select style="display: inline;"  class="form-control" formControlName="apptimstamp" data-toggle="tooltip"   
                           data-placement="right"  title="Select Student Branch"   (click) ="hideForm()" (click)="this.niform=false;" >  
                       <option value="Yes"  selected>Yes</option>  
                       <option value="No"> No</option>  
                     </select>  
-                  
+                </div> 
 
 <!--                     
                         <input type="radio" formControlName="apptimstamp"  name="sry" id="sry" value="Yes"  style="width: 15px; background:transparent; display:inline;" >   
@@ -406,21 +565,20 @@
                   
        -->
                           <!-- <input type="text" formControlName="apptimstamp" placeholder="Security Required"> -->
-                        </div>
+                       
                         <div >
                             <label   >Security Amount:	
                           </label>
-                          <div>
-                            <img src="../../assets/form Icons/data-security.png" style="height: 18px; display: inline;" alt=””> &nbsp; &nbsp;
+                          <div  class="conborder">
+                            <!-- <img src="../../assets/form Icons/data-security.png" style="height: 18px; display: inline;" alt=””> &nbsp; &nbsp; -->
 
                             <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
-                                <input type="radio"  style="display: inline;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  >
+                                <input type="radio"  style="display: inline; color:#1068b2 ;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  >
                             
                            
                             <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
-                                <input type="radio" style="display: inline;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" >
+                                <input type="radio" style="display: inline;color:#1068b2 ; background-color: #1068b2 ;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" >
                               
-                                
                             </div>
                           <!-- <select class="form-control" formControlName="oprstamp" data-toggle="tooltip"   
                           data-placement="right" title="Select Student Branch">  
@@ -430,19 +588,21 @@
                             <!-- <input type="text" formControlName="oprstamp" placeholder="Security Amount" > -->
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                           </div>
+                    
+
                           <div >
                             <label  >Caution Money:</label>
-                            <img src="../../assets/form Icons/caution-sign.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                            <!-- <img src="../../assets/form Icons/caution-sign.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                             <input type="text" formControlName="paystat" placeholder="Caution Money" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                             <label  >Tenure (In Year):</label>
-                            <img src="../../assets/form Icons/stopwatch.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                            <!-- <img src="../../assets/form Icons/stopwatch.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                             <input type="text" formControlName="oprtimstamp" placeholder="Tenure (In Year)" style="display: inline;" (click)="this.showform=false;" (click)="this.niform=false;" >
                           </div>
                           <div >
                               <label  >Operation Ins:</label>
-                              <img src="../../assets/form Icons/teamwork.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                              <!-- <img src="../../assets/form Icons/teamwork.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                               <select class="form-control" formControlName="reldate" data-toggle="tooltip"  style="display:inline;" 
                               data-placement="right" title="Select Student Branch" (click)="this.showform=false;" (click)="this.niform=false;" >  
                           <option value="single" selected>SIN-Single</option>  
@@ -452,18 +612,190 @@
                             </div>
                             <div >
                               <label  >Remarks:</label>
-                              <img src="../../assets/form Icons/chat-bubble.png" style="height: 18px; display: inline;" alt=””> &nbsp;
+                              <!-- <img src="../../assets/form Icons/chat-bubble.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
                               <input type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                             </div>
+                </div>
+                </div>
                 
               </td>
 
               <td>
-                <!-- <span style="   font-family: poppins;
-                font: size 3px;
-                color: #121b27;  font-size:15px;  font-family: poppins;"><br>
-                    Corporate Branch</span>
-     -->
+               <div style="color: #1068b2;">
+                   <h2>
+                       Customer Details
+                   </h2>
+               </div>
+                  <!-- <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;"   style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Customer Name  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div> -->
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            
+                            <select class="form-control" formControlName="actype" data-toggle="tooltip"   
+                            data-placement="right" title="Select Student Branch" style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>  <option value="" disabled selected>Select your option</option> 
+                            <option value="ACT001" selected>Account Type 01</option>  
+                            <option value="ACT002">Account Type 02</option>  
+                            <option value="ACT003">Account Type 03</option>  
+                            <option value="ACT004">Account Type 04</option>  
+                            <option value="ACT005">Account Type 05</option>  
+                            <option value="ACT006">Account Type 06</option> 
+                           </select>  
+                            
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Custoemr Type 
+                             <img src="../../assets/Button Icon/fast-forward.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   type="text" formControlName="cname"  placeholder="Customer Name" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Customer Name  <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   type="text" formControlName="cuscod" placeholder="Customer ID Number" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Customer ID  
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input    type="text" formControlName="addone"  placeholder="Enter Present Residential Address" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Present Address  
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   type="text" formControlName="addtwo"  placeholder="Enter Permanent Residential Address"  (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Permanent Address 
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   type="text" formControlName="house"  placeholder="Road No/Plot NO" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">House
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input    type="text" formControlName="city"  placeholder="City Name/Village Name/Thana Name" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">City Name
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input    type="text" formControlName="phone"  placeholder="Phone Number" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Phone Number
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   type="text" formControlName="email" placeholder="Email Address"  (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Email
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input    type="text" formControlName="ocpatn"  placeholder="Occupation" (click)="this.showform=false;" (click)="this.niform=false;"   style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Occupation
+                            <img src="../../assets/Button Icon/pencil.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                           
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                    <fieldset
+                        style="color: black;  display: inline;
+                       background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :22px;
+                        padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                   
+                   <label style="display: inline;"> Date of Birth:</label>
+                   <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 110px; display: inline;"  >
+                
+                   <label style="display: inline;"> Age:</label>
+                   <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;">
+                      </fieldset>
+                            <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204); color: rgb(34, 33, 33);   ">
+                                Date of Birth & Age  <img src="../../assets/Button Icon/notification.png" width="15px" height="15px" >  </span>
+                         </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input   id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Allocation Date
+                            <img src="../../assets/Button Icon/error.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <div class="omrs-input-group">
+                        <label class="omrs-input-underlined">
+                            <input  id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time"  style="color: black; 
+                            background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
+                             padding-bottom:1px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                          <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(199, 202, 204);   ">Expire Date
+                            <img src="../../assets/Button Icon/alert.png" width="15px" height="15px" >  </span> 
+                        </label>
+                    </div>
+
+                    <!-- <label  >Expire Date:</label>
+                    <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time" > -->
+
+                    <!-- <label style="display: inline;"> Date of Birth:</label>
+                    <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;"  >
+                 
+                    <label style="display: inline;"> Age:</label>
+                    <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;">
+                  -->
+
+
+
+                    <div hidden>
+
+                  
                     <div >
                         <label  >Custoemr Type:</label>
   
@@ -541,6 +873,8 @@
                                                 <label  >Expire Date:</label>
                                                 <input id="currentDate" type="date" formControlName="update_BY" placeholder="Update Time" >
                                               </div>
+
+                                            </div>
                               </td>
           </tr>
       </table>
@@ -711,7 +1045,7 @@
   </table>
 
 <!-- Account Number From-->
-<table width="80%"  id="pop"  align="center"   >
+<table width="80%"  id="pop"  align="center"    >
     <tr>
       <td>
       
@@ -781,7 +1115,9 @@
   <tr >
 
   </tr>
-  <hr/>
+   <hr/>
+   <br><br><br><br><br><br><br><br>
+
   </table>
 </div>
 
@@ -805,9 +1141,11 @@
 
         <div class="omrs-input-group">
             <label class="omrs-input-underlined">
-                <input type="text" class="form-control"  [(ngModel)]="filterTerm" style="color: green; background-color: transparent; border: transparent; box-shadow: transparent; padding-top :35px; padding-bottom:20px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                <input type="text" class="form-control"  [(ngModel)]="filterTerm" style="color: #1068b2; 
+                background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :35px;
+                 padding-bottom:15px; border: 0px; border-radius: 0%; text-decoration: none;" required>
               <span class="omrs-input-label" style="font-size: 20px ; padding-top: 0px;">Search  <img src="../../assets/Button Icon/search.png" width="20px" height="20px" >  </span> 
-                <span class="omrs-input-helper">You Can Search Your Required Data Here..</span>
+                <span class="omrs-input-helper" style="color: #1068b2;">You Can Search Your Required Data Here..</span>
           </label>
         </div>
 
@@ -1038,7 +1376,7 @@
             <td align="Center" style="padding-top: 0px;">
                 <span style=" font-family: 'Raleway',sans-serif; 
                 font-size:26px;
-                color: #32598d;">Bank Aisa-Locker Service</span> 
+                color:#1068b2;">Bank Aisa-Locker Service</span> 
                  <span style="   font-family: poppins;
                  font: size 3px;
                  color: #121b27;  font-size:15px;  font-family: poppins;"  *ngIf = "showAdd"><br>
@@ -1054,7 +1392,7 @@
                    <span style="   font-family: poppins;
                    font: size 3px;
                    color: #121b27;  font-size:12px;  font-family: poppins; "  *ngIf = "showUpdate" ><br>
-                       Drawer Allocation to Customer <br></span>
+                       Drawer Allocation To Customer Details Update <br></span>
                     <span style="   font-family: poppins;
                     font: size 3px;
                     color: #121b27;  font-size:15px;  font-family: poppins;"  *ngIf = "record"><br>
@@ -1065,7 +1403,7 @@
                     All The Drawer Allocation Records <br></span>
 
                     <div width="100%" align="center" style="padding-top: 5px;">
-                        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();" style=" background-color: #8fa0b8;"> 
+                        <button type="button"  class="btn btn-secondary"  onClick="window.location.reload();" style=" background-color: #8fa0b8; "> 
                             <img src="../../assets/Button Icon/rewind.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> Refresh</button> &nbsp;
                         <button type="button" *ngIf = "showAdd" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
                         this.showUpdate = false;"  style=" background-color: #8fa0b8; " >
@@ -1073,7 +1411,7 @@
                         Clear</button> &nbsp;
                         <button type="button" *ngIf = "showAdd" (click) = "postLockerServiceDetails()" class="btn btn-success"  style=" background-color: #8fa0b8;" >
                             <img src="../../assets/Button Icon/download (6).png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””>                            
-                            Submit</button>&nbsp;
+                            Submit</button>
                         <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary"  style=" background-color: #8fa0b8;" >
                             <img src="../../assets/Button Icon/plus.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
                             Update</button> 
@@ -1084,14 +1422,14 @@
                             <button type="button"  *ngIf = "showAdd" (click) = "showRecord()" class="btn btn-primary"   style=" background-color: #8fa0b8;">
                                 <img src="../../assets/Button Icon/file.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
                                 Record</button> 
-                                &nbsp;&nbsp; <button type="button" *ngIf = "showUpdate" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
+                              &nbsp; <button type="button" *ngIf = "showUpdate" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
                                 this.showUpdate = false;"  style=" background-color: #8fa0b8; " >
                                 <img src="../../assets/Button Icon/cross.png" style="height: 15px; display: inline; padding-bottom:2px;" alt=””> 
                                 Clear</button>   
                         </div>
             </td>
             <td align="right"  >
-                <a href="https://www.erainfotechbd.com/" >         <img src="../../assets/Picsart_22-02-06_15-23-50-312.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
+                <a href="http://localhost:4200//" >         <img src="../../assets/Picsart_22-02-06_15-23-50-312.png" alt="" height="95px"  width="180px" style="padding-right: 20px;  padding-top: 10px;">
                 </a>  </td>
         </tr>
         <tr style="height: 7px;">

@@ -71,6 +71,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     })
     this.getAllLockerServiceDetails();
     this.fform = true;
+    
   }
 
   clickAddEmployee(){
