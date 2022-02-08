@@ -273,7 +273,6 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.showAdd=false;
       
      }
-
      key: any = 'relid';
      reverse: boolean = false;
      sort(key : any){
