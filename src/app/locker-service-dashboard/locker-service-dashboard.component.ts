@@ -284,6 +284,7 @@ export class LockerServiceDashboardComponent implements OnInit {
      pageChanged(event: any) {
       this.config.currentPage = event;
     }
+    
     showFformm(){
       this.fform=true;
       this.record=false;
