@@ -903,7 +903,22 @@
                                              
                                                 <label style="display: inline;"> Age:</label>
                                                 <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;">
-                                              </div>
+                                            
+                                                <details style="width: 50%;">
+                                                    <summary>Calculate Age</summary>
+                                                    <div class="row" style="width: auto;">
+                                                        <div class="input-field col m2">
+                                                            <input type="date" [(ngModel)]="birthdate" formControlName="dob" id="txtdate">
+                                                        </div>
+                                                        <div class="input-field col m4">
+                                                            <input type="number"  formControlName="age" [(ngModel)]="agee" id="agee">
+                                                        </div>
+                                                        <button (click)="CalculateAge()" style="width: auto;">Calculate Age</button>
+                                                    </div>
+                                                    <br><br><br><br><br>
+                                                    
+                                                    </details>
+                                            </div>
 
                                               <div >
                                                 <label  >Allocation Date:</label>
@@ -916,6 +931,8 @@
                                               </div>
 
                                             </div>
+
+                                           
                               </td>
           </tr>
       </table>
@@ -937,8 +954,20 @@
 </tr>
 <!-- Security From-->
 </table>
+<details style="width: 50%;">
+<summary>Calculate Age</summary>
+<div class="row" style="width: auto;">
+    <div class="input-field col m2">
+        <input type="date" [(ngModel)]="birthdate" id="txtdate">
+    </div>
+    <div class="input-field col m4">
+        <input type="number" [(ngModel)]="agee" id="agee">
+    </div>
+    <button (click)="CalculateAge()" style="width: auto;">Calculate Age</button>
+</div>
+<br><br><br><br><br>
 
-
+</details>
 
 <table width="100%"  id="pop"   align="center">
     <tr>

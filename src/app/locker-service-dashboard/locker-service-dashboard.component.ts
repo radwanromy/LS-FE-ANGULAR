@@ -29,12 +29,18 @@ export class LockerServiceDashboardComponent implements OnInit {
 
   config:any;
 
+  public birthdate!: Date;
+  public agee!: number;
+
 
 
   
 
   constructor(private formBuilder: FormBuilder,
     private api : ApiService) { }
+
+
+  
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
@@ -289,6 +295,24 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.record=false;
       this.showAdd=true;
     }
+
+  //   const bdate = new Date(this.dob);
+  // const timeDiff = Math.abs(Date.now() - bdate.getTime() );
+  // this.age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+
+   CalculateAge()
+    {
+        if(this.birthdate){
+          const bdate = new Date(this.birthdate);
+
+          const timeDiff = Math.abs(Date.now() - bdate.getTime() );
+          this.agee = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+          //  var timeDiff = Math.abs(Date.now() - this.birthdate.getTime());
+           //Used Math.floor instead of Math.ceil
+           //so 26 years and 140 days would be considered as 26, not 27.
+          //  this.agee = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+       }
+   }
 
 
 }

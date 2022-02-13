@@ -3,12 +3,10 @@ export class LockerServiceModel{
     lckrid :string = '';
     drwrid : string = '';
     cuscod : string = '';
-
     actype : string = '';
     actnum : string = '';
     brancd : string = '';
     oprbrancd : string = '';
-
     appflg : string = '';
     appstamp  : string = '';
     dob  : string = '';
@@ -20,17 +18,12 @@ export class LockerServiceModel{
     paystat : string = '';
     oprtimstamp : string = '';
     reldate : string = '';
-    remarks : string = '' ;
-
-    
+    remarks : string = '' ;  
     house : string = '';
     city : string = '';
     phone : string = '' ;
-
     update_BY : string = '';
-    update_DATE : string = '';
-
-    
+    update_DATE : string = '';  
     ocpatn : string = '';
     email : string = '';
     cname : string = '';
