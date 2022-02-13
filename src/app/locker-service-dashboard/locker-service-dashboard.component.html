@@ -899,27 +899,26 @@
                                               <div >
                                                 <label> Date of Birth & Age:</label>
                                                 <label style="display: inline;"> Date of Birth:</label>
-                                                <input  type="date" style="display: inline;" formControlName="dob"  placeholder="Updated By" style="width: 140px; display: inline;"  >
+                                                <input  type="date" style="display: inline;" onkeypress="CalculateAge()" formControlName="dob" type="date" [(ngModel)]="birthdate" id="txtdate" placeholder="Updated By" style="width: 140px; display: inline;"  >
                                              
                                                 <label style="display: inline;"> Age:</label>
-                                                <input type="text"    formControlName="age"  placeholder="Age" style="width: 60px; display: inline;">
+                                                <input type="text"    formControlName="age"  [(ngModel)]="agee" id="agee"  placeholder="Age" style="width: 60px; display: inline;">
                                             
-                                                <details style="width: 50%;">
-                                                    <summary>Calculate Age</summary>
-                                                    <div class="row" style="width: auto;">
-                                                        <div class="input-field col m2">
-                                                            <input type="date" [(ngModel)]="birthdate" formControlName="dob" id="txtdate">
-                                                        </div>
-                                                        <div class="input-field col m4">
-                                                            <input type="number"  formControlName="age" [(ngModel)]="agee" id="agee">
-                                                        </div>
-                                                        <button (click)="CalculateAge()" style="width: auto;">Calculate Age</button>
-                                                    </div>
-                                                    <br><br><br><br><br>
-                                                    
-                                                    </details>
+     
                                             </div>
+                                            <!-- <details style="width: 50%;">
+                                                <summary>Calculate Age</summary>
+                                                <div class="row" style="width: auto;">
+                                                    <div class="input-field col m2">
+                                                        <input type="date" [(ngModel)]="birthdate"  onkeypress="CalculateAge()" formControlName="dob" id="txtdate">
+                                                    </div>
+                                                    <div class="input-field col m4">
+                                                        <input type="number"  formControlName="age" [(ngModel)]="agee" id="agee">
+                                                    </div>
+                                                    <button (click)="CalculateAge()" style="width: auto;">Calculate Age</button>
+                                                </div>
 
+                                                </details> -->
                                               <div >
                                                 <label  >Allocation Date:</label>
                                                 <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time"  >
@@ -958,7 +957,7 @@
 <summary>Calculate Age</summary>
 <div class="row" style="width: auto;">
     <div class="input-field col m2">
-        <input type="date" [(ngModel)]="birthdate" id="txtdate">
+        <input type="date" [(ngModel)]="birthdate" id="txtdate" >
     </div>
     <div class="input-field col m4">
         <input type="number" [(ngModel)]="agee" id="agee">
