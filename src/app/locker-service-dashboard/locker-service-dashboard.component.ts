@@ -86,6 +86,20 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.showUpdate = false;
     this.fform = true;
   } 
+
+  CalculateAge()
+    {
+        if(this.formValue.value.dob){
+          const bdate = new Date(this.formValue.value.dob);
+
+          const timeDiff = Math.abs(Date.now() - bdate.getTime() );
+          this.formValue.value.age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+          //  var timeDiff = Math.abs(Date.now() - this.birthdate.getTime());
+           //Used Math.floor instead of Math.ceil
+           //so 26 years and 140 days would be considered as 26, not 27.
+          //  this.agee = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
+       }
+   }
   postLockerServiceDetails(){
     
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
@@ -179,6 +193,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.fform = true;
       this.record= false
     }
+
+    
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -300,19 +316,7 @@ export class LockerServiceDashboardComponent implements OnInit {
   // const timeDiff = Math.abs(Date.now() - bdate.getTime() );
   // this.age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
 
-   CalculateAge()
-    {
-        if(this.birthdate){
-          const bdate = new Date(this.birthdate);
-
-          const timeDiff = Math.abs(Date.now() - bdate.getTime() );
-          this.agee = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
-          //  var timeDiff = Math.abs(Date.now() - this.birthdate.getTime());
-           //Used Math.floor instead of Math.ceil
-           //so 26 years and 140 days would be considered as 26, not 27.
-          //  this.agee = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
-       }
-   }
+   
 
 
 }

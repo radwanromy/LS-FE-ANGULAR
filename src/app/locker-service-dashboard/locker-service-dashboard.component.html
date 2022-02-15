@@ -898,14 +898,14 @@
 
                                               <div >
                                                 <label> Date of Birth & Age:</label>
-                                                <label style="display: inline;"> Date of Birth:</label>
-                                                <input  type="date" style="display: inline;" onkeypress="CalculateAge()" formControlName="dob" type="date" [(ngModel)]="birthdate" id="txtdate" placeholder="Updated By" style="width: 140px; display: inline;"  >
-                                             
-                                                <label style="display: inline;"> Age:</label>
-                                                <input type="text"    formControlName="age"  [(ngModel)]="agee" id="agee"  placeholder="Age" style="width: 60px; display: inline;">
-                                            
+                                                <label style="display: inline;"> Birth:</label>
+                                                <input  type="date" style="display: inline;"  formControlName="dob" type="date" [(ngModel)]="this.formValue.value.dob"  style="width: 155px; display: inline;" onclick="CalculateAge()"  >
+                                                <label style="display: inline;"> Age: :</label>
+                                                <input type="text"    formControlName="age"  [(ngModel)]="this.formValue.value.age"   placeholder="Age" style="width: 60px; display: inline;">
      
                                             </div>
+                                           
+                                           
                                             <!-- <details style="width: 50%;">
                                                 <summary>Calculate Age</summary>
                                                 <div class="row" style="width: auto;">
@@ -919,6 +919,7 @@
                                                 </div>
 
                                                 </details> -->
+                                              
                                               <div >
                                                 <label  >Allocation Date:</label>
                                                 <input id="currentDate" type="date" formControlName="update_DATE" placeholder="Update Time"  >
@@ -930,10 +931,15 @@
                                               </div>
 
                                             </div>
+                                            <div style="padding: 10px;">
+                                                
+<button (click)="CalculateAge()" style="width: fit-content; box-decoration-break: clone; visibility: visible; " >Calculate Age</button> 
+                                            </div>
 
                                            
                               </td>
           </tr>
+          
       </table>
       <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
     </form>
@@ -947,26 +953,13 @@
 
 
 </tr>
+
 <tr >
   
         
 </tr>
 <!-- Security From-->
 </table>
-<details style="width: 50%;">
-<summary>Calculate Age</summary>
-<div class="row" style="width: auto;">
-    <div class="input-field col m2">
-        <input type="date" [(ngModel)]="birthdate" id="txtdate">
-    </div>
-    <div class="input-field col m4">
-        <input type="number" [(ngModel)]="agee" id="agee">
-    </div>
-    <button (click)="CalculateAge()" style="width: auto;">Calculate Age</button>
-</div>
-<br><br><br><br><br>
-
-</details>
 
 <table width="100%"  id="pop"   align="center">
     <tr>
