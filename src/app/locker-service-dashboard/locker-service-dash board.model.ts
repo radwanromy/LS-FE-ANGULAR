@@ -30,6 +30,15 @@ export class LockerServiceModel{
     // userinput : string = '';
     // dob : string = '';
 
+    nomi : string = '';
+    nomin : string = '';  
+    nomip : string = '';
+    nomir : string = '';
+    nomii : string = '';
+    nomiin : string = '';  
+    nomiip : string = '';
+    nomiir : string = '';
+
 
 
 
