@@ -94,6 +94,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
           const timeDiff = Math.abs(Date.now() - bdate.getTime() );
           this.formValue.value.age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+          
           //  var timeDiff = Math.abs(Date.now() - this.birthdate.getTime());
            //Used Math.floor instead of Math.ceil
            //so 26 years and 140 days would be considered as 26, not 27.
