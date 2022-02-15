@@ -141,6 +141,16 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
 
+    this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
+    this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
+    this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
+    this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
+
+    this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
+    this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
+    this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
+    this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
+
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
       console.log(res);
@@ -199,6 +209,17 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
       this.formValue.controls['email'].patchValue(row.email);
       this.formValue.controls['cname'].patchValue(row.cname);
+
+
+      this.formValue.controls['nomi'].patchValue(row.nomi);
+      this.formValue.controls['nomin'].patchValue(row.nomin);
+      this.formValue.controls['nomip'].patchValue(row.nomip);
+      this.formValue.controls['nomir'].patchValue(row.nomir);
+      this.formValue.controls['nomii'].patchValue(row.nomii);
+      this.formValue.controls['nomiin'].patchValue(row.nomiin);
+      this.formValue.controls['nomiip'].patchValue(row.nomiip);
+      this.formValue.controls['nomiir'].patchValue(row.nomiir);
+
       this.showAdd= false;
       this.showUpdate= true;
       this.fform = true;
@@ -234,6 +255,20 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
+
+    
+
+    this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
+    this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
+    this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
+    this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
+
+    this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
+    this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
+    this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
+    this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
+
+    
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
