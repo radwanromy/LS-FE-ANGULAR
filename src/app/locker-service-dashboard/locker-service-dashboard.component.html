@@ -1157,6 +1157,11 @@
                         <tr align="center">
                             <td>1</td>
                             <td> 
+                            
+                            
+                            
+                                <input type="text" formControlName="acnum" placeholder="Enter Nominee ID" [(ngModel)]="this.formValue.value.actnum" hidden>
+
                                     
                                 <input type="text" formControlName="nomi" placeholder="Enter Nominee ID" >
                             
@@ -1209,8 +1214,8 @@
                               <button type="button"  class="btn btn-secondary" (click)="this.niform=false;">Close</button> &nbsp;
                               <button type="button" id = "cancel" class="btn btn-danger"  data-bs-dismiss="modal" (click)=" this.formValue.reset();  this.showAdd = true;
                               this.showUpdate = false;">Clear</button> &nbsp;
-                              <button type="button" (click) = "postLockerServiceDetails()"  class="btn btn-success" >Submit</button>
-                              <button type="button" *ngIf = "showUpdate" (click) = "updateLockerServiceDetails()" class="btn btn-primary"  style="padding-left: 3px;">Save</button>   
+                              <button type="button" (click) = "postNomineeDetails()"  class="btn btn-success" >Submit</button>
+                              <button type="button" *ngIf = "showUpdate" (click) = "updateNomineeDetails()" class="btn btn-primary"  style="padding-left: 3px;">Save</button>   
                               </div>
                 </td>
             </tr>
@@ -1428,8 +1433,81 @@
     </tr>
 
 </table>
+
   
 </div>
+</div>
+
+
+
+<h3 align="center">Nominee Information</h3>
+<div class="modal-bodyy"   this.showAdd = true; *ngIf = "record" align="center" >
+    <div class="form-group2" align="right" style="padding: 20px;" >
+      <div class="omrs-input-group">
+              <label class="omrs-input-underlined">
+                  <input type="text" class="form-control"  [(ngModel)]="filterTermN" style="color: #1068b2; 
+                  background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :35px;
+                   padding-bottom:15px; border: 0px; border-radius: 0%; text-decoration: none;" required>
+                <span class="omrs-input-label" style="font-size: 20px ; padding-top: 0px;">Search  <img src="../../assets/Button Icon/search.png" width="20px" height="20px" >  </span> 
+                  <span class="omrs-input-helper" style="color: #1068b2;">You Can Search Your Required Data Here..</span>
+            </label>
+          </div>
+  </div> 
+
+<div  style="padding-left: 20px;">
+    
+    <table class="table mt-3" width="100%">
+        <thead >
+            <tr align="CENTER">
+                <th scope="col" (click)="sort('nid')" >Nominee ID &nbsp; <i class="fa fa-sort" style="color: rgb(10, 10, 10); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col" (click)="sort('acnum')" >Account Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col" (click)="sort('nomi')" >1st Nominee Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomin')"  >1st Nominee Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomip')" >1stNominee %  &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomir')" >1st Nominee Relation &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomii')" >2nd Nominee Number &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomiin')" >2nd Nominee Name &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomiip')" >2nd Nominee % &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col"  (click)="sort('nomiir')" >2nd Nominee Relation &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
+                <th scope="col">Action</th>
+    
+                
+            </tr>
+        </thead>
+        <tbody><tr *ngFor="let row of nomineeData | filter:filterTermN | orderBy: key :reverse" align="CENTER">
+             <!-- | paginate: { itemsPerPage:100, currentPage: c }  -->
+            <td >{{row.nid}}</td>
+            <td>{{row.acnum}}</td>
+            <td>{{row.nomi}}</td>
+            <td>{{row.nomin}}</td>
+            <td>{{row.nomip}}</td>
+            <td>{{row.nomir}}</td>
+            <td>{{row.nomii}}</td> 
+            <td>{{row.nomiin}}</td>
+            <td>{{row.nomiip}}</td>
+            <td>{{row.nomiir}}</td>
+            <td align = "center">
+                <button (click)="getOnNomiForm(row)" type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Edit
+                </button><br>
+                <button type="button"  (click)="deleteLockerServiceData(row)" class="btn btn-danger mx-3"> Delete</button>
+            </td>
+        </tr>
+        </tbody>
+       
+        <tr colspan="11" rowspan="" align="center">
+            <td colspan="11" rowspan="3" align="center">
+                <!-- <pagination-controls (pageChange) = "c = $event" > </pagination-controls> -->
+            </td>
+           
+        </tr>
+    
+    </table>
+    
+    <br>
+    <br>
+    <Br>
+     </div>
 </div>
 <!-- 
 <div class="modal-body">

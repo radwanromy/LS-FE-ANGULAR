@@ -39,7 +39,8 @@ export class LockerServiceModel{
     nomiip : string = '';
     nomiir : string = '';
 
-
+    nid : number = 1;
+    acnum :string = '';
 
 
 }

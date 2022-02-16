@@ -26,6 +26,10 @@ export class LockerServiceDashboardComponent implements OnInit {
   fform !:boolean;
   filterTerm !: string;
   p: number = 1;
+  c: number = 1;
+  nomineeData !: any;
+  
+  filterTermN !: string;
 
   config:any;
 
@@ -82,9 +86,12 @@ export class LockerServiceDashboardComponent implements OnInit {
      nomii:  [''],
      nomiin:  ['']  ,
      nomiip:  [''],
-     nomiir:  ['']
+     nomiir:  [''],
+     acnum:  ['']
 
     })
+
+    
     this.getAllLockerServiceDetails();
     this.fform = true;
     
@@ -141,15 +148,6 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
 
-    this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
-    this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
-    this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
-    this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
-
-    this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
-    this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
-    this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
-    this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
 
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
@@ -164,10 +162,49 @@ export class LockerServiceDashboardComponent implements OnInit {
       alert("Something went wrong with insert");
     })
   }
+
+  postNomineeDetails(){
+    
+    ;
+    this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
+
+    this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
+    this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
+    this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
+    this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
+
+    this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
+    this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
+    this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
+    this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
+
+    this.api.postNominee(this.lockerServiceModelObj)
+    .subscribe(res => {
+      console.log(res);
+      alert("Nominee Details Added Successfully.")
+      let ref = document.getElementById('cancel')
+      ref?.click();
+      // this.formValue.reset();
+      this.getAllNomineeDetails();
+    },
+    err=>{
+      alert("Something went wrong with insert of nominee");
+    })
+  }
   getAllLockerServiceDetails(){
       this.api.getEmployee()
       .subscribe( res => {
         this.lockerServiceData = res;
+        this.showAdd = true;
+        
+      })
+    }
+
+    getAllNomineeDetails(){
+      this.api.getNominee()
+      .subscribe( res => {
+        this.nomineeData = res;
+        // this.lockerServiceData= res;
         this.showAdd = true;
         
       })
@@ -180,6 +217,15 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.getAllLockerServiceDetails();
       })
     }
+    deleteNoimneeData(res : any){
+      this.api.deleteNominee(res.nid)
+      .subscribe(res => {
+        
+        alert("Deleted");
+        this. getAllNomineeDetails();
+      })
+    }
+
     getOnForm(row: any){
       this.lockerServiceModelObj.relid = row.relid;
       this.formValue.controls['lckrid'].patchValue(row.lckrid);
@@ -209,8 +255,20 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['ocpatn'].patchValue(row.ocpatn);
       this.formValue.controls['email'].patchValue(row.email);
       this.formValue.controls['cname'].patchValue(row.cname);
+      // this.formValue.controls['acnum'].patchValue(row.actnum);
+      this.formValue.controls['acnum'].patchValue(this.lockerServiceModelObj.actnum);
 
+      this.showAdd= false;
+      this.showUpdate= true;
+      this.fform = true;
+      this.record= false
+    }
 
+    
+    
+    getOnNomiForm(row: any){
+      this.lockerServiceModelObj.nid = row.nid;
+      this.formValue.controls['acnum'].patchValue(row.actnum);
       this.formValue.controls['nomi'].patchValue(row.nomi);
       this.formValue.controls['nomin'].patchValue(row.nomin);
       this.formValue.controls['nomip'].patchValue(row.nomip);
@@ -226,7 +284,6 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.record= false
     }
 
-    
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -255,20 +312,10 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
-
     
 
-    this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
-    this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
-    this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
-    this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
 
-    this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
-    this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
-    this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
-    this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
 
-    
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
@@ -297,6 +344,33 @@ export class LockerServiceDashboardComponent implements OnInit {
   //     })
   // }      
  }
+
+ 
+ updateNomineeDetails(){
+  this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
+  this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
+  this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
+  this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
+  this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
+  this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
+  this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
+  this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
+  this.lockerServiceModelObj.nomiir = this.formValue.value.nomiir;
+
+     this.api.updateNominee(this.lockerServiceModelObj,this.lockerServiceModelObj.nid)
+     .subscribe(res=>{
+      alert("Nominee Update Successfully")
+      let ref=document.getElementById("cancel")
+      ref?.click();
+      // this.formValue.reset();
+      this.getAllNomineeDetails();
+      this.showUpdate=false;
+    },
+      err=>{
+        alert("Something wrong in update of nominee");
+      })
+    
+}
     onKeyPress(event : any){
       // console.log("Event Succefully");
       this.lockerServiceModelObj.relid=this.formValue.value.relid;
@@ -306,11 +380,14 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res=>{
         console.log(res);
         this.getOnForm(res);
+        this.formValue.controls['acnum'].patchValue(this.lockerServiceModelObj.actnum);
       },
       err=>{
         alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");
       })
     }
+
+
     // function ageCalculator() {
     //   var userinput =document.getElementById("DOB")?.nodeValue; 
 
@@ -358,24 +435,13 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.showAdd=true;
     }
 
-  //   const bdate = new Date(this.dob);
-  // const timeDiff = Math.abs(Date.now() - bdate.getTime() );
-  // this.age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
+  
 
-   
 
 
 }
 import { Grid, Sort,  Search, Toolbar } from '@syncfusion/ej2-grids';
 Grid.Inject(Sort,  Search, Toolbar);
-// relid:[''],
-// oprbrancd: [''],
-// cuscod: [''],
-// brancd: [''],
-// actype:[''],
-// actnum:[''],
-// lckrid:[''],drwrid:[''],remarks:[''],reldate:[''],paystat:[''],      oprstamp:[''],oprtimstamp:[''],update_BY:[''],update_DATE:[''],appflg:[''],appstamp:[''],dob:[''],
-// age:[''],addone:[''],addtwo:[''],house:[''],city:[''],phone:[''],ocpatn:[''],email:[''],cname:[''],apptimstamp: ['']
 let grid: Grid = new Grid({
   dataSource: LockerServiceModel,
     allowSorting: true,
@@ -396,28 +462,3 @@ let grid: Grid = new Grid({
 );
 grid.appendTo('#Grid');
 
-// sortData(){
-//   if(this.order:any){
-//     let newarr = this.showData.sort((a,b) => a.relid - b.relid);
-//     this.showData = newarr;
-//   }
-//   else {
-//     let newarr = this.showData.sort((a,b)=> b.id - a.id);
-//     this.showData = newarr;
-//   }
-//   this.order = !this.order;
-// }
-// function sortData() {
-//   throw new Error('Function not implemented.');
-// }
-
-// searchData(){
-//   let searchValue = (<HTMLInputElement>document.getElementById('search')).value;
-//   let searchFilter = new Search({
-//     fields: ['cuscod', 'brancd'],
-//     operator: 'contains',
-//     key: searchValue,
-//     ignoreCase: true
-//   });
-//   grid.search(searchFilter);
-// }

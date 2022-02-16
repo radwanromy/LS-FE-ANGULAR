@@ -38,6 +38,37 @@ export class ApiService {
   getByIdRelease(relid : number){
     return this.http.get("http://localhost:9090/api/posts/"+relid);   
   }
+  postNominee(data: any){
+    return this.http.post<any>("http://localhost:9090/api/nomis/nomi/", data)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+
+  getNominee(){
+    return this.http.get<any>("http://localhost:9090/api/nomis/getNomi/")
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+
+  updateNominee(data: any, nid: number){
+    return this.http.put<any>("http://localhost:9090/api/nomis/"+nid, data)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+
+  deleteNominee(nid: number){
+    return this.http.delete<any>("http://localhost:9090/api/nomis/"+nid)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+  getByIdNominee(nid : number){
+    return this.http.get("http://localhost:9090/api/nomis/"+nid);   
+  }
+
 }
 
 
