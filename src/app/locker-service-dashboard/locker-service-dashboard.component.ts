@@ -87,7 +87,8 @@ export class LockerServiceDashboardComponent implements OnInit {
      nomiin:  ['']  ,
      nomiip:  [''],
      nomiir:  [''],
-     acnum:  ['']
+     acnum:  [''],
+     fk_relid:  ['']
 
     })
 
@@ -167,7 +168,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     
     ;
     this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
-
+    // this.lockerServiceModelObj.fk_relid = this.formValue.value.fk_relid;
     this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
     this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
     this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
@@ -257,6 +258,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['cname'].patchValue(row.cname);
       // this.formValue.controls['acnum'].patchValue(row.actnum);
       this.formValue.controls['acnum'].patchValue(this.lockerServiceModelObj.actnum);
+      this.formValue.controls['fk_relid'].patchValue(this.lockerServiceModelObj.relid);
 
       this.showAdd= false;
       this.showUpdate= true;
@@ -268,6 +270,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     
     getOnNomiForm(row: any){
       this.lockerServiceModelObj.nid = row.nid;
+      // this.formValue.controls['fk_relid'].patchValue(row.relid);
       this.formValue.controls['acnum'].patchValue(row.actnum);
       this.formValue.controls['nomi'].patchValue(row.nomi);
       this.formValue.controls['nomin'].patchValue(row.nomin);
@@ -348,6 +351,7 @@ export class LockerServiceDashboardComponent implements OnInit {
  
  updateNomineeDetails(){
   this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
+  // this.lockerServiceModelObj.fk_relid = this.formValue.value.fk_relid;
   this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
   this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
   this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
@@ -380,7 +384,9 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res=>{
         console.log(res);
         this.getOnForm(res);
+        this.getOnNomiForm(res);
         this.formValue.controls['acnum'].patchValue(this.lockerServiceModelObj.actnum);
+        // this.formValue.controls['fk_relid'].patchValue(this.lockerServiceModelObj.relid);
       },
       err=>{
         alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");

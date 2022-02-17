@@ -41,6 +41,7 @@ export class LockerServiceModel{
 
     nid : number = 1;
     acnum :string = '';
+    fk_relid : number = 1;
 
 
 }
