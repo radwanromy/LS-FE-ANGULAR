@@ -81,11 +81,20 @@ export class ApiService {
       return res;
     }))
   }
-  updateAllocation(data: any, relid: number){
-    return this.http.put<any>("http://localhost:8888/api/LSM/DrawerAllocate/"+relid, data)
+  updateAllocation(data: any, actnum: any){
+    return this.http.put<any>("http://localhost:8888/api/LSM/DrawerAllocate/"+actnum, data)
     .pipe(map((res: any) => {
       return res;
     }))
+  }
+  deleteAllocation(actnum: any){
+    return this.http.delete<any>("http://localhost:8888/api/LSM/DrawerAllocate/"+actnum)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+  getByIdAllocation(actnum : any){
+    return this.http.get("http://localhost:8888/api/LSM/DrawerAllocate/"+actnum);   
   }
 
 }

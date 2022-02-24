@@ -157,14 +157,13 @@ export class LockerServiceDashboardComponent implements OnInit {
 
   postNomineeDetails(){
     
-    ;
+
     this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
     // this.lockerServiceModelObj.fk_relid = this.formValue.value.fk_relid;
     this.lockerServiceModelObj.nomi = this.formValue.value.nomi;
     this.lockerServiceModelObj.nomin = this.formValue.value.nomin;
     this.lockerServiceModelObj.nomip = this.formValue.value.nomip;
     this.lockerServiceModelObj.nomir = this.formValue.value.nomir;
-
     this.lockerServiceModelObj.nomii = this.formValue.value.nomii;
     this.lockerServiceModelObj.nomiin = this.formValue.value.nomiin;
     this.lockerServiceModelObj.nomiip = this.formValue.value.nomiip;
