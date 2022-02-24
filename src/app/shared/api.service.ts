@@ -68,6 +68,25 @@ export class ApiService {
   getByIdNominee(nid : number){
     return this.http.get("http://localhost:9090/api/nomis/"+nid);   
   }
+ //New Allocation Backend 
+  postAllocation(data: any){
+    return this.http.post<any>("http://localhost:8888/api/LSM/DrawerAllocate/Allocate", data)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+  getAllocation(){
+    return this.http.get<any>("http://localhost:8888/api/LSM/DrawerAllocate/Get/")
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
+  updateAllocation(data: any, relid: number){
+    return this.http.put<any>("http://localhost:8888/api/LSM/DrawerAllocate/"+relid, data)
+    .pipe(map((res: any) => {
+      return res;
+    }))
+  }
 
 }
 
