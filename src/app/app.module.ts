@@ -11,7 +11,6 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { NgToastModule } from 'ng-angular-popup';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +28,7 @@ import { NgToastModule } from 'ng-angular-popup';
     MatFormFieldModule,
     NgxPaginationModule,
     NgToastModule
+  
 
   ],
   providers: [

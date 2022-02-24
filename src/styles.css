@@ -182,7 +182,7 @@ border-width: 1px;
    background-color:rgb(173,216,230);
 }
 BODY{
-  font-size: 12PX;
+  font-size: 12px;
 }
 
 .btn {
@@ -196,5 +196,7 @@ BODY{
   --bs-body-line-height:1.3888;
 }
 
-
+#close{
+ all: unset;
+}
 

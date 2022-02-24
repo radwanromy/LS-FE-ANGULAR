@@ -82,7 +82,6 @@ export class LockerServiceDashboardComponent implements OnInit {
      fk_relid:  ['']
 
     })
-
     
     this.getAllLockerServiceDetails();
     this.fform = true;
@@ -143,7 +142,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
       alert("Locker Details Added Successfully.")
-      this.toast.success({detail:'Success',summary:'Locker Details Added Successfully.',duration:5000, sticky:true,position:'tr'})
+      this.toast.success({detail:'Success',summary:'Locker Details Added Successfully.',duration:3000})
       
       let ref = document.getElementById('cancel')
       ref?.click();
@@ -152,7 +151,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     },
     err=>{
       alert("Something went wrong with insert");
-      this.toast.error({detail:'Error Message',summary:'Something went wrong with insert!!',duration:5000, sticky:true,position:'tr'})
+      this.toast.error({detail:'Error Message',summary:'Something went wrong with insert!!',duration:3000, sticky:true,position:'tr'})
     })
   }
 
@@ -175,7 +174,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
       alert("Nominee Details Added Successfully.")
-      this.toast.success({detail:'Success',summary:'Nominee Details Added Successfully.',duration:5000, sticky:true,position:'tr'})
+      this.toast.success({detail:'Success',summary:'Nominee Details Added Successfully.',duration:3000})
  let ref = document.getElementById('cancel')
       ref?.click();
       // this.formValue.reset();
@@ -183,7 +182,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     },
     err=>{
       alert("Something went wrong with insert of nominee");
-      this.toast.error({detail:'Error Message',summary:'Something went wrong with insertion of nominee!!',duration:5000, sticky:true,position:'tr'})
+      this.toast.error({detail:'Error Message',summary:'Something went wrong with insertion of nominee!!',duration:3000, sticky:true,position:'tr'})
     })
   }
   getAllLockerServiceDetails(){
@@ -209,7 +208,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res => {
         
         alert("Deleted");
-        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:5000, sticky:true,position:'tr'})
+        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:3000})
         this.getAllLockerServiceDetails();
       })
     }
@@ -218,7 +217,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res => {
         
         alert("Deleted");
-        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:5000, sticky:true,position:'tr'})
+        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:3000})
         this. getAllNomineeDetails();
       })
     }
@@ -259,12 +258,8 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.showUpdate= true;
       this.fform = true;
       this.record= false
-      this.toast.success({detail:'Success',summary:'Data Get On The Form Successfully.',duration:5000, sticky:true,position:'tr'})
-   
+      this.toast.success({detail:'Searching Successful!',summary:'Data Get On The Form Successfully.',duration:3000})   
     }
-
-    
-    
     getOnNomiForm(row: any){
       this.lockerServiceModelObj.nid = row.nid;
       // this.formValue.controls['fk_relid'].patchValue(row.relid);
@@ -277,13 +272,11 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.formValue.controls['nomiin'].patchValue(row.nomiin);
       this.formValue.controls['nomiip'].patchValue(row.nomiip);
       this.formValue.controls['nomiir'].patchValue(row.nomiir);
-
       this.showAdd= false;
       this.showUpdate= true;
       this.fform = true;
       this.record= false
     }
-
   updateLockerServiceDetails(){
     this.lockerServiceModelObj.lckrid = this.formValue.value.lckrid;
     this.lockerServiceModelObj.drwrid = this.formValue.value.drwrid;
@@ -316,7 +309,7 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
         alert("Update Successfully")
-        this.toast.success({detail:'Success',summary:'Data Update Successfully.',duration:5000, sticky:true,position:'tr'})
+        this.toast.success({detail:'Success',summary:'Data Update Successfully.',duration:3000})
         let ref=document.getElementById("cancel")
         ref?.click();
         this.formValue.reset();
@@ -325,7 +318,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       },
         err=>{
           alert("Something wrong in update");
-          this.toast.error({detail:'Error',summary:'Something wrong in update.',duration:5000, sticky:true,position:'tr'})
+          this.toast.error({detail:'Error',summary:'Something wrong in update.',duration:3000, sticky:true,position:'tr'})
         })
   //   console.log(this.ReleaseModeloObj);
   //   this.apiservice.UpdateByIdRelease(this.ReleaseModeloObj.relid, this.ReleaseModeloObj,)
@@ -340,8 +333,6 @@ export class LockerServiceDashboardComponent implements OnInit {
   //     })
   // }      
  }
-
- 
  updateNomineeDetails(){
   this.lockerServiceModelObj.acnum = this.formValue.value.acnum;
   // this.lockerServiceModelObj.fk_relid = this.formValue.value.fk_relid;
@@ -357,7 +348,7 @@ export class LockerServiceDashboardComponent implements OnInit {
      this.api.updateNominee(this.lockerServiceModelObj,this.lockerServiceModelObj.nid)
      .subscribe(res=>{
       alert("Nominee Update Successfully")
-      this.toast.success({detail:'Success',summary:'Nominee Update Successfully.',duration:5000, sticky:true,position:'tr'})
+      this.toast.success({detail:'Success',summary:'Nominee Update Successfully.',duration:3000})
       let ref=document.getElementById("cancel")
       ref?.click();
       // this.formValue.reset();
@@ -365,10 +356,9 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.showUpdate=false;
     },
       err=>{
-        alert("Something wrong in update of nominee");
-        this.toast.error({detail:'Error',summary:'Nominee Update Failed!',duration:5000, sticky:true,position:'tr'})
+        // alert("Something wrong in update of nominee");
+        this.toast.error({detail:'Error',summary:'Nominee Update Failed!',duration:3000, sticky:true,position:'tr'})
       })
-    
 }
     onKeyPress(event : any){
       // console.log("Event Succefully");
@@ -385,7 +375,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       },
       err=>{
         // alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");
-        this.toast.error({detail:'Error',summary:'Not Found. Kindly Check The ID Number Again!',duration:5000, sticky:true,position:'tr'})
+        this.toast.error({detail:'Search Error',summary:'Not Found. Kindly Check The ID Number Again!',duration:3000, sticky:true,position:'tr'})
       })
     }
     // function ageCalculator() {
@@ -410,7 +400,8 @@ export class LockerServiceDashboardComponent implements OnInit {
      showRecord(){
        this.record=true;
        this.fform=false;
-       this.showAdd=false;     
+       this.showAdd=false;  
+       this.toast.success({detail:'Records',summary:'Showing Records Successfully.',duration:3000})   
      }
      key: any = 'relid';
      reverse: boolean = false;
