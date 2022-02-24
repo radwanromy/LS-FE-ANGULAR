@@ -10,6 +10,7 @@ import { TestComponent } from './test/test.component';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/mater
     Ng2SearchPipeModule , 
     Ng2OrderModule, 
     MatFormFieldModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgToastModule
 
   ],
   providers: [

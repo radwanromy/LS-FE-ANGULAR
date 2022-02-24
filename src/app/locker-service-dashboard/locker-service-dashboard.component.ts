@@ -7,6 +7,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-locker-service-dashboard',
@@ -28,23 +29,13 @@ export class LockerServiceDashboardComponent implements OnInit {
   p: number = 1;
   c: number = 1;
   nomineeData !: any;
-  
   filterTermN !: string;
-
   config:any;
-
   public birthdate!: Date;
   public agee!: number;
-
-
-
-  
-
+ 
   constructor(private formBuilder: FormBuilder,
-    private api : ApiService) { }
-
-
-  
+    private api : ApiService, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
@@ -148,12 +139,12 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
-
-
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
       console.log(res);
       alert("Locker Details Added Successfully.")
+      this.toast.success({detail:'Success',summary:'Locker Details Added Successfully.',duration:5000, sticky:true,position:'tr'})
+      
       let ref = document.getElementById('cancel')
       ref?.click();
       this.formValue.reset();
@@ -161,6 +152,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     },
     err=>{
       alert("Something went wrong with insert");
+      this.toast.error({detail:'Error Message',summary:'Something went wrong with insert!!',duration:5000, sticky:true,position:'tr'})
     })
   }
 
@@ -183,13 +175,15 @@ export class LockerServiceDashboardComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
       alert("Nominee Details Added Successfully.")
-      let ref = document.getElementById('cancel')
+      this.toast.success({detail:'Success',summary:'Nominee Details Added Successfully.',duration:5000, sticky:true,position:'tr'})
+ let ref = document.getElementById('cancel')
       ref?.click();
       // this.formValue.reset();
       this.getAllNomineeDetails();
     },
     err=>{
       alert("Something went wrong with insert of nominee");
+      this.toast.error({detail:'Error Message',summary:'Something went wrong with insertion of nominee!!',duration:5000, sticky:true,position:'tr'})
     })
   }
   getAllLockerServiceDetails(){
@@ -215,6 +209,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res => {
         
         alert("Deleted");
+        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:5000, sticky:true,position:'tr'})
         this.getAllLockerServiceDetails();
       })
     }
@@ -223,6 +218,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       .subscribe(res => {
         
         alert("Deleted");
+        this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:5000, sticky:true,position:'tr'})
         this. getAllNomineeDetails();
       })
     }
@@ -259,11 +255,12 @@ export class LockerServiceDashboardComponent implements OnInit {
       // this.formValue.controls['acnum'].patchValue(row.actnum);
       this.formValue.controls['acnum'].patchValue(this.lockerServiceModelObj.actnum);
       this.formValue.controls['fk_relid'].patchValue(this.lockerServiceModelObj.relid);
-
       this.showAdd= false;
       this.showUpdate= true;
       this.fform = true;
       this.record= false
+      this.toast.success({detail:'Success',summary:'Data Get On The Form Successfully.',duration:5000, sticky:true,position:'tr'})
+   
     }
 
     
@@ -315,14 +312,11 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.lockerServiceModelObj.ocpatn = this.formValue.value.ocpatn;
     this.lockerServiceModelObj.email = this.formValue.value.email;
     this.lockerServiceModelObj.cname = this.formValue.value.cname;
-    
-
-
-
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
         alert("Update Successfully")
+        this.toast.success({detail:'Success',summary:'Data Update Successfully.',duration:5000, sticky:true,position:'tr'})
         let ref=document.getElementById("cancel")
         ref?.click();
         this.formValue.reset();
@@ -331,10 +325,9 @@ export class LockerServiceDashboardComponent implements OnInit {
       },
         err=>{
           alert("Something wrong in update");
+          this.toast.error({detail:'Error',summary:'Something wrong in update.',duration:5000, sticky:true,position:'tr'})
         })
-
   //   console.log(this.ReleaseModeloObj);
-
   //   this.apiservice.UpdateByIdRelease(this.ReleaseModeloObj.relid, this.ReleaseModeloObj,)
   //   .subscribe(res=>{
   //     alert("Update Successfully")
@@ -364,6 +357,7 @@ export class LockerServiceDashboardComponent implements OnInit {
      this.api.updateNominee(this.lockerServiceModelObj,this.lockerServiceModelObj.nid)
      .subscribe(res=>{
       alert("Nominee Update Successfully")
+      this.toast.success({detail:'Success',summary:'Nominee Update Successfully.',duration:5000, sticky:true,position:'tr'})
       let ref=document.getElementById("cancel")
       ref?.click();
       // this.formValue.reset();
@@ -372,6 +366,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     },
       err=>{
         alert("Something wrong in update of nominee");
+        this.toast.error({detail:'Error',summary:'Nominee Update Failed!',duration:5000, sticky:true,position:'tr'})
       })
     
 }
@@ -389,40 +384,33 @@ export class LockerServiceDashboardComponent implements OnInit {
         // this.formValue.controls['fk_relid'].patchValue(this.lockerServiceModelObj.relid);
       },
       err=>{
-        alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");
+        // alert("Searching ID Is Not Found. Kindly Check The ID Number Again!");
+        this.toast.error({detail:'Error',summary:'Not Found. Kindly Check The ID Number Again!',duration:5000, sticky:true,position:'tr'})
       })
     }
-
-
     // function ageCalculator() {
     //   var userinput =document.getElementById("DOB")?.nodeValue; 
-
     //   if(userinput==null || userinput==''){  
     //     document.getElementById("message").innerHTML = "**Choose a date please!";    
     //     return false;   
-    //   }
-      
+    //   }     
     // }
       hideForm(){
       this.showform=true; 
       this.niform=false;
     }
-
     hideNomineeInformation(){
       this.niform=true; 
       this.showform=false;
     }
      close(){
       this.niform=false;
-
       this.showform=false;
      }
-
      showRecord(){
        this.record=true;
        this.fform=false;
-       this.showAdd=false;
-      
+       this.showAdd=false;     
      }
      key: any = 'relid';
      reverse: boolean = false;
@@ -430,41 +418,31 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.key = key;
        this.reverse = !this.reverse;
      }
-
      pageChanged(event: any) {
       this.config.currentPage = event;
     }
-    
     showFformm(){
       this.fform=true;
       this.record=false;
       this.showAdd=true;
     }
-
-  
-
-
-
 }
 import { Grid, Sort,  Search, Toolbar } from '@syncfusion/ej2-grids';
 Grid.Inject(Sort,  Search, Toolbar);
 let grid: Grid = new Grid({
-  dataSource: LockerServiceModel,
+    dataSource: LockerServiceModel,
     allowSorting: true,
     sortSettings: { columns: [{ field: 'relid', direction: 'Ascending' }, { field: 'actype', direction: 'Descending' }] },
     toolbar: ['Search'],
     searchSettings: { fields: ['CustomerID'], operator: 'contains', key: 'Ha', ignoreCase: true },
-
     columns: [
         { field: 'relid', headerText: 'relid', textAlign: 'Right', width: 120 },
         { field: 'oprbrancd', headerText: 'Customer ID', width: 150 },
         { field: 'cuscod', headerText: 'Ship City', width: 150 },
-        { field: 'brancd', headerText: 'Ship Name', width: 150 }
+        { field: 'brancd', headerText: 'Ship Name', width: 150 },
+        
     ],
     height: 315,
-   
-   
 }
 );
 grid.appendTo('#Grid');
-
