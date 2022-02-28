@@ -141,7 +141,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.api.postEmployee(this.lockerServiceModelObj)
     .subscribe(res => {
       console.log(res);
-      alert("Locker Details Added Successfully.")
+      // alert("Locker Details Added Successfully.")
       this.toast.success({detail:'Success',summary:'Locker Details Added Successfully.',duration:3000})
       
       let ref = document.getElementById('cancel')
@@ -150,7 +150,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.getAllLockerServiceDetails();
     },
     err=>{
-      alert("Something went wrong with insert");
+      // alert("Something went wrong with insert");
       this.toast.error({detail:'Error Message',summary:'Something went wrong with insert!!',duration:3000, sticky:true,position:'tr'})
     })
   }
@@ -172,7 +172,7 @@ export class LockerServiceDashboardComponent implements OnInit {
     this.api.postNominee(this.lockerServiceModelObj)
     .subscribe(res => {
       console.log(res);
-      alert("Nominee Details Added Successfully.")
+      // alert("Nominee Details Added Successfully.")
       this.toast.success({detail:'Success',summary:'Nominee Details Added Successfully.',duration:3000})
  let ref = document.getElementById('cancel')
       ref?.click();
@@ -180,7 +180,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       this.getAllNomineeDetails();
     },
     err=>{
-      alert("Something went wrong with insert of nominee");
+      // alert("Something went wrong with insert of nominee");
       this.toast.error({detail:'Error Message',summary:'Something went wrong with insertion of nominee!!',duration:3000, sticky:true,position:'tr'})
     })
   }
@@ -192,35 +192,30 @@ export class LockerServiceDashboardComponent implements OnInit {
         
       })
     }
-
     getAllNomineeDetails(){
       this.api.getNominee()
       .subscribe( res => {
         this.nomineeData = res;
         // this.lockerServiceData= res;
-        this.showAdd = true;
-        
+        this.showAdd = true;       
       })
     }
   deleteLockerServiceData(res : any){
       this.api.deleteEmployee(res.relid)
-      .subscribe(res => {
-        
-        alert("Deleted");
+      .subscribe(res => {       
+        // alert("Deleted");
         this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:3000})
         this.getAllLockerServiceDetails();
       })
     }
     deleteNoimneeData(res : any){
       this.api.deleteNominee(res.nid)
-      .subscribe(res => {
-        
-        alert("Deleted");
+      .subscribe(res => {        
+        // alert("Deleted");
         this.toast.success({detail:'Success',summary:'Deleted Successfully.',duration:3000})
         this. getAllNomineeDetails();
       })
     }
-
     getOnForm(row: any){
       this.lockerServiceModelObj.relid = row.relid;
       this.formValue.controls['lckrid'].patchValue(row.lckrid);
@@ -307,7 +302,7 @@ export class LockerServiceDashboardComponent implements OnInit {
       // console.log(this.lockerServiceModelObj);
        this.api.updateEmployee(this.lockerServiceModelObj,this.lockerServiceModelObj.relid)
        .subscribe(res=>{
-        alert("Update Successfully")
+        // alert("Update Successfully")
         this.toast.success({detail:'Success',summary:'Data Update Successfully.',duration:3000})
         let ref=document.getElementById("cancel")
         ref?.click();
@@ -316,7 +311,7 @@ export class LockerServiceDashboardComponent implements OnInit {
         this.showUpdate=false;
       },
         err=>{
-          alert("Something wrong in update");
+          // alert("Something wrong in update");
           this.toast.error({detail:'Error',summary:'Something wrong in update.',duration:3000, sticky:true,position:'tr'})
         })
   //   console.log(this.ReleaseModeloObj);
@@ -346,7 +341,7 @@ export class LockerServiceDashboardComponent implements OnInit {
 
      this.api.updateNominee(this.lockerServiceModelObj,this.lockerServiceModelObj.nid)
      .subscribe(res=>{
-      alert("Nominee Update Successfully")
+      // alert("Nominee Update Successfully")
       this.toast.success({detail:'Success',summary:'Nominee Update Successfully.',duration:3000})
       let ref=document.getElementById("cancel")
       ref?.click();
@@ -400,7 +395,7 @@ export class LockerServiceDashboardComponent implements OnInit {
        this.record=true;
        this.fform=false;
        this.showAdd=false;  
-       this.toast.success({detail:'Records',summary:'Showing Records Successfully.',duration:3000})   
+       this.toast.success({detail:'Records ',summary:'Showing Records Successfully.',duration:1000})   
      }
      key: any = 'relid';
      reverse: boolean = false;

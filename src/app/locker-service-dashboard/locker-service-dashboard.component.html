@@ -598,8 +598,6 @@
 
                             <label for="saf" style="display: inline;">On Fixed &nbsp;&nbsp;</label>
                                 <input type="radio"  style="display: inline; color:#1068b2 ;" formControlName="oprstamp" id="saf"  value="onFixed"  selected style="width: 15px; background:transparent; display: inline;"  >
-                            
-                           
                             <label for="sap" style="display: inline;" > &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;Percentage &nbsp;&nbsp;</label>
                                 <input type="radio" style="display: inline;color:#1068b2 ; background-color: #1068b2 ;" formControlName="oprstamp" id="sap" value="onPercentage" style="width: 15px; background:transparent;display: inline;" >
                               
@@ -612,8 +610,7 @@
                             <!-- <input type="text" formControlName="oprstamp" placeholder="Security Amount" > -->
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                           </div>
-                    
-
+                
                           <div >
                             <label  >Caution Money:</label>
                             <!-- <img src="../../assets/form Icons/caution-sign.png" style="height: 18px; display: inline;" alt=””> &nbsp; -->
@@ -640,10 +637,8 @@
                               <input type="text" formControlName="remarks" placeholder="Feed back" (click)="this.showform=false;" style="display: inline;" (click)="this.niform=false;" >
                             </div>
                 </div>
-                </div>
-                
+                </div>               
               </td>
-
               <td>
                <div style="color: #1068b2;">
                    <h2>
@@ -660,8 +655,7 @@
                     </div> -->
 
                     <div class="omrs-input-group">
-                        <label class="omrs-input-underlined">
-                            
+                        <label class="omrs-input-underlined">              
                             <select class="form-control" formControlName="actype" data-toggle="tooltip"   
                             data-placement="right" title="Select Student Branch" style="color: black; 
                             background-color: rgba(245, 245, 220, 0); border: transparent; box-shadow: transparent; padding-top :15px;
@@ -673,7 +667,6 @@
                             <option value="ACT005">Account Type 05</option>  
                             <option value="ACT006">Account Type 06</option> 
                            </select>  
-                            
                           <span class="omrs-input-label" align="left" style="font-size:15px ; padding-top: 0px; width: 100%;  background:rgb(255, 255, 255);;   ">Custoemr Type 
                              <!-- <img src="../../assets/Button Icon/fast-forward.png" width="15px" height="15px" >   -->
                             </span> 
@@ -689,7 +682,6 @@
                          </span> 
                         </label>
                     </div>
-
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input   type="text" formControlName="cuscod" placeholder="Customer ID Number" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
@@ -700,7 +692,6 @@
                          </span> 
                         </label>
                     </div>
-
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input    type="text" formControlName="addone"  placeholder="Enter Present Residential Address" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
@@ -711,7 +702,6 @@
                          </span> 
                         </label>
                     </div>
-
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input   type="text" formControlName="addtwo"  placeholder="Enter Permanent Residential Address"  (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
@@ -722,7 +712,6 @@
                           </span> 
                         </label>
                     </div>
-
                     <div class="omrs-input-group">
                         <label class="omrs-input-underlined">
                             <input   type="text" formControlName="house"  placeholder="Road No/Plot NO" (click)="this.showform=false;" (click)="this.niform=false;"  style="color: black; 
@@ -1328,17 +1317,12 @@
         <td colspan="11" rowspan="3" align="center">
             <pagination-controls (pageChange) = "p = $event" > </pagination-controls>
         </td>
-       
     </tr>
-
 </table>
-
 <br>
 <br>
-<Br>
-    
+<Br>  
 <table class="table mt-3">
-    
     <!-- <pagination-controls (pageChange) = "p = $event"> </pagination-controls> -->
     <thead>
         <tr align="CENTER">
@@ -1400,9 +1384,7 @@
             <th scope="col" (click)="sort('age')">Age &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col" (click)="sort('apptimstamp')">Status &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
             <th scope="col" (click)="sort('remarks')" >Remarks &nbsp; <i class="fa fa-sort" style="color: rgb(0, 0, 0); font-style:normal; font-size: medium;">⇅</i></th>
-            <th scope="col">Action </th>
-
-            
+            <th scope="col">Action </th>         
         </tr>
     </thead>
     <tbody><tr *ngFor="let row of lockerServiceData | filter:filterTerm | orderBy: key :reverse | paginate: { itemsPerPage: 3, currentPage: p } " align="CENTER">
